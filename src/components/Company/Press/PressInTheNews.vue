@@ -1,4 +1,16 @@
 <script setup lang="ts">
+// Logo sources for the press strip
+const pressLogos: string[] = [
+  '/images/company/press/company_press_1_logo1.svg',
+  '/images/company/press/company_press_1_logo2.svg',
+  '/images/company/press/company_press_1_logo3.svg',
+  '/images/company/press/company_press_1_logo4.svg',
+  '/images/company/press/company_press_1_logo5.svg',
+  '/images/company/press/company_press_1_logo6.svg',
+  '/images/company/press/company_press_1_logo7.svg',
+  '/images/company/press/company_press_1_logo8.svg',
+  '/images/company/press/company_press_1_logo9.svg'
+]
 </script>
 
 <template>
@@ -13,15 +25,8 @@
           <dt class="w-full lg:w-auto mr-10 text-sm text-gray-deep shrink-0">As seen on</dt>
           <dd class="w-full lg:flex-1 overflow-hidden relative">
             <div class="h-10 flex items-center">
-              <img src="/images/company/press/company_press_1_logo1.svg" class="w-auto h-full mr-4 md:mr-8 shrink-0" />
-              <img src="/images/company/press/company_press_1_logo2.svg" class="w-auto h-full mr-4 md:mr-8 shrink-0" />
-              <img src="/images/company/press/company_press_1_logo3.svg" class="w-auto h-full mr-4 md:mr-8 shrink-0" />
-              <img src="/images/company/press/company_press_1_logo4.svg" class="w-auto h-full mr-4 md:mr-8 shrink-0" />
-              <img src="/images/company/press/company_press_1_logo5.svg" class="w-auto h-full mr-4 md:mr-8 shrink-0" />
-              <img src="/images/company/press/company_press_1_logo6.svg" class="w-auto h-full mr-4 md:mr-8 shrink-0" />
-              <img src="/images/company/press/company_press_1_logo7.svg" class="w-auto h-full mr-4 md:mr-8 shrink-0" />
-              <img src="/images/company/press/company_press_1_logo8.svg" class="w-auto h-full mr-4 md:mr-8 shrink-0" />
-              <img src="/images/company/press/company_press_1_logo9.svg" class="w-auto h-full mr-4 md:mr-8 shrink-0" />
+              <!-- v-for logo items -->
+              <img v-for="(logo, idx) in pressLogos" :key="idx" :src="logo" class="w-auto h-full mr-4 md:mr-8 shrink-0" />
             </div>
             <em class="w-1/5 h-full absolute left-0 top-0 block" style="background-image: linear-gradient(90deg, rgb(255, 255, 255), rgba(255, 255, 255, 0));"></em>
             <em class="w-1/5 h-full absolute right-0 top-0 block" style="background-image: linear-gradient(90deg, rgba(255, 255, 255, 0), rgb(255, 255, 255));"></em>

@@ -16,6 +16,18 @@ const investors: Investor[] = [
   { name: 'Ryan Petersen', company: 'Flexport', image: '/images/company/careers/company_careers_5_13.jpeg' },
   { name: 'Max Mullen', company: 'Instacart', image: '/images/company/careers/company_careers_5_14.png' }
 ]
+
+// Logo strip sources
+const investorLogos: string[] = [
+  '/images/company/careers/company_careers_5_logo1.svg',
+  '/images/company/careers/company_careers_5_logo2.svg',
+  '/images/company/careers/company_careers_5_logo3.svg',
+  '/images/company/careers/company_careers_5_logo4.svg',
+  '/images/company/careers/company_careers_5_logo5.svg',
+  '/images/company/careers/company_careers_5_logo6.svg',
+  '/images/company/careers/company_careers_5_logo7.svg',
+  '/images/company/careers/company_careers_5_logo8.svg'
+]
 </script>
 
 <template>
@@ -28,14 +40,8 @@ const investors: Investor[] = [
         <dt class="w-[170px] text-sm text-gray-deep">Our investors built companies like</dt>
         <dd class="w-full lg:flex-1 overflow-hidden relative">
           <div class="h-[34px] flex gap-8 items-center">
-            <img src="/images/company/careers/company_careers_5_logo1.svg" class="w-auto h-full shrink-0" />
-            <img src="/images/company/careers/company_careers_5_logo2.svg" class="w-auto h-full shrink-0" />
-            <img src="/images/company/careers/company_careers_5_logo3.svg" class="w-auto h-full shrink-0" />
-            <img src="/images/company/careers/company_careers_5_logo4.svg" class="w-auto h-full shrink-0" />
-            <img src="/images/company/careers/company_careers_5_logo5.svg" class="w-auto h-full shrink-0" />
-            <img src="/images/company/careers/company_careers_5_logo6.svg" class="w-auto h-full shrink-0" />
-            <img src="/images/company/careers/company_careers_5_logo7.svg" class="w-auto h-full shrink-0" />
-            <img src="/images/company/careers/company_careers_5_logo8.svg" class="w-auto h-full shrink-0" />
+            <!-- v-for logo items -->
+            <img v-for="(logo, idx) in investorLogos" :key="idx" :src="logo" class="w-auto h-full shrink-0" />
           </div>
           
       <em class="w-1/5 h-full absolute left-0 top-0 block" style="background-image: linear-gradient(90deg, rgb(255, 255, 255), rgba(255, 255, 255, 0));"></em>

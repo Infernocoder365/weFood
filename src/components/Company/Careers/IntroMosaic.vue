@@ -1,5 +1,31 @@
 <script setup lang="ts">
 // Intro section with headline, Forbes badge, and image mosaic
+const mosaicItems = [
+  {
+    id: 1,
+    classes: 'lg:col-span-3 lg:row-span-2 col-span-1',
+    src: '/images/company/careers/company_careers_1_1.jpg',
+    alt: 'Team 1'
+  },
+  {
+    id: 2,
+    classes: 'lg:col-span-1 col-span-1',
+    src: '/images/company/careers/company_careers_1_2.jpg',
+    alt: 'Team 2'
+  },
+  {
+    id: 3,
+    classes: 'lg:col-span-1 col-span-1',
+    src: '/images/company/careers/company_careers_1_3.jpg',
+    alt: 'Team 3'
+  },
+  {
+    id: 4,
+    classes: 'lg:col-span-2 col-span-1',
+    src: '/images/company/careers/company_careers_1_4.jpg',
+    alt: 'Team 4'
+  }
+]
 </script>
 
 <template>
@@ -19,31 +45,11 @@
         </p>
       </div>
       <dl class="grid grid-cols-2 lg:grid-cols-5 gap-2">
-        <dd class="lg:col-span-3 lg:row-span-2 col-span-1">
+        <!-- Use v-for to render mosaic items -->
+        <dd v-for="item in mosaicItems" :key="item.id" :class="item.classes">
           <div class="w-full h-full rounded-xl overflow-hidden flex">
             <div class="w-full h-full bg-gray-200">
-              <img class="w-full h-full object-cover" src="/images/company/careers/company_careers_1_1.jpg" alt="Team 1" />
-            </div>
-          </div>
-        </dd>
-        <dd class="lg:col-span-1 col-span-1">
-          <div class="w-full h-full rounded-xl overflow-hidden flex">
-            <div class="w-full h-full bg-gray-200">
-              <img class="w-full h-full object-cover" src="/images/company/careers/company_careers_1_2.jpg" alt="Team 2" />
-            </div>
-          </div>
-        </dd>
-        <dd class="lg:col-span-1 col-span-1">
-          <div class="w-full h-full rounded-xl overflow-hidden flex">
-            <div class="w-full h-full bg-gray-200">
-              <img class="w-full h-full object-cover" src="/images/company/careers/company_careers_1_3.jpg" alt="Team 3" />
-            </div>
-          </div>
-        </dd>
-        <dd class="lg:col-span-2 col-span-1">
-          <div class="w-full h-full rounded-xl overflow-hidden flex">
-            <div class="w-full h-full bg-gray-200">
-              <img class="w-full h-full object-cover" src="/images/company/careers/company_careers_1_4.jpg" alt="Team 4" />
+              <img class="w-full h-full object-cover" :src="item.src" :alt="item.alt" />
             </div>
           </div>
         </dd>
