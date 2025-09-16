@@ -55,7 +55,7 @@ const props = withDefaults(defineProps<{
           <ul class="grid grid-cols-1 gap-10">
             <!-- Render features dynamically and use icons from params -->
             <li v-for="(feature, idx) in props.features" :key="idx" class="col-span-1 flex">
-              <em class="w-12 h-12 mr-3 bg-gray-default rounded-lg flex shrink-0 items-center justify-center" aria-hidden="true">
+              <em class="w-12 h-12 mr-3 bg-[#ebebeb] rounded-lg flex shrink-0 items-center justify-center" aria-hidden="true">
                 <span v-html="props.icons[idx]"></span>
               </em>
               <div class="flex-1 overflow-hidden">

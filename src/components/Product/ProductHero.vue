@@ -40,7 +40,7 @@ const props = withDefaults(defineProps<{
                   <path d="M19 12L31 24L19 36" stroke-linecap="round" stroke-linejoin="round"></path>
                 </svg></a>
               <a :href="props.secondaryCtaHref"
-                class="h-12 px-4 mr-3 mt-3 bg-gray-default rounded-lg flex items-center"><span>{{ props.secondaryCtaText }}</span><svg stroke="currentColor" stroke-width="4" width="20" height="20" viewBox="0 0 48 48"
+                class="h-12 px-4 mr-3 mt-3 bg-[#ebebeb] rounded-lg flex items-center"><span>{{ props.secondaryCtaText }}</span><svg stroke="currentColor" stroke-width="4" width="20" height="20" viewBox="0 0 48 48"
                   fill="none" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 opacity-60">
                   <path d="M19 12L31 24L19 36" stroke-linecap="round" stroke-linejoin="round"></path>
                 </svg></a>
