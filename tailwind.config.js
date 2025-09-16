@@ -17,10 +17,17 @@ export default {
         'text-header': '#000000',
         'minor': '#3b82f6',
         'gray-light': '#f3f4f6',
-        'gray-default': '#6b7280',
+        'gray-default': 'rgb(144 144 144 / <alpha-value>)',
+        'gray-light': 'rgb(241 241 242 / <alpha-value>)',
+        'gray-deep': 'rgb(120 122 125 / <alpha-value>)',
         'card': '#f9fafb',
         'footer': 'rgb(29 29 39)',
+        'default': 'white',
         'white-semi': 'rgba(255, 255, 255, 0.52)'
+      },
+      textColor: {
+        footer: '#ffffff',
+        default: '#000000'
       },
       maxWidth: {
         'fixed': '88.75rem',
@@ -35,6 +42,10 @@ export default {
       },
       backdropBlur: {
         '13': '13px'
+      },
+      // Add 17-column grid utility
+      gridTemplateColumns: {
+        '17': 'repeat(17, minmax(0, 1fr))'
       }
     },
   },

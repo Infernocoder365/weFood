@@ -3,3 +3,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Existing base overrides */
+@layer base {
+  body {
+    color: rgb(23 31 31 / 1);
+    background-color: rgb(241 241 242 / 1);
+    @apply font-sans;
+  }
+}
+
+/* Utilities overrides */
+@layer utilities {
+  .text-footer {
+    @apply text-white;
+  }
+  /* Custom border color utility to match design */
+  .border-default {
+    border-color: rgb(203 203 203);
+  }
+}

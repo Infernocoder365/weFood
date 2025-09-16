@@ -24,7 +24,7 @@ import FooterComponent from './layout/FooterComponent.vue'
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   line-height: 1.6;
-  color: #333;
+  color: black;
 }
 
 #app {
