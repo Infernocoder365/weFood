@@ -17,6 +17,14 @@ const CompanyCareersView = () => import('../views/Company/CompanyCareersView.vue
 const CompanyPressView = () => import('../views/Company/CompanyPressView.vue')
 const CompanyReviewsView = () => import('../views/Company/CompanyReviewsView.vue')
 const CompanyReleasesView = () => import('../views/Company/CompanyReleasesView.vue')
+const BlogResource = () => import('../views/Resources/BlogResource.vue')
+const CaseResource = () => import('../views/Resources/CaseResource.vue')
+const SupportResource = () => import('../views/Resources/SupportResource.vue')
+const OwnerResource = () => import('../views/Resources/OwnerResource.vue')
+
+// Auth Views
+const LoginView = () => import('../views/Auth/LoginView.vue')
+const RegisterView = () => import('../views/Auth/RegisterView.vue')
 
 const routes: RouteRecordRaw[] = [
   { path: '/', name: 'home', component: HomeView },
@@ -37,17 +45,18 @@ const routes: RouteRecordRaw[] = [
   { path: '/company/reviews', name: 'company-reviews', component: CompanyReviewsView },
   { path: '/company/releases', name: 'company-releases', component: CompanyReleasesView },
   // Resources
-  { path: '/resources/blog', name: 'resources-blog', component: GenericPage },
-  { path: '/resources/case', name: 'resources-case', component: GenericPage },
-  { path: '/resources/support', name: 'resources-support', component: GenericPage },
-  { path: '/resources/owner', name: 'resources-owner', component: GenericPage },
+  { path: '/resources/blog', name: 'resources-blog', component: BlogResource },
+  { path: '/resources/case', name: 'resources-case', component: CaseResource },
+  { path: '/resources/support', name: 'resources-support', component: SupportResource },
+  { path: '/resources/owner', name: 'resources-owner', component: OwnerResource },
   // Legal / misc
   { path: '/privacy-policy', name: 'privacy', component: GenericPage },
   { path: '/license', name: 'license', component: GenericPage },
   { path: '/service', name: 'service', component: GenericPage },
-  { path: '/dashboard', name: 'dashboard', component: GenericPage },
-  { path: '/premium-membership', name: 'premium-membership', component: GenericPage },
-  { path: '/login', name: 'login', component: GenericPage },
+  { path: '/dashboard', name: 'dashboard', component: GenericPage, meta: { requiresAuth: true } },
+  { path: '/premium-membership', name: 'premium-membership', component: GenericPage, meta: { requiresAuth: true } },
+  { path: '/login', name: 'login', component: LoginView },
+  { path: '/register', name: 'register', component: RegisterView },
   // Fallback
   { path: '/:pathMatch(.*)*', name: 'not-found', component: GenericPage },
 ]
@@ -55,6 +64,29 @@ const routes: RouteRecordRaw[] = [
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
   routes,
+})
+
+// Global auth guard
+import { useCounterStore } from '@/stores/counter' // keep existing store imports happy if needed
+import { useAuthStore } from '@/stores/auth'
+
+router.beforeEach((to) => {
+  const auth = useAuthStore()
+
+  // If already logged in, block navigating to login/register
+  if (auth.isAuthenticated && (to.path === '/login' || to.path === '/register')) {
+    const next = (to.query.next as string) || '/dashboard'
+    return { path: next }
+  }
+
+  // Protect routes that need auth
+  if (to.meta.requiresAuth) {
+    if (!auth.isAuthenticated) {
+      return { path: '/login', query: { next: to.fullPath } }
+    }
+  }
+
+  return true
 })
 
 export default router

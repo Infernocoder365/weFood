@@ -1,25 +1,25 @@
 <script setup lang="ts">
-import ReleasesTopSpacer from '@/components/Company/Releases/ReleasesTopSpacer.vue'
-import ReleasesFallHero from '@/components/Company/Releases/ReleasesFallHero.vue'
-import ReleasesFallDetails from '@/components/Company/Releases/ReleasesFallDetails.vue'
-import ReleasesSummerHero from '@/components/Company/Releases/ReleasesSummerHero.vue'
-import ReleasesSummerDetails from '@/components/Company/Releases/ReleasesSummerDetails.vue'
-import ReleasesSpringHero from '@/components/Company/Releases/ReleasesSpringHero.vue'
-import ReleasesSpringDetails from '@/components/Company/Releases/ReleasesSpringDetails.vue'
-import ReleasesWinterHero from '@/components/Company/Releases/ReleasesWinterHero.vue'
-import ReleasesWinterDetails from '@/components/Company/Releases/ReleasesWinterDetails.vue'
+import SectionIntro from '@/components/Company/Releases/SectionIntro.vue'
+import FallHero from '@/components/Company/Releases/FallHero.vue'
+import FallDetails from '@/components/Company/Releases/FallDetails.vue'
+import SummerHero from '@/components/Company/Releases/SummerHero.vue'
+import SummerDetails from '@/components/Company/Releases/SummerDetails.vue'
+import SpringHero from '@/components/Company/Releases/SpringHero.vue'
+import SpringDetails from '@/components/Company/Releases/SpringDetails.vue'
+import WinterHero from '@/components/Company/Releases/WinterHero.vue'
+import WinterDetails from '@/components/Company/Releases/WinterDetails.vue'
 </script>
 
 <template>
   <main>
-    <ReleasesTopSpacer />
-    <ReleasesFallHero />
-    <ReleasesFallDetails />
-    <ReleasesSummerHero />
-    <ReleasesSummerDetails />
-    <ReleasesSpringHero />
-    <ReleasesSpringDetails />
-    <ReleasesWinterHero />
-    <ReleasesWinterDetails />
+    <SectionIntro />
+    <FallHero />
+    <FallDetails />
+    <SummerHero />
+    <SummerDetails />
+    <SpringHero />
+    <SpringDetails />
+    <WinterHero />
+    <WinterDetails />
   </main>
 </template>

@@ -138,19 +138,19 @@ const leftColumnReviews = ref([
     id: 1,
     text: "WeFood has been a game-changer for our restaurant. Online orders increased by 300% in just 3 months.",
     name: "Sarah M",
-    avatar: null
+    avatar: "/images/home/in_review_l1.jpeg"
   },
   {
     id: 2,
     text: "The mobile app feature helped us build a loyal customer base. Customers love the convenience.",
     name: "Mike R",
-    avatar: null
+    avatar: "/images/home/in_review_l2.jpeg"
   },
   {
     id: 3,
     text: "Customer support is outstanding. They helped us set everything up perfectly.",
     name: "Lisa K",
-    avatar: null
+    avatar: "/images/home/in_review_l3.jpeg"
   }
 ])
 
@@ -159,19 +159,19 @@ const centerColumnReviews = ref([
     id: 4,
     text: "Why isn't every restaurant using this system? My SCO is at an all-time high, because I am retaining customers to my website.",
     name: "Daryl E",
-    avatar: null
+    avatar: '/images/home/in_review_c1.jpeg'
   },
   {
     id: 5,
     text: "WeFood.com has almost everything you need to run your restaurant online. An awesome partner to have for restaurants.",
     name: "Jake A",
-    avatar: null
+    avatar: '/images/home/in_review_c2.jpeg'
   },
   {
     id: 6,
     text: "They are helping us take back more control of our business and compete with larger companies because the technology is great!",
     name: "Michael B",
-    avatar: null
+    avatar: '/images/home/in_review_c3.jpeg'
   }
 ])
 
@@ -180,19 +180,19 @@ const rightColumnReviews = ref([
     id: 7,
     text: "Exceptional customer service from start to finish, every step of the process has been an enjoyable experience.",
     name: "Ziad A",
-    avatar: null
+    avatar: '/images/home/in_review_r1.jpeg'
   },
   {
     id: 8,
     text: "The SEO features really work. We're now ranking #1 for our local keywords.",
     name: "Tom H",
-    avatar: null
+    avatar: '/images/home/in_review_r2.jpeg'
   },
   {
     id: 9,
     text: "Easy to use platform with powerful features. Highly recommend to any restaurant owner.",
     name: "Anna P",
-    avatar: null
+    avatar: '/images/home/in_review_r3.jpeg'
   }
 ])
 </script>
