@@ -183,9 +183,7 @@
                           Story</span></RouterLink><RouterLink to="/company/careers"
                         class="py-1 px-3 hover:bg-gray-50 hover:text-blue-600 transition-colors rounded"><span>Careers</span></RouterLink><RouterLink
                         to="/company/press" class="py-1 px-3 hover:bg-gray-50 hover:text-blue-600 transition-colors rounded"><span>Press</span></RouterLink><RouterLink
-                        to="/company/reviews" class="py-1 px-3 hover:bg-gray-50 hover:text-blue-600 transition-colors rounded"><span>Rate Your
-                          Experience</span></RouterLink><RouterLink to="/company/releases"
-                        class="py-1 px-3 hover:bg-gray-50 hover:text-blue-600 transition-colors rounded"><span>Product
+                        to="/company/releases" class="py-1 px-3 hover:bg-gray-50 hover:text-blue-600 transition-colors rounded"><span>Product
                           Releases</span></RouterLink></div>
                   </div>
                 </dt>
@@ -286,16 +284,53 @@
             class="nav_item__btn px-2.5 py-2 rounded-lg cursor-pointer select-none flex hover:bg-gray-100 hover:underline transition-colors">
             <span>Dashboard</span></RouterLink>
         </dd>
-        <dd class="ml-1 nav_menu flex flex-col">
-          <RouterLink to="/login" class="p-2 flex hover:bg-gray-100 rounded transition-colors"><svg
-              class="w-5 h-5 text-black" viewBox="0 0 16 16" focusable="false" role="img"
-              xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+        <!-- Account/Login area updated per sample WeFood-dashboard header -->
+        <dd v-if="!auth.isAuthenticated" class="ml-1 nav_menu flex flex col">
+          <RouterLink to="/login" class="p-2 flex hover:bg-gray-100 rounded transition-colors">
+            <svg class="w-5 h-5 text-black" viewBox="0 0 16 16" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
               <g>
-                <path
-                  d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z">
-                </path>
+                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"></path>
               </g>
-            </svg></RouterLink>
+            </svg>
+          </RouterLink>
+        </dd>
+        <dd v-else class="ml-1 nav_menu flex flex-col relative" @click.stop @mouseenter="openAccount" @mouseleave="closeAccount">
+          <button class="p-2 flex items-center hover:bg-gray-100 rounded transition-colors">
+            <b class="max-w-[80px] truncate">{{ displayName }}</b>
+            <svg class="w-5 h-5 text-black" viewBox="0 0 16 16" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+              <g>
+                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"></path>
+              </g>
+            </svg>
+          </button>
+          <div v-show="isAccountOpen" class="nav_menu__popup relative">
+            <div class="absolute top-0 right-0 bg-white text-black shadow-xl border border-gray-200">
+              <i class="w-3 h-3 bg-white border-l border-t border-gray-200 rotate-45 absolute right-3 -top-1.5 flex"></i>
+              <ul class="relative block">
+                <li class="block">
+                  <RouterLink @click="closeAccount" to="/profile" class="hover:bg-gray-100 w-full px-3 py-2.5 whitespace-nowrap flex items-center" :class="{ 'bg-[rgb(6_38_131)] text-white': route.path === '/profile' }"><span>My Account</span></RouterLink>
+                </li>
+                <li class="block">
+                  <RouterLink @click="closeAccount" to="/premium-membership" class="hover:bg-gray-100 w-full px-3 py-2.5 whitespace-nowrap flex items-center" :class="{ 'bg-[rgb(6_38_131)] text-white': route.path === '/premium-membership' }"><span>Premium Membership</span></RouterLink>
+                </li>
+                <li class="block">
+                  <RouterLink @click="closeAccount" to="/faqs" class="hover:bg-gray-100 w-full px-3 py-2.5 whitespace-nowrap flex items-center" :class="{ 'bg-[rgb(6_38_131)] text-white': route.path === '/faqs' }"><span>FAQs</span></RouterLink>
+                </li>
+                <li class="block">
+                  <RouterLink @click="closeAccount" to="/contact-us" class="hover:bg-gray-100 w-full px-3 py-2.5 whitespace-nowrap flex items-center" :class="{ 'bg-[rgb(6_38_131)] text-white': route.path === '/contact-us' }"><span>Contact us</span></RouterLink>
+                </li>
+                <li class="block">
+                  <RouterLink @click="closeAccount" to="/join-us" class="hover:bg-gray-100 w-full px-3 py-2.5 whitespace-nowrap flex items-center" :class="{ 'bg-[rgb(6_38_131)] text-white': route.path === '/join-us' }"><span>Join us</span></RouterLink>
+                </li>
+                <li class="block">
+                  <RouterLink @click="closeAccount" to="/privacy-policy" class="hover:bg-gray-100 w-full px-3 py-2.5 whitespace-nowrap flex items-center" :class="{ 'bg-[rgb(6_38_131)] text-white': route.path === '/privacy-policy' }"><span>Privacy Policy</span></RouterLink>
+                </li>
+                <li class="block">
+                  <RouterLink @click="closeAccount" to="/license" class="hover:bg-gray-100 w-full px-3 py-2.5 whitespace-nowrap flex items-center" :class="{ 'bg-[rgb(6_38_131)] text-white': route.path === '/license' }"><span>Terms Condition</span></RouterLink>
+                </li>
+              </ul>
+            </div>
+          </div>
         </dd>
         <dd class="ml-1 relative flex"><button class="p-2 flex hover:bg-gray-100 rounded transition-colors"><svg
               class="w-5 h-5 text-black" viewBox="0 0 16 16" focusable="false" role="img"
@@ -320,6 +355,15 @@
               </path>
             </svg>
           </button></dd>
+        <dd v-if="auth.isAuthenticated" class="ml-1">
+          <button @click.stop="handleLogout" class="p-2 flex hover:bg-gray-100 rounded transition-colors" title="Logout">
+            <svg class="w-5 h-5" stroke="currentColor" stroke-width="2.5" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M23.9917 6H6V42H24" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M33 33L42 24L33 15" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M16 23.9917H42" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </button>
+        </dd>
       </dl>
     </div>
     <div class="w-full h-0 relative lg:hidden">
@@ -330,14 +374,34 @@
           <div class="px-4 text-lg font-medium">
             <dl>
               <dd class="w-full text-lg font-medium block">
-                <RouterLink to="/" class="py-2 hover:text-blue-600 hover:underline transition-colors block">
+                <RouterLink to="/dashboard"
+                  class="py-2 hover:text-blue-600 hover:underline transition-colors block"
+                  :class="{ 'bg-[rgb(6_38_131)]': route.path === '/dashboard' }">
                   <span>Dashboard</span></RouterLink>
                 <RouterLink to="/premium-membership"
-                  class="py-2 hover:text-blue-600 hover:underline transition-colors block"><span>Premium
+                  class="py-2 hover:text-blue-600 hover:underline transition-colors block"
+                  :class="{ 'bg-[rgb(6_38_131)]': route.path === '/premium-membership' }"><span>Premium
                     Membership</span></RouterLink>
-                <RouterLink to="/pricing" class="py-2 hover:text-blue-600 hover:underline transition-colors block">
+                <RouterLink to="/invite" class="py-2 hover:text-blue-600 hover:underline transition-colors block"
+                  :class="{ 'bg-[rgb(6_38_131)]': route.path === '/invite' }">
+                  <span>Invite</span></RouterLink>
+                <RouterLink to="/orders" class="py-2 hover:text-blue-600 hover:underline transition-colors block"
+                  :class="{ 'bg-[rgb(6_38_131)]': route.path === '/orders' }">
+                  <span>Orders</span></RouterLink>
+                <RouterLink to="/withdraw" class="py-2 hover:text-blue-600 hover:underline transition-colors block"
+                  :class="{ 'bg-[rgb(6_38_131)]': route.path === '/withdraw' }">
+                  <span>Withdraw</span></RouterLink>
+                <RouterLink to="/logs" class="py-2 hover:text-blue-600 hover:underline transition-colors block"
+                  :class="{ 'bg-[rgb(6_38_131)]': route.path === '/logs' }">
+                  <span>Logs</span></RouterLink>
+                <RouterLink to="/profile" class="py-2 hover:text-blue-600 hover:underline transition-colors block"
+                  :class="{ 'bg-[rgb(6_38_131)]': route.path === '/profile' }">
+                  <span>Profile</span></RouterLink>
+                <RouterLink to="/pricing" class="py-2 hover:text-blue-600 hover:underline transition-colors block"
+                  :class="{ 'bg-[rgb(6_38_131)]': route.path === '/pricing' }">
                   <span>Pricing</span></RouterLink>
-                <RouterLink to="/works" class="py-2 hover:text-blue-600 hover:underline transition-colors block">
+                <RouterLink to="/works" class="py-2 hover:text-blue-600 hover:underline transition-colors block"
+                  :class="{ 'bg-[rgb(6_38_131)]': route.path === '/works' }">
                   <span>How it works</span></RouterLink>
               </dd>
             </dl>
@@ -384,24 +448,64 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
-import { RouterLink } from 'vue-router'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { RouterLink, useRoute, useRouter } from 'vue-router'
+import { useAuthStore } from '@/stores/auth'
 
 const isMenuOpen = ref(false)
 const isScrolled = ref(false)
+const isAccountOpen = ref(false)
+
+const auth = useAuthStore()
+const route = useRoute()
+const router = useRouter()
 
 const toggleMenu = () => (isMenuOpen.value = !isMenuOpen.value)
 const closeMenu = () => (isMenuOpen.value = false)
+
+const openAccount = () => (isAccountOpen.value = true)
+const closeAccount = () => (isAccountOpen.value = false)
+
+const handleLogout = () => {
+  auth.logout()
+  closeAccount()
+  closeMenu()
+  router.push('/login')
+}
 
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 0
 }
 
+function decodeTokenName(token?: string | null): string | null {
+  if (!token) return null
+  try {
+    const parts = token.split('.')
+    if (parts.length !== 3) return null
+    const payload = JSON.parse(atob(parts[1]))
+    const name = payload?.name || payload?.nickname || payload?.realname || payload?.username
+    if (typeof name === 'string' && name.trim()) return name
+    return null
+  } catch (e) {
+    return null
+  }
+}
+
+const displayName = computed(() => {
+  const nameFromToken = decodeTokenName(auth.token)
+  if (nameFromToken) return nameFromToken
+  if (auth.phone) return auth.phone
+  if (auth.userid) return String(auth.userid)
+  return 'Account'
+})
+
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
+  window.addEventListener('click', closeAccount)
 })
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
+  window.removeEventListener('click', closeAccount)
 })
 </script>

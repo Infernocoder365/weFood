@@ -31,14 +31,14 @@
       </p>
 
       <form class="pt-10" @submit.prevent="onSubmit">
-        <p class="text-sm capitalize">Username / Phone Number</p>
+        <p class="text-sm capitalize">Phone Number</p>
         <dl class="h-12 mb-5 border-b border-gray-300 flex items-center">
           <dd class="px-3 cursor-pointer flex-shrink-0 flex items-center text-sm">
-            <span class="min-w-[40px] pr-1 inline-block">🇸🇬 +65</span>
+            <span class="min-w-[40px] pr-1 inline-block">{{ code }}</span>
             <svg class="w-3 h-3 opacity-60" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"></path></svg>
           </dd>
           <dt class="flex-1 overflow-hidden">
-            <input v-model="username" type="text" placeholder="Type here" class="w-full h-8 text-base bg-transparent placeholder:text-gray-400 outline-none" />
+            <input v-model="phone" type="text" placeholder="Type here" class="w-full h-8 text-base bg-transparent placeholder:text-gray-400 outline-none" />
           </dt>
         </dl>
 
@@ -63,8 +63,36 @@
           <a href="javascript:;" class="text-sm underline">Forgot Password?</a>
         </div>
 
-        <button type="submit" class="mt-5 w-full py-2.5 bg-black text-white rounded-none">Login</button>
+        <button type="submit" class="mt-5 w-full py-2.5 bg-black text-white rounded-none" :disabled="submitting">
+          <span v-if="submitting">Signing in...</span>
+          <span v-else>Login</span>
+        </button>
+        <p v-if="error" class="mt-3 text-sm text-red-600">{{ error }}</p>
       </form>
+    </div>
+
+    <!-- Success Dialog -->
+    <div v-if="successOpen" class="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
+      <div class="w-full md:w-[600px] lg:w-[800px] bg-white text-black rounded-md shadow-lg">
+        <div class="w-full flex">
+          <div class="p-4 flex-1 overflow-hidden">
+            <p class="text-lg font-bold">{{ successTitle }}</p>
+          </div>
+          <button class="p-4 bg-transparent flex flex-shrink-0" @click="onSuccessClose">
+            <svg class="w-5 h-5" stroke="currentColor" stroke-width="3" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 8L40 40" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8 40L40 8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </button>
+        </div>
+        <div class="p-4 text-base">
+          <div class="text-blue-500 w-full pb-4 mb-4 border-b border-gray-200">
+            <svg class="w-16 h-16 mb-3 mx-auto block" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg>
+            <p class="text-center font-medium"><span>Success!</span></p>
+          </div>
+          <article class="ctx-article text-center">{{ successMessage }}</article>
+        </div>
+        <ul class="!p-2 text-sm md:text-base flex justify-center">
+          <li class="w-full md:w-auto p-2"><button class="w-full md:w-auto lg:md:min-w-[80px] px-3 h-9 bg-black text-white md:rounded" @click="onSuccessClose"><span>Confirm</span></button></li>
+        </ul>
+      </div>
     </div>
   </section>
 </template>
@@ -80,15 +108,34 @@ const auth = useAuthStore()
 
 const next = computed(() => (route.query.next as string) || '/dashboard')
 
-const username = ref('')
+const phone = ref('')
 const password = ref('')
+const code = ref('+65')
 const showPassword = ref(false)
+const submitting = ref(false)
+const error = ref<string | null>(null)
 
-function onSubmit() {
-  const ok = auth.login({ username: username.value, password: password.value })
+const successOpen = ref(false)
+const successTitle = ref('Login')
+const successMessage = ref('You have successfully logged in')
+
+async function onSubmit() {
+  error.value = null
+  submitting.value = true
+  const ok = await auth.login({ phone: phone.value, password: password.value, code: code.value })
+  submitting.value = false
   if (ok) {
-    router.replace(next.value)
+    successTitle.value = 'Login'
+    successMessage.value = 'You have successfully logged in'
+    successOpen.value = true
+  } else {
+    error.value = auth.error || 'Login failed'
   }
+}
+
+function onSuccessClose() {
+  successOpen.value = false
+  router.replace(next.value)
 }
 
 function onClose() {
