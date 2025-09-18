@@ -495,7 +495,7 @@ const displayName = computed(() => {
   const nameFromToken = decodeTokenName(auth.token)
   if (nameFromToken) return nameFromToken
   if (auth.phone) return auth.phone
-  if (auth.userid) return String(auth.userid)
+  if (auth.userid && auth.userid !== 'unknown') return String(auth.userid)
   return 'Account'
 })
 

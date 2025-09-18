@@ -31,6 +31,15 @@ const PrivacyPolicyView = () => import('../views/PrivacyPolicyView.vue')
 const ProfileView = () => import('../views/ProfileView.vue')
 const LicenseTermsView = () => import('../views/LicenseTermsView.vue')
 
+// 新增：引入具体页面视图
+const AccessView = () => import('../views/AccessView.vue')
+const WithdrawView = () => import('../views/WithdrawView.vue')
+const OrderView = () => import('../views/OrderView.vue')
+// 钱包流水记录
+const WalletRecordView = () => import('../views/WalletRecordView.vue')
+// 账户充值
+const RechargeView = () => import('../views/RechargeView.vue')
+
 // Profile-related Views
 const PasswordChangeView = () => import('../views/PasswordChangeView.vue')
 const CashwordChangeView = () => import('../views/CashwordChangeView.vue')
@@ -73,11 +82,15 @@ const routes: RouteRecordRaw[] = [
   { path: '/service', name: 'service', component: GenericPage },
   { path: '/dashboard', name: 'dashboard', component: () => import('../views/DashboardView.vue'), meta: { requiresAuth: true } },
   { path: '/premium-membership', name: 'premium-membership', component: PremiumMembershipView, meta: { requiresAuth: true } },
-  { path: '/invite', name: 'invite', component: GenericPage, meta: { requiresAuth: true } },
-  { path: '/orders', name: 'orders', component: GenericPage, meta: { requiresAuth: true } },
-  { path: '/withdraw', name: 'withdraw', component: GenericPage, meta: { requiresAuth: true } },
+  { path: '/invite', name: 'invite', component: JoinUsView, meta: { requiresAuth: true } },
+  { path: '/withdraw', name: 'withdraw', component: WithdrawView, meta: { requiresAuth: true } },
   { path: '/logs', name: 'logs', component: GenericPage, meta: { requiresAuth: true } },
   { path: '/profile', name: 'profile', component: ProfileView, meta: { requiresAuth: true } },
+  // Added dashboard sub-routes
+  { path: '/access', name: 'access', component: AccessView, meta: { requiresAuth: true } },
+  { path: '/order', name: 'order', component: OrderView, meta: { requiresAuth: true } },
+  { path: '/wallet/record', name: 'wallet-record', component: WalletRecordView, meta: { requiresAuth: true } },
+  { path: '/recharge', name: 'recharge', component: RechargeView, meta: { requiresAuth: true } },
   // Profile-related routes
   { path: '/password/change', name: 'password-change', component: PasswordChangeView, meta: { requiresAuth: true } },
   { path: '/cashword/change', name: 'cashword-change', component: CashwordChangeView, meta: { requiresAuth: true } },

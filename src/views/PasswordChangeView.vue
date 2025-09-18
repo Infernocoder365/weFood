@@ -24,7 +24,7 @@
           <div class="mb-5">
             <p class="text-xs mb-1">Old password</p>
             <div
-              class="w-full h-11 px-2 transition-all duration-300 relative flex items-center border-b border-solid border-b-[var(--input-border-color)] focus-within:!border-black">
+              class="w-full h-11 px-2 transition-all duration-300 relative flex items-center border-b border-solid focus-within:!border-black">
               <input :type="oldPwdVisible ? 'text' : 'password'" placeholder="Type here"
                 class="bg-transparent flex-1 h-9 text-base leading-none appearance-none outline-none focus:outline-none ring-0 focus:ring-0 focus:border-transparent" />
               <button type="button" class="text-sm opacity-80 hover:opacity-100"
@@ -49,7 +49,7 @@
           <div class="mb-5">
             <p class="text-xs mb-1">New password</p>
             <div
-              class="w-full h-11 px-2 transition-all duration-300 relative flex items-center border-b border-solid border-b-[var(--input-border-color)] focus-within:!border-black">
+              class="w-full h-11 px-2 transition-all duration-300 relative flex items-center border-b border-solid focus-within:!border-black">
               <input :type="newPwdVisible ? 'text' : 'password'" placeholder="Type here"
                 class="bg-transparent flex-1 h-9 text-base leading-none appearance-none outline-none focus:outline-none ring-0 focus:ring-0 focus:border-transparent" />
               <button type="button" class="text-sm opacity-80 hover:opacity-100"
@@ -74,7 +74,7 @@
           <div class="mb-5">
             <p class="text-xs mb-1">Confirm password</p>
             <div
-              class="w-full h-11 px-2 transition-all duration-300 relative flex items-center border-b border-solid border-b-[var(--input-border-color)] focus-within:!border-black">
+              class="w-full h-11 px-2 transition-all duration-300 relative flex items-center border-b border-solid focus-within:!border-black">
               <input :type="confirmPwdVisible ? 'text' : 'password'" placeholder="Type here"
                 class="bg-transparent flex-1 h-9 text-base leading-none appearance-none outline-none focus:outline-none ring-0 focus:ring-0 focus:border-transparent" />
               <button type="button" class="text-sm opacity-80 hover:opacity-100"

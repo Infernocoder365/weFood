@@ -74,7 +74,7 @@
                         <dt class="w-full pb-2.5 mb-2.5 border-b border-default block">
                             <h5 class="text-xs font-bold text-gray-deep"><span>Asset</span></h5>
                         </dt>
-                        <dd class="w-full pb-2.5 mb-2.5 border-b border-default block"><a href="javascript:;"
+                        <dd class="w-full pb-2.5 mb-2.5 border-b border-default block"><RouterLink to="/access"
                                 class="w-full hover:translate-x-5 transition-all duration-500 flex"><em
                                     class="w-7 h-7 mr-2.5 flex shrink-0"><img src="/images/dashboard/icon-access.svg"
                                         class="w-full h-full object-contain"></em>
@@ -83,8 +83,8 @@
                                     <p class="text-gray-default"><span>Explore your loyalty rewards &amp; track your
                                             progress</span></p>
                                 </div>
-                            </a></dd>
-                        <dd class="w-full pb-2.5 mb-2.5 border-b border-default block"><a href="javascript:;"
+                            </RouterLink></dd>
+                        <dd class="w-full pb-2.5 mb-2.5 border-b border-default block"><RouterLink to="/withdraw"
                                 class="w-full hover:translate-x-5 transition-all duration-500 flex"><em
                                     class="w-7 h-7 mr-2.5 flex shrink-0"><img src="/images/dashboard/icon-withdraw.svg"
                                         class="w-full h-full object-contain"></em>
@@ -92,13 +92,13 @@
                                     <h6 class="mb-1"><span>Withdrawal</span></h6>
                                     <p class="text-gray-default"><span>Cash out your funds​</span></p>
                                 </div>
-                            </a></dd>
+                            </RouterLink></dd>
                     </dl>
                     <dl class="col-span-12 sm:col-span-6 lg:col-span-4">
                         <dt class="w-full pb-2.5 mb-2.5 border-b border-default block">
                             <h5 class="text-xs font-bold text-gray-deep"><span>History</span></h5>
                         </dt>
-                        <dd class="w-full pb-2.5 mb-2.5 border-b border-default block"><a href="javascript:;"
+                        <dd class="w-full pb-2.5 mb-2.5 border-b border-default block"><RouterLink to="/order"
                                 class="w-full hover:translate-x-5 transition-all duration-500 flex"><em
                                     class="w-7 h-7 mr-2.5 flex shrink-0"><img src="/images/dashboard/icon-order.svg"
                                         class="w-full h-full object-contain"></em>
@@ -106,8 +106,8 @@
                                     <h6 class="mb-1"><span>Orders</span></h6>
                                     <p class="text-gray-default"><span>Track your order status​​</span></p>
                                 </div>
-                            </a></dd>
-                        <dd class="w-full pb-2.5 mb-2.5 border-b border-default block"><a href="javascript:;"
+                            </RouterLink></dd>
+                        <dd class="w-full pb-2.5 mb-2.5 border-b border-default block"><RouterLink to="/wallet/record"
                                 class="w-full hover:translate-x-5 transition-all duration-500 flex"><em
                                     class="w-7 h-7 mr-2.5 flex shrink-0"><img src="/images/dashboard/icon-logs.svg"
                                         class="w-full h-full object-contain"></em>
@@ -116,13 +116,13 @@
                                     <p class="text-gray-default"><span>Track your recharges, withdrawals, and earnings
                                             history</span></p>
                                 </div>
-                            </a></dd>
+                            </RouterLink></dd>
                     </dl>
                     <dl class="col-span-12 sm:col-span-6 lg:col-span-4">
                         <dt class="w-full pb-2.5 mb-2.5 border-b border-default block">
                             <h5 class="text-xs font-bold text-gray-deep"><span>Profile</span></h5>
                         </dt>
-                        <dd class="w-full pb-2.5 mb-2.5 border-b border-default block"><a href="javascript:;"
+                        <dd class="w-full pb-2.5 mb-2.5 border-b border-default block"><RouterLink to="/profile"
                                 class="w-full hover:translate-x-5 transition-all duration-500 flex"><em
                                     class="w-7 h-7 mr-2.5 flex shrink-0"><img src="/images/dashboard/icon-profile.svg"
                                         class="w-full h-full object-contain"></em>
@@ -131,8 +131,8 @@
                                     <p class="text-gray-default"><span>Manage your sign-in and password details</span>
                                     </p>
                                 </div>
-                            </a></dd>
-                        <dd class="w-full pb-2.5 mb-2.5 border-b border-default block"><a href="javascript:;"
+                            </RouterLink></dd>
+                        <dd class="w-full pb-2.5 mb-2.5 border-b border-default block"><RouterLink to="/invite"
                                 class="w-full hover:translate-x-5 transition-all duration-500 flex"><em
                                     class="w-7 h-7 mr-2.5 flex shrink-0"><img src="/images/dashboard/icon-invite.svg"
                                         class="w-full h-full object-contain"></em>
@@ -140,7 +140,7 @@
                                     <h6 class="mb-1"><span>Referral code</span></h6>
                                     <p class="text-gray-default"><span>Get your amazing rewards</span></p>
                                 </div>
-                            </a></dd>
+                            </RouterLink></dd>
                     </dl>
                 </div>
             </section>
@@ -151,6 +151,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useAuthStore } from '@/stores/auth'
+import { RouterLink } from 'vue-router'
 
 const auth = useAuthStore()
 
