@@ -63,7 +63,7 @@
           </div>
 
           <div>
-            <button class="h-11 w-full max-w-[560px] bg-black text-white rounded-lg" @click="submit">
+            <button class="h-11 w-full bg-black text-white rounded-lg mx-auto" @click="submit">
               Submit
             </button>
           </div>

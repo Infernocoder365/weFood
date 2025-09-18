@@ -97,7 +97,7 @@
             </div>
           </div>
           <div>
-            <button class="h-11 px-6 bg-black text-white rounded-lg">Submit</button>
+            <button class="w-full text-center h-11 px-6 bg-black text-white rounded-lg">Submit</button>
           </div>
           <p class="mt-6 text-center text-red-400">Forgot old password, please contact customer service to retrieve it
           </p>

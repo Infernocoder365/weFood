@@ -355,15 +355,15 @@
               </path>
             </svg>
           </button></dd>
-        <dd v-if="auth.isAuthenticated" class="ml-1">
-          <button @click.stop="handleLogout" class="p-2 flex hover:bg-gray-100 rounded transition-colors" title="Logout">
-            <svg class="w-5 h-5" stroke="currentColor" stroke-width="2.5" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M23.9917 6H6V42H24" stroke-linecap="round" stroke-linejoin="round"></path>
-              <path d="M33 33L42 24L33 15" stroke-linecap="round" stroke-linejoin="round"></path>
-              <path d="M16 23.9917H42" stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg>
-          </button>
-        </dd>
+        <dd v-if="isLoggedIn" class="ml-1">
+                <button @click.stop="handleLogout" class="p-2 flex hover:bg-gray-100 rounded transition-colors" title="Logout">
+                  <svg class="w-5 h-5" stroke="currentColor" stroke-width="2.5" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M23.9917 6H6V42H24" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M33 33L42 24L33 15" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M16 23.9917H42" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </button>
+              </dd>
       </dl>
     </div>
     <div class="w-full h-0 relative lg:hidden">
