@@ -285,7 +285,7 @@
             <span>Dashboard</span></RouterLink>
         </dd>
         <!-- Account/Login area updated per sample WeFood-dashboard header -->
-        <dd v-if="!auth.isAuthenticated" class="ml-1 nav_menu flex flex col">
+        <dd v-if="!isLoggedIn" class="ml-1 nav_menu flex flex col">
           <RouterLink to="/login" class="p-2 flex hover:bg-gray-100 rounded transition-colors">
             <svg class="w-5 h-5 text-black" viewBox="0 0 16 16" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
               <g>
@@ -498,6 +498,9 @@ const displayName = computed(() => {
   if (auth.userid && auth.userid !== 'unknown') return String(auth.userid)
   return 'Account'
 })
+
+// Consider 'Account' or 'unknown' (no token/phone/valid userid) as logged-out display
+const isLoggedIn = computed(() => !!auth.isAuthenticated && displayName.value !== 'Account' && displayName.value !== 'unknown')
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)

@@ -16,7 +16,7 @@
                   d="M5.82843 6.99955L8.36396 9.53509L6.94975 10.9493L2 5.99955L6.94975 1.0498L8.36396 2.46402L5.82843 4.99955H13C17.4183 4.99955 21 8.58127 21 12.9996C21 17.4178 17.4183 20.9996 13 20.9996H4V18.9996H13C16.3137 18.9996 19 16.3133 19 12.9996C19 9.68584 16.3137 6.99955 13 6.99955H5.82843Z" />
               </svg>
             </em>
-            <span>{{ $t('common.back') }}</span>
+            <span>Return to previous page</span>
           </RouterLink>
         </div>
       </div>
@@ -28,16 +28,11 @@
           <section class="py-5">
             <!-- Tabs: Tailwind implementation -->
             <div class="py-2 bg-default text-default">
-              <div role="tablist" aria-orientation="horizontal" class="flex items-center gap-6 border-b border-black/10">
-                <button
-                  v-for="(tab, idx) in tabs"
-                  :key="tab"
-                  type="button"
-                  @click="activeTab = idx"
-                  class="relative -mb-px pb-2 text-sm sm:text-base whitespace-nowrap border-b-2"
-                  :class="activeTab === idx ? 'border-black text-black font-medium' : 'border-transparent text-gray-500 hover:text-black'"
-                >
-                  <span>{{ $t(tab) }}</span>
+              <div role="tablist" aria-orientation="horizontal" class="w-full flex items-center justify-around gap-6">
+                <button v-for="(tab, idx) in tabs" :key="tab" type="button" @click="activeTab = idx"
+                  class="relative -mb-px pb-2 text-sm sm:text-base whitespace-nowrap w-full"
+                  :class="activeTab === idx ? 'border-black text-black font-medium' : 'border-transparent text-gray-500 hover:text-black'">
+                  <span>{{ tab }}</span>
                 </button>
               </div>
             </div>
@@ -126,6 +121,6 @@
 import { RouterLink } from 'vue-router'
 import { ref } from 'vue'
 
-const tabs = ['order.tabs.all', 'order.tabs.pending', 'order.tabs.freezing', 'order.tabs.completed']
+const tabs = ['All Orders', 'Pending', 'Freezing', 'Completed']
 const activeTab = ref(0)
 </script>

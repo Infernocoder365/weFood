@@ -3,7 +3,7 @@
     <!-- Title row with bottom border -->
     <div class="w-full max-w-4xl mx-auto px-6">
       <div class="pt-3 pb-5 border-b border-black">
-        <h1 class="text-[24px] sm:text-[30px] lg:text-[40px] text-center leading-none">{{ $t('auth.register.title') }}</h1>
+        <h1 class="text-[24px] sm:text-[30px] lg:text-[40px] text-center leading-none">Create an account</h1>
       </div>
     </div>
 
@@ -13,40 +13,40 @@
         <span class="mr-2 inline-flex items-center justify-center w-6 h-6 rounded-full bg-blue-100 text-blue-600">
           <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M15 6l-6 6 6 6"/></svg>
         </span>
-        {{ $t('common.back') }}
+        Return to previous page
       </button>
     </div>
 
     <!-- Body -->
     <div class="w-full max-w-[520px] mx-auto box-border px-6">
       <p class="mt-5 text-center text-sm">
-        <b class="opacity-60">{{ $t('auth.register.already') }}&nbsp;</b>
-        <RouterLink class="text-black underline" :to="{ name: 'login', query: { next } }">{{ $t('auth.register.loginHere') }}</RouterLink>
+        <b class="opacity-60">Already have an account?&nbsp;</b>
+        <RouterLink class="text-black underline" :to="{ name: 'login', query: { next } }">Log in here</RouterLink>
       </p>
 
       <form class="pt-8" @submit.prevent="onSubmit">
-        <p class="text-sm">{{ $t('form.phone') }}</p>
+        <p class="text-sm">Phone Number</p>
         <dl class="h-12 mb-5 border-b border-gray-300 flex items-center">
           <dd class="px-3 cursor-pointer flex-shrink-0 flex items-center text-sm">
             <span class="min-w-[40px] pr-1 inline-block">{{ code }}</span>
             <svg class="w-3 h-3 opacity-60" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>
           </dd>
           <dt class="flex-1 overflow-hidden">
-            <input v-model="phone" type="tel" :placeholder="$t('form.placeholder')" class="w-full h-8 text-base bg-transparent placeholder:text-gray-400 outline-none" />
+            <input v-model="phone" type="tel" placeholder="Type here" class="w-full h-8 text-base bg-transparent placeholder:text-gray-400 outline-none" />
           </dt>
         </dl>
 
-        <p class="text-sm">{{ $t('form.referralCode') }}</p>
+        <p class="text-sm">Referral Code</p>
         <dl class="h-12 mb-5 border-b border-gray-300 flex items-center">
           <dt class="flex-1 overflow-hidden">
             <input v-model="invite_code" type="text" placeholder="P7UA8N" class="w-full h-8 text-base bg-transparent placeholder:text-gray-400 outline-none" />
           </dt>
         </dl>
 
-        <p class="text-sm">{{ $t('form.password') }}</p>
+        <p class="text-sm">Login Password</p>
         <dl class="h-12 mb-5 border-b border-gray-300 flex items-center">
           <dt class="flex-1 overflow-hidden">
-            <input v-model="password" :type="showPassword ? 'text' : 'password'" :placeholder="$t('form.placeholder')" class="w-full h-8 text-base bg-transparent placeholder:text-gray-400 outline-none" />
+            <input v-model="password" :type="showPassword ? 'text' : 'password'" placeholder="Type here" class="w-full h-8 text-base bg-transparent placeholder:text-gray-400 outline-none" />
           </dt>
           <dd class="h-8 pl-3 pr-2 flex-shrink-0 flex items-center">
             <button type="button" class="text-sm opacity-80 hover:opacity-100" @click="showPassword = !showPassword">
@@ -60,10 +60,10 @@
           </dd>
         </dl>
 
-        <p class="text-sm">{{ $t('form.confirmPassword') }}</p>
+        <p class="text-sm">Confirm Password</p>
         <dl class="h-12 mb-5 border-b border-gray-300 flex items-center">
           <dt class="flex-1 overflow-hidden">
-            <input v-model="confirm" :type="showPassword ? 'text' : 'password'" :placeholder="$t('form.placeholder')" class="w-full h-8 text-base bg-transparent placeholder:text-gray-400 outline-none" />
+            <input v-model="confirm" :type="showPassword ? 'text' : 'password'" placeholder="Type here" class="w-full h-8 text-base bg-transparent placeholder:text-gray-400 outline-none" />
           </dt>
           <dd class="h-8 pl-3 pr-2 flex-shrink-0 flex items-center">
             <button type="button" class="text-sm opacity-80 hover:opacity-100" @click="showPassword = !showPassword">
@@ -77,10 +77,10 @@
           </dd>
         </dl>
 
-        <p class="text-sm">{{ $t('form.depositPassword') }}</p>
+        <p class="text-sm">Deposit Password</p>
         <dl class="h-12 mb-5 border-b border-gray-300 flex items-center">
           <dt class="flex-1 overflow-hidden">
-            <input v-model="deposit_pwd" :type="showDeposit ? 'text' : 'password'" :placeholder="$t('form.placeholder')" class="w-full h-8 text-base bg-transparent placeholder:text-gray-400 outline-none" />
+            <input v-model="deposit_pwd" :type="showDeposit ? 'text' : 'password'" placeholder="Type here" class="w-full h-8 text-base bg-transparent placeholder:text-gray-400 outline-none" />
           </dt>
           <dd class="h-8 pl-3 pr-2 flex-shrink-0 flex items-center">
             <button type="button" class="text-sm opacity-80 hover:opacity-100" @click="showDeposit = !showDeposit">
@@ -93,13 +93,13 @@
         <label class="text-sm inline-flex items-start">
           <input type="checkbox" v-model="agree" class="mr-2 mt-1" />
           <span>
-            {{ $t('auth.register.agreePrefix') }} <a href="javascript:;" class="underline">{{ $t('auth.register.terms') }}</a>.
+            I have read and agree to <a href="javascript:;" class="underline">Registration Terms</a>.
           </span>
         </label>
 
         <button type="submit" :disabled="!agree || !canSubmit || submitting" class="mt-5 w-full py-2.5 bg-black text-white rounded-none disabled:opacity-50">
-          <span v-if="submitting">{{ $t('auth.register.submitting') }}</span>
-          <span v-else>{{ $t('auth.register.submit') }}</span>
+          <span v-if="submitting">Submitting...</span>
+          <span v-else>Register</span>
         </button>
         <p v-if="error" class="mt-3 text-sm text-red-600">{{ error }}</p>
       </form>
@@ -119,12 +119,12 @@
         <div class="p-4 text-base">
           <div class="text-blue-500 w-full pb-4 mb-4 border-b border-gray-200">
             <svg class="w-16 h-16 mb-3 mx-auto block" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg>
-            <p class="text-center font-medium"><span>{{ $t('common.success') }}</span></p>
+            <p class="text-center font-medium"><span>Success!</span></p>
           </div>
           <article class="ctx-article text-center">{{ successMessage }}</article>
         </div>
         <ul class="!p-2 text-sm md:text-base flex justify-center">
-          <li class="w-full md:w-auto p-2"><button class="w-full md:w-auto lg:md:min-w-[80px] px-3 h-9 bg-black text-white md:rounded" @click="onSuccessClose"><span>{{ $t('common.confirm') }}</span></button></li>
+          <li class="w-full md:w-auto p-2"><button class="w-full md:w-auto lg:md:min-w-[80px] px-3 h-9 bg-black text-white md:rounded" @click="onSuccessClose"><span>Confirm</span></button></li>
         </ul>
       </div>
     </div>
@@ -135,9 +135,6 @@
 import { ref, computed } from 'vue'
 import { useRoute, useRouter, RouterLink } from 'vue-router'
 import { useAuthStore } from '@/stores/auth'
-import { useI18n } from 'vue-i18n'
-
-const { t } = useI18n()
 
 const route = useRoute()
 const router = useRouter()
@@ -159,8 +156,8 @@ const submitting = ref(false)
 const error = ref<string | null>(null)
 
 const successOpen = ref(false)
-const successTitle = ref(t('auth.register.submit'))
-const successMessage = ref(t('auth.register.success'))
+const successTitle = ref('Register')
+const successMessage = ref('You have successfully registered')
 
 const canSubmit = computed(() => !!phone.value && !!password.value && password.value === confirm.value && !!deposit_pwd.value && !!invite_code.value && !!code.value)
 
@@ -171,11 +168,11 @@ async function onSubmit() {
   const ok = await auth.register({ phone: phone.value, password: password.value, deposit_pwd: deposit_pwd.value, invite_code: invite_code.value, code: code.value })
   submitting.value = false
   if (ok) {
-    successTitle.value = t('auth.register.submit')
-    successMessage.value = t('auth.register.success')
+    successTitle.value = 'Register'
+    successMessage.value = 'You have successfully registered'
     successOpen.value = true
   } else {
-    error.value = auth.error || t('auth.register.failed')
+    error.value = auth.error || 'Register failed'
   }
 }
 
