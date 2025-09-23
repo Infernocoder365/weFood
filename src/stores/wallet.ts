@@ -2,9 +2,15 @@
 import { defineStore } from 'pinia';
 import { WalletAPI } from '@/services/api'; 
 
+interface Wallet {
+  address: string;
+  utype: string; // Define the type for utype
+  notes?: string; // Optional property
+}
+
 export const useWalletStore = defineStore('wallet', {
   state: () => ({
-    wallets: [] as any[],
+    wallets: [] as any,
     loading: false,
     error: null,
   }),
@@ -26,8 +32,7 @@ export const useWalletStore = defineStore('wallet', {
       }
     },
 
-    async addWallet(payload: { address: string; utype: string; notes?: string }) {
-      const { address, utype, notes } = payload;
+    async addWallet({ address, utype, notes }: Wallet) {
       this.loading = true;
       try {
         const response = await WalletAPI.addWallet(address, utype, notes);
