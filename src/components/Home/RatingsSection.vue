@@ -3,7 +3,7 @@
     <div class="w-full max-w-wrap mx-auto">
       <div class="lg:text-center">
         <h3 class="max-w-[600px] mx-auto mb-6 text-[36px] lg:text-[44px] font-medium leading-tight">
-          <span>See why we're rated #1 in restaurant tech</span>
+          <span>{{ $t('home.ratings.title') }}</span>
         </h3>
       </div>
       
@@ -28,7 +28,7 @@
               </svg>
             </em>
             <div class="text-xs flex-1 overflow-hidden">
-              <span>Rated #1 Restaurant Marketing Software</span>
+              <span>{{ $t('home.ratings.badge1') }}</span>
             </div>
           </li>
           <li class="w-[190px] py-2 pl-2 pr-3 bg-gray-body rounded-xl flex items-center">
@@ -46,7 +46,7 @@
               </svg>
             </em>
             <div class="text-xs flex-1 overflow-hidden">
-              <span>Leader Position Summer 2024</span>
+              <span>{{ $t('home.ratings.badge2') }}</span>
             </div>
           </li>
         </ul>
@@ -119,7 +119,7 @@
       <!-- See More Reviews Button -->
       <div class="pt-6 flex justify-center">
         <a href="#" class="h-12 px-4 ctx-minor rounded-lg flex items-center">
-          <span>See more reviews</span>
+          <span>{{ $t('home.ratings.see_more_reviews') }}</span>
           <svg stroke="currentColor" stroke-width="4" width="20" height="20" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5">
             <path d="M19 12L31 24L19 36" stroke-linecap="round" stroke-linejoin="round"></path>
           </svg>
@@ -130,71 +130,37 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 
-// Sample reviews data organized by columns
-const leftColumnReviews = ref([
-  {
-    id: 1,
-    text: "WeFood has been a game-changer for our restaurant. Online orders increased by 300% in just 3 months.",
-    name: "Sarah M",
-    avatar: "/images/home/in_review_l1.jpeg"
-  },
-  {
-    id: 2,
-    text: "The mobile app feature helped us build a loyal customer base. Customers love the convenience.",
-    name: "Mike R",
-    avatar: "/images/home/in_review_l2.jpeg"
-  },
-  {
-    id: 3,
-    text: "Customer support is outstanding. They helped us set everything up perfectly.",
-    name: "Lisa K",
-    avatar: "/images/home/in_review_l3.jpeg"
-  }
-])
+const { tm } = useI18n()
 
-const centerColumnReviews = ref([
-  {
-    id: 4,
-    text: "Why isn't every restaurant using this system? My SCO is at an all-time high, because I am retaining customers to my website.",
-    name: "Daryl E",
-    avatar: '/images/home/in_review_c1.jpeg'
-  },
-  {
-    id: 5,
-    text: "WeFood.com has almost everything you need to run your restaurant online. An awesome partner to have for restaurants.",
-    name: "Jake A",
-    avatar: '/images/home/in_review_c2.jpeg'
-  },
-  {
-    id: 6,
-    text: "They are helping us take back more control of our business and compete with larger companies because the technology is great!",
-    name: "Michael B",
-    avatar: '/images/home/in_review_c3.jpeg'
-  }
-])
+const leftColumnReviews = computed(() => {
+  const items = tm('home.ratings.reviews.left') ?? []
+  return [
+    { id: 1, text: items?.[0]?.text ?? '', name: items?.[0]?.name ?? '', avatar: '/images/home/in_review_l1.jpeg' },
+    { id: 2, text: items?.[1]?.text ?? '', name: items?.[1]?.name ?? '', avatar: '/images/home/in_review_l2.jpeg' },
+    { id: 3, text: items?.[2]?.text ?? '', name: items?.[2]?.name ?? '', avatar: '/images/home/in_review_l3.jpeg' },
+  ]
+})
 
-const rightColumnReviews = ref([
-  {
-    id: 7,
-    text: "Exceptional customer service from start to finish, every step of the process has been an enjoyable experience.",
-    name: "Ziad A",
-    avatar: '/images/home/in_review_r1.jpeg'
-  },
-  {
-    id: 8,
-    text: "The SEO features really work. We're now ranking #1 for our local keywords.",
-    name: "Tom H",
-    avatar: '/images/home/in_review_r2.jpeg'
-  },
-  {
-    id: 9,
-    text: "Easy to use platform with powerful features. Highly recommend to any restaurant owner.",
-    name: "Anna P",
-    avatar: '/images/home/in_review_r3.jpeg'
-  }
-])
+const centerColumnReviews = computed(() => {
+  const items = tm('home.ratings.reviews.center') ?? []
+  return [
+    { id: 4, text: items?.[0]?.text ?? '', name: items?.[0]?.name ?? '', avatar: '/images/home/in_review_c1.jpeg' },
+    { id: 5, text: items?.[1]?.text ?? '', name: items?.[1]?.name ?? '', avatar: '/images/home/in_review_c2.jpeg' },
+    { id: 6, text: items?.[2]?.text ?? '', name: items?.[2]?.name ?? '', avatar: '/images/home/in_review_c3.jpeg' },
+  ]
+})
+
+const rightColumnReviews = computed(() => {
+  const items = tm('home.ratings.reviews.right') ?? []
+  return [
+    { id: 7, text: items?.[0]?.text ?? '', name: items?.[0]?.name ?? '', avatar: '/images/home/in_review_r1.jpeg' },
+    { id: 8, text: items?.[1]?.text ?? '', name: items?.[1]?.name ?? '', avatar: '/images/home/in_review_r2.jpeg' },
+    { id: 9, text: items?.[2]?.text ?? '', name: items?.[2]?.name ?? '', avatar: '/images/home/in_review_r3.jpeg' },
+  ]
+})
 </script>
 
 <style scoped>

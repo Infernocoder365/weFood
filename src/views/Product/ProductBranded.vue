@@ -6,27 +6,30 @@ import ProductFAQs from '@/components/Product/ProductFAQs.vue'
 import ProductTestimonial from '@/components/Product/ProductTestimonial.vue'
 import ProductGuides from '@/components/Product/ProductGuides.vue'
 import ProductOrderingCTA from '@/components/Product/ProductOrderingCTA.vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 const heroProps = {
-  title: 'Imagine having your own mobile app.',
-  description: 'With a mobile app, more customers order directly — instead of going to third parties.',
-  primaryCtaText: 'Get Started',
+  title: t('product_branded.hero.title'),
+  description: t('product_branded.hero.description'),
+  primaryCtaText: t('actions.get_started'),
   primaryCtaHref: '/dashboard',
-  secondaryCtaText: 'View Pricing',
+  secondaryCtaText: t('actions.view_pricing'),
   secondaryCtaHref: '/pricing',
   videoSrc: '/images/product/branded/video_3.mp4',
   videoPoster: '/images/product/branded/video_3.jpg',
-  overlayText: 'See how Mo from Phnom Penh Noodle Shack gets more repeat orders with his mobile app'
+  overlayText: t('product_branded.hero.overlay_text')
 }
 
 const salesFeaturesProps = {
-  title: 'Every restaurant today needs a mobile app',
+  title: t('product_branded.sales_features.title'),
   leftImageSrc: '/images/product/branded/product_branded_1.jpg',
-  leftImageAlt: 'Branded app hero image',
+  leftImageAlt: t('product_branded.sales_features.left_image_alt'),
   features: [
-    { title: 'The fastest way for your regulars to order', description: 'Customers can re-order in a few taps. No distractions from other restaurants.' },
-    { title: 'Your own 5-star mobile app', description: "We've helped restaurants earn thousands of 5-star reviews on Apple and Android." },
-    { title: 'It drives repeat orders', description: 'Restaurants with apps get 85% more return customers.' }
+    { title: t('product_branded.sales_features.features.0.title'), description: t('product_branded.sales_features.features.0.desc') },
+    { title: t('product_branded.sales_features.features.1.title'), description: t('product_branded.sales_features.features.1.desc') },
+    { title: t('product_branded.sales_features.features.2.title'), description: t('product_branded.sales_features.features.2.desc') }
   ],
   icons: [
     `<svg width="100%" height="100%" viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.5 24.0625C16.5 28.4808 20.0817 32.0625 24.5 32.0625C27.0264 32.0625 29.3304 30.8914 30.8115 29.0625M32.5 24.0625C32.5 19.6442 28.9183 16.0625 24.5 16.0625C21.9736 16.0625 19.6696 17.2336 18.1885 19.0625M17.5 16.0625V20.0625H21.5M31.5118 32.0625V28.0625H27.5118" stroke="currentColor" stroke-width="2" stroke-linecap="square"></path></svg>`,
@@ -36,86 +39,86 @@ const salesFeaturesProps = {
 }
 
 const provenDesignProps = {
-  title: 'Increase sales with your own mobile app',
+  title: t('product_branded.proven_design.title'),
   cards: [
     {
       src: '/images/product/branded/product_branded_2_1.png',
       imgClass: 'w-full h-full rounded-[24px] lg:rounded-[32px] object-contain object-top',
-      alt: 'Fast ordering',
+      alt: t('product_branded.proven_design.cards.0.alt'),
       wrapperClass: 'flex flex-col items-center justify-end',
       textWrapperClass: 'w-[65%] relative',
       textColorClass: 'text-black',
-      label: 'Fast ordering',
+      label: t('product_branded.proven_design.cards.0.label'),
       headingClass: 'text-[24px] md:text-[26px] lg:text-[30px]',
-      heading: 'Regulars can reorder in seconds.'
+      heading: t('product_branded.proven_design.cards.0.heading')
     },
     {
       src: '/images/product/branded/product_branded_2_2.jpg',
       imgClass: 'w-full h-full rounded-[24px] lg:rounded-[32px] object-contain object-bottom',
-      alt: '5-star ratings',
+      alt: t('product_branded.proven_design.cards.1.alt'),
       wrapperClass: '',
       textWrapperClass: 'w-full relative',
       textColorClass: 'text-black',
-      label: 'Control delivery options',
+      label: t('product_branded.proven_design.cards.1.label'),
       headingClass: 'text-[22px] md:text-[26px] lg:text-[28px]',
-      heading: "Thousands of 5-star ratings on Apple and Android. It's your turn."
+      heading: t('product_branded.proven_design.cards.1.heading')
     },
     {
       src: '/images/product/branded/product_branded_2_3.jpg',
       imgClass: 'w-full h-full object-cover rounded-[24px] lg:rounded-[32px]',
-      alt: 'Drive loyalty',
+      alt: t('product_branded.proven_design.cards.2.alt'),
       wrapperClass: 'flex flex-col justify-end',
       textWrapperClass: 'w-full relative',
       textColorClass: 'text-white',
-      label: 'Drive loyalty',
+      label: t('product_branded.proven_design.cards.2.label'),
       headingClass: 'text-[22px] md:text-[26px] lg:text-[28px]',
-      heading: 'Apps drive 85% more repeat orders.'
+      heading: t('product_branded.proven_design.cards.2.heading')
     }
   ]
 }
 
 const faqsProps = {
-  title: 'FAQs',
+  title: t('product_branded.faqs.title'),
   faqs: [
-    { question: 'Do independent restaurants really need their own app?', answer: `<article class="ctx-article p-5 text-base text-[#171F1F]"><div><p>Yes, it’s another way we help you drive sales.<br><br>Here’s the data from the thousands of restaurants we work with: 80% of your regulars want apps from their favorite restaurants. Roughly 1 in 2 of your regulars will download your app. People who install restaurant apps order 85% more frequently.</p></div></article>` },
-    { question: 'Do you build me a custom app from scratch?', answer: `<article class="ctx-article p-5 text-base text-[#171F1F]"><div><p>Your app, like your online ordering, is based on proven systems that drive sales.<br><br>You'll be able to personalize your app with your brand and customize your rewards program.<br><br>If you were to build an app from scratch, it would cost you at least 5 figures and take months. Using a tried-and-tested mobile app design is how we can launch you in weeks.</p></div></article>` },
-    { question: 'How much does this cost?', answer: `<article class="ctx-article p-5 text-base text-[#171F1F]"><div><p>Your branded mobile app comes included when you sign up. There is no additional charge to have a mobile app for your restaurant.</p></div></article>` }
+    { question: t('product_branded.faqs.items.0.question'), answer: t('product_branded.faqs.items.0.answer_html') },
+    { question: t('product_branded.faqs.items.1.question'), answer: t('product_branded.faqs.items.1.answer_html') },
+    { question: t('product_branded.faqs.items.2.question'), answer: t('product_branded.faqs.items.2.answer_html') }
   ],
   sideCard: {
     imageSrc: '/images/product/branded/faq_manager_6.jpg',
-    imageAlt: 'Manager',
-    quote: 'I didn’t think having our own app would work, but our regulars love it and use it constantly. We’ve more than doubled our direct online sales since starting with WeFood.',
-    name: 'Timirie Shibley',
-    role: 'WeFood of Doo-Dah Diner'
+    imageAlt: t('product_branded.faqs.side_card.image_alt'),
+    quote: t('product_branded.faqs.side_card.quote'),
+    name: t('product_branded.faqs.side_card.name'),
+    role: t('product_branded.faqs.side_card.role')
   }
 }
 
 const testimonialProps = {
   imageSrc: '/images/product/branded/in_how_1.jpg',
-  imageAlt: 'Customer story',
-  headline: 'How Samos Oaxaca increased direct online sales to $10,000/m by using WeFood.com',
+  imageAlt: t('product_branded.testimonial.image_alt'),
+  headline: t('product_branded.testimonial.headline'),
   metrics: [
-    { value: '+$150,000', label: 'Online sales' },
-    { value: '+377%', label: 'Growth' }
+    { value: '+$150,000', label: t('product_branded.testimonial.metrics.online_sales') },
+    { value: '+377%', label: t('product_branded.testimonial.metrics.growth') }
   ]
 }
 
 const guidesProps = {
-  sectionTitle: 'Guides and best practices for your mobile app',
+  sectionTitle: t('product_branded.guides.section_title'),
   blogHref: '/resources/blog',
   mainVideoSrc: '/images/product/branded/new_video_2.mp4',
-  mainVideoTitle: 'How To Get Your Own Mobile App For Your Restaurant in 7 Days',
+  mainVideoTitle: t('product_branded.guides.main_video_title'),
   sideImageSrc: '/images/product/branded/product_branded_3_2.jpg',
-  sideImageAlt: 'Guide side card',
-  sideImageTitle: 'The Best Way To Get A Mobile App Your Restaurant'
+  sideImageAlt: t('product_branded.guides.side_image_alt'),
+  sideImageTitle: t('product_branded.guides.side_image_title')
 }
 
 const orderingCtaProps = {
-  title: 'Keep guests coming back with loyalty and rewards',
+  title: t('product_branded.ordering_cta.title'),
   imageSrc: '/images/product/branded/product_branded_4_1.jpg',
   linkTo: '/product/loyalty',
-  cardTitle: 'Rewards for regulars',
-  cardDescription: 'Give your customers loyalty points, just like the big brands'
+  cardTitle: t('product_branded.ordering_cta.card_title'),
+  cardDescription: t('product_branded.ordering_cta.card_desc')
 }
 </script>
 

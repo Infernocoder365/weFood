@@ -3,10 +3,8 @@
     <div class="w-full max-w-wrap mx-auto">
       <div
         class="pt-24 pb-32 lg:pt-32 lg:pb-52 px-[5%] bg-footer text-footer rounded-[24px] md:rounded-[32px] lg:rounded-[48px]">
-        <h3 class="w-[430px] max-w-full mb-6 text-[36px] lg:text-[44px] font-medium leading-none"><span>Actual
-            reviews from restaurant WeFood</span></h3>
-        <p class="w-[440px] max-w-full text-base opacity-60"><span>We asked our customers to share their
-            experiences with WeFood.com on independent software review websites.</span></p>
+        <h3 class="w-[430px] max-w-full mb-6 text-[36px] lg:text-[44px] font-medium leading-none"><span>{{ t('company.reviews_page.cta_title') }}</span></h3>
+        <p class="w-[440px] max-w-full text-base opacity-60"><span>{{ t('company.reviews_page.cta_subtitle') }}</span></p>
         <section class="mt-20 grid gap-12 md:gap-24 lg:gap-32">
           <!-- Use v-for to render each ReviewsQuoteList -->
           <ReviewsQuoteList
@@ -28,7 +26,10 @@
 </template>
 
 <script setup>
+import { useI18n } from 'vue-i18n'
 import ReviewsQuoteList from './ReviewsQuoteList.vue';
+
+const { t } = useI18n()
 
 const items = [
   {

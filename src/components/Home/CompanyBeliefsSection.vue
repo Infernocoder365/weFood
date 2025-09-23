@@ -5,10 +5,10 @@
         <!-- Header -->
         <dt class="col-span-3 lg:col-span-1">
           <h3 class="max-w-[560px] mx-auto mb-6 text-[36px] lg:text-[44px] font-medium leading-tight">
-            <span>{{ content.title }}</span>
+            <span>{{ t('home.company_beliefs.title') }}</span>
           </h3>
           <p class="max-w-[400px] mx-auto text-lg text-gray-600">
-            <span>{{ content.subtitle }}</span>
+            <span>{{ t('home.company_beliefs.subtitle') }}</span>
           </p>
         </dt>
         
@@ -21,10 +21,10 @@
               class="pb-8 grid grid-cols-2 gap-4 lg:gap-14 border-b border-gray-300"
             >
               <div class="col-span-1 text-lg font-medium">
-                <span>{{ belief.title }}</span>
+                <span>{{ t(belief.titleKey) }}</span>
               </div>
               <div class="col-span-1 text-sm text-gray-600 font-medium">
-                <span>{{ belief.description }}</span>
+                <span>{{ t(belief.descKey) }}</span>
               </div>
             </li>
           </ul>
@@ -37,7 +37,7 @@
               <img 
                 class="w-full h-auto rounded-xl hidden lg:block" 
                 :src="ceo.image"
-                :alt="ceo.name"
+                :alt="t('home.company_beliefs.ceo.name')"
               >
               <div class="w-full lg:w-[138px] lg:absolute lg:-left-6 lg:top-24">
                 <svg
@@ -58,8 +58,8 @@
               </div>
             </div>
             <div class="text-xs text-gray-600 flex-1 overflow-hidden">
-              <p>{{ ceo.name }}</p>
-              <p>{{ ceo.title }}</p>
+              <p>{{ t('home.company_beliefs.ceo.name') }}</p>
+              <p>{{ t('home.company_beliefs.ceo.title') }}</p>
             </div>
           </div>
         </dd>
@@ -70,33 +70,17 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 
-const content = ref({
-  title: '3 beliefs that guide our company',
-  subtitle: 'Understand how we do business.'
-})
+const { t } = useI18n()
 
 const beliefs = ref([
-  {
-    id: 1,
-    title: 'Your sales growth is the most important thing.',
-    description: 'Sales growth after switching to WeFood'
-  },
-  {
-    id: 2,
-    title: 'We have to earn your business every month.',
-    description: 'Restaurants are hard enough. You don\'t need another tech vendor tying you up in a long-term contract. We only do month-to-month.'
-  },
-  {
-    id: 3,
-    title: 'Restaurants should own their customer relationships.',
-    description: 'Many tech companies separate restaurants from their customers. With WeFood, you own your customer data. If you ever decide to leave WeFood, you get to bring your customers with you.'
-  }
+  { id: 1, titleKey: 'home.company_beliefs.items[0].title', descKey: 'home.company_beliefs.items[0].description' },
+  { id: 2, titleKey: 'home.company_beliefs.items[1].title', descKey: 'home.company_beliefs.items[1].description' },
+  { id: 3, titleKey: 'home.company_beliefs.items[2].title', descKey: 'home.company_beliefs.items[2].description' }
 ])
 
 const ceo = ref({
-  name: 'Adam Guild',
-  title: 'Co-Founder and CEO at WeFood',
   image: '/images/home/in_guide_1.jpg'
 })
 </script>

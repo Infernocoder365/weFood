@@ -1,0 +1,21 @@
+{
+  "app": {
+    "name": "WeFood",
+    "tagline": "Smarter dining, simpler life"
+  },
+  "nav": {
+    "home": "Home",
+    "product": "Product",
+    "pricing": "Pricing",
+    "resources": "Resources",
+    "company": "Company",
+    "works": "How it works"
+  },
+  "actions": {
+    "learn_more": "Learn more",
+    "get_started": "Get started",
+    "contact_us": "Contact us",
+    "sign_in": "Sign in",
+    "sign_up": "Sign up"
+  }
+}

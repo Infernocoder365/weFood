@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 </script>
 
 <template>
@@ -12,18 +12,17 @@
                 <dd class="w-full md:flex-1 md:overflow-hidden">
                   <div class="w-full px-6 pt-8 pb-10 md:px-10">
                     <div class="w-full">
-                      <h3 class="mb-6 text-[36px] lg:text-[44px] font-medium leading-tight"><span>How Samos Oaxaca
-                          increased direct online sales to $10,000/m by using WeFood.com</span></h3>
+                      <h3 class="mb-6 text-[36px] lg:text-[44px] font-medium leading-tight"><span>{{ $t('home.success_story.title') }}</span></h3>
                     </div>
                     <div class="w-full">
                       <ul class="flex justify-between md:justify-start gap-6">
                         <li class="font-medium">
-                          <p class="text-lg"><span>+$150,000</span></p>
-                          <p class="text-sm text-gray-default"><span>Online sales</span></p>
+                          <p class="text-lg"><span>{{ $t('home.success_story.stats.sales') }}</span></p>
+                          <p class="text-sm text-gray-default"><span>{{ $t('home.success_story.stats.sales_label') }}</span></p>
                         </li>
                         <li class="font-medium">
-                          <p class="text-lg"><span>+377%</span></p>
-                          <p class="text-sm text-gray-default"><span>Growth</span></p>
+                          <p class="text-lg"><span>{{ $t('home.success_story.stats.growth') }}</span></p>
+                          <p class="text-sm text-gray-default"><span>{{ $t('home.success_story.stats.growth_label') }}</span></p>
                         </li>
                       </ul>
                     </div>

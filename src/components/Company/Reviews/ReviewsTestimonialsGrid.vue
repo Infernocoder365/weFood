@@ -51,10 +51,12 @@
 </template>
 
 <script setup>
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 const testimonials = [
   {
     stars: 5,
-    title: '"Easy to work with and streamlined systems for small business"',
+    title: t('company.reviews_page.testimonials.0.title'),
     shortName: 'RS',
     logo: '/images/company/reviews/company_reviews_1_logo1.svg',
     name: 'Rohit S.',
@@ -63,7 +65,7 @@ const testimonials = [
   },
   {
     stars: 5,
-    title: '"WeFood.com is a must for every business"',
+    title: t('company.reviews_page.testimonials.1.title'),
     shortName: 'AA',
     logo: '/images/company/reviews/company_reviews_1_logo1.svg',
     name: 'Ameer A.',
@@ -72,7 +74,7 @@ const testimonials = [
   },
   {
     stars: 5,
-    title: '"Simple and Straightforward"',
+    title: t('company.reviews_page.testimonials.2.title'),
     shortName: 'BM',
     logo: '/images/company/reviews/company_reviews_1_logo1.svg',
     name: 'Bawarchi M.',
@@ -81,7 +83,7 @@ const testimonials = [
   },
   {
     stars: 5,
-    title: '"WeFood.com delivers!"',
+    title: t('company.reviews_page.testimonials.3.title'),
     shortName: 'AC',
     logo: '/images/company/reviews/company_reviews_1_logo1.svg',
     name: 'Anthony C.',
@@ -90,7 +92,7 @@ const testimonials = [
   },
   {
     stars: 5,
-    title: '"WeFood.com + Small Business = BIG Business"',
+    title: t('company.reviews_page.testimonials.4.title'),
     shortName: 'AR',
     logo: '/images/company/reviews/company_reviews_1_logo1.svg',
     name: 'Anil R.',
@@ -99,7 +101,7 @@ const testimonials = [
   },
   {
     stars: 5,
-    title: '"Easy transition; Attentive Customer Support"',
+    title: t('company.reviews_page.testimonials.5.title'),
     shortName: 'JV',
     logo: '/images/company/reviews/company_reviews_1_logo1.svg',
     name: 'JV V.',
@@ -108,7 +110,7 @@ const testimonials = [
   },
   {
     stars: 5,
-    title: '"WeFood helps us build a Virtual Relationship with our Clients!"',
+    title: t('company.reviews_page.testimonials.6.title'),
     shortName: 'JM',
     logo: '/images/company/reviews/company_reviews_1_logo1.svg',
     name: 'Juana M.',

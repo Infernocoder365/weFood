@@ -8,16 +8,16 @@
             <a href="javascript:;" class="w-full max-w-[700px] relative block">
               <img
                 :src="story.image"
-                :alt="story.restaurantName"
+                :alt="t('home.customer_story.hero.restaurant_name')"
                 class="w-full rounded-[28px] object-cover"
                 style="height: 400px;"
               >
               <div class="w-full p-8 text-white absolute left-0 bottom-0">
                 <p class="text-lg font-medium opacity-90">
-                  <span>{{ story.linkText }}</span>
+                  <span>{{ t('home.customer_story.hero.link_text') }}</span>
                 </p>
                 <p class="text-lg font-medium opacity-50">
-                  <span>{{ story.restaurantName }}</span>
+                  <span>{{ t('home.customer_story.hero.restaurant_name') }}</span>
                 </p>
               </div>
             </a>
@@ -26,15 +26,15 @@
           <!-- Main Content -->
           <dd class="col-span-3 order-2">
             <h3 class="mb-6 text-[36px] lg:text-[44px] font-medium leading-tight">
-              <span>{{ story.customerName }}</span><br>
-              <span>{{ story.quote }}</span>
+              <span>{{ t('home.customer_story.hero.customer_name') }}</span><br>
+              <span>{{ t('home.customer_story.hero.quote') }}</span>
             </h3>
             <div class="flex">
               <a 
                 href="/" 
                 class="h-12 px-4 text-white rounded-lg flex items-center ctx-minor transition-colors"
               >
-                <span>See more reviews</span>
+                <span>{{ t('actions.see_more_reviews') }}</span>
                 <svg 
                   stroke="currentColor" 
                   stroke-width="4" 
@@ -54,16 +54,16 @@
           <!-- Stats -->
           <dd class="col-span-3 md:col-span-1 order-3 flex flex-col justify-between">
             <p class="mb-6 text-base text-gray-600 font-medium">
-              <span>{{ story.description }}</span>
+              <span>{{ t('home.customer_story.hero.description') }}</span>
             </p>
             <ul class="w-full font-medium grid grid-cols-2 gap-6">
               <li class="col-span-1 md:col-span-2">
-                <p class="text-[36px] lg:text-[44px] text-gray-900">{{ story.stats.growth }}</p>
-                <p class="text-sm text-gray-500">{{ story.stats.growthLabel }}</p>
+                <p class="text-[36px] lg:text-[44px] text-gray-900">{{ t('home.customer_story.stats.growth') }}</p>
+                <p class="text-sm text-gray-500">{{ t('home.customer_story.stats.growth_label') }}</p>
               </li>
               <li class="col-span-1 md:col-span-2">
-                <p class="text-[36px] lg:text-[44px] text-gray-900">{{ story.stats.installs }}</p>
-                <p class="text-sm text-gray-500">{{ story.stats.installsLabel }}</p>
+                <p class="text-[36px] lg:text-[44px] text-gray-900">{{ t('home.customer_story.stats.installs') }}</p>
+                <p class="text-sm text-gray-500">{{ t('home.customer_story.stats.installs_label') }}</p>
               </li>
             </ul>
           </dd>
@@ -82,8 +82,8 @@
             </svg>
           </em>
           <p class="pl-2 hidden md:block">
-            <span class="text-gray-500">Previous&nbsp;</span>
-            <b>{{ navigation.previous }}</b>
+            <span class="text-gray-500">{{ t('actions.previous') }}&nbsp;</span>
+            <b>{{ t('home.customer_story.navigation.previous_label') }}</b>
           </p>
         </a>
         
@@ -92,8 +92,8 @@
           class="p-1 text-gray-600 hover:text-orange-600 hover:underline flex items-center transition-colors"
         >
           <p class="pr-2 hidden md:block">
-            <span class="text-gray-500">Next&nbsp;</span>
-            <b>{{ navigation.next }}</b>
+            <span class="text-gray-500">{{ t('actions.next') }}&nbsp;</span>
+            <b>{{ t('home.customer_story.navigation.next_label') }}</b>
           </p>
           <em class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
             <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -108,26 +108,15 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 const story = ref({
-  customerName: 'John',
-  quote: 'WeFood is a must-have for succeeding online as an independent restaurant today.',
-  description: 'WeFood is a must-have for succeeding online as an independent restaurant today.',
-  restaurantName: 'Metro Pizza',
-  linkText: 'See the story',
-  image: '/images/home/home_review_1.jpg',
-  stats: {
-    growth: '+54%',
-    growthLabel: 'Sales growth',
-    installs: '11,000',
-    installsLabel: 'Installs of their new mobile app, created with WeFood'
-  }
+  image: '/images/home/home_review_1.jpg'
 })
 
-const navigation = ref({
-  previous: 'Samos Oaxaca',
-  next: 'Talkin Tacos'
-})
+const navigation = ref({})
 </script>
 
 <style scoped>

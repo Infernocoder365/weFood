@@ -6,37 +6,38 @@ import ProductFAQs from '@/components/Product/ProductFAQs.vue'
 import ProductTestimonial from '@/components/Product/ProductTestimonial.vue'
 import ProductGuides from '@/components/Product/ProductGuides.vue'
 import ProductOrderingCTA from '@/components/Product/ProductOrderingCTA.vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 const heroProps = {
-  title: "Restaurant websites built for sales first, style second.",
-  description:
-    "WeFood builds your website to drive sales. Our proven design grows Google traffic, outranks delivery apps, and beats your competition.",
-  primaryCtaText: 'Get Started',
+  title: t('product_website.hero.title'),
+  description: t('product_website.hero.description'),
+  primaryCtaText: t('actions.get_started'),
   primaryCtaHref: '/dashboard',
-  secondaryCtaText: 'View Pricing',
+  secondaryCtaText: t('actions.view_pricing'),
   secondaryCtaHref: '/pricing',
   videoSrc: '/images/product/product/video_1.mp4',
   videoPoster: '/images/product/product/video_1.jpg',
-  overlayText:
-    "See how the WeFood of Mr M's Sandwich Shop use WeFood to get 'more clicks, more traffic, more sales'"
+  overlayText: t('product_website.hero.overlay_text')
 }
 
 const salesFeaturesProps = {
-  title: "Get more sales from your restaurant's website",
+  title: t("product_website.sales_features.title"),
   leftImageSrc: '/images/product/product/product_pro_1.jpg',
-  leftImageAlt: 'Website preview',
+  leftImageAlt: t('product_website.sales_features.left_image_alt'),
   features: [
     {
-      title: 'We build websites that Google loves',
-      description: 'AI-optimized websites that boost your SEO and get you more Google traffic.'
+      title: t('product_website.sales_features.features.0.title'),
+      description: t('product_website.sales_features.features.0.desc')
     },
     {
-      title: 'Drive online sales like the big brands',
-      description: 'Easy online ordering right on your website. Grow your traffic, grow your orders.'
+      title: t('product_website.sales_features.features.1.title'),
+      description: t('product_website.sales_features.features.1.desc')
     },
     {
-      title: "Your new website in days, not months",
-      description: "Add your branding to our proven design, then you're ready to grow online."
+      title: t('product_website.sales_features.features.2.title'),
+      description: t('product_website.sales_features.features.2.desc')
     }
   ],
   icons: [
@@ -55,99 +56,95 @@ const salesFeaturesProps = {
 }
 
 const provenDesignProps = {
-  title: 'A proven design that drives more traffic',
+  title: t('product_website.proven_design.title'),
   cards: [
     {
       src: '/images/product/product/product_pro_2_1.png',
       imgClass: 'w-full h-full rounded-[24px] lg:rounded-[32px] object-contain object-top',
-      alt: 'SEO boost',
+      alt: t('product_website.proven_design.cards.0.alt'),
       wrapperClass: 'flex flex-col items-center justify-end',
       textWrapperClass: 'w-[65%] relative',
       textColorClass: 'text-black',
-      label: '',
+      label: t('product_website.proven_design.cards.0.label'),
       headingClass: 'text-[24px] md:text-[26px] lg:text-[30px]',
-      heading: 'AI-optimized sites boost SEO and Google traffic.'
+      heading: t('product_website.proven_design.cards.0.heading')
     },
     {
       src: '/images/product/product/product_pro_2_2.jpg',
       imgClass: 'w-full h-full rounded-[24px] lg:rounded-[32px] object-contain object-right-bottom',
-      alt: 'Ordering built-in',
+      alt: t('product_website.proven_design.cards.1.alt'),
       wrapperClass: '',
       textWrapperClass: 'w-full relative',
       textColorClass: 'text-black',
-      label: 'Online ordering built-in',
+      label: t('product_website.proven_design.cards.1.label'),
       headingClass: 'text-[22px] md:text-[26px] lg:text-[28px]',
-      heading: 'Great ordering experience that increases sales.'
+      heading: t('product_website.proven_design.cards.1.heading')
     },
     {
       src: '/images/product/product/product_pro_2_3.png',
       imgClass: 'w-full h-full object-cover rounded-[24px] lg:rounded-[32px]',
-      alt: 'Fast launch',
+      alt: t('product_website.proven_design.cards.2.alt'),
       wrapperClass: 'flex flex-col justify-end',
       textWrapperClass: 'w-full relative',
       textColorClass: 'text-white',
-      label: 'Fast launch',
+      label: t('product_website.proven_design.cards.2.label'),
       headingClass: 'text-[22px] md:text-[26px] lg:text-[28px]',
-      heading: 'Add your branding, then go live ASAP.'
+      heading: t('product_website.proven_design.cards.2.heading')
     }
   ]
 }
 
 const faqsProps = {
-  title: 'FAQs',
+  title: t('product_website.faqs.title'),
   faqs: [
     {
-      question: 'What happens to my current website?',
-      answer:
-        `<article class="ctx-article p-5 text-base text-[#171F1F]"><div><p>When you sign up with WeFood, you'll get a new restaurant website optimized for traffic and sales. It will replace your current website.<br><br> Your domain and website URL will stay the same.<br><br> We won't delete your current website. If you ever decide to cancel your subscription with us, we will restore your website to how it was before you signed up.</p></div></article>`
+      question: t('product_website.faqs.items.0.question'),
+      answer: t('product_website.faqs.items.0.answer_html')
     },
     {
-      question: 'How much can I customize my design?',
-      answer:
-        `<article class="ctx-article p-5 text-base text-[#171F1F]"><div><p>We believe sales is the most important thing. So we give you a proven design that you can personalize with your branding.<br><br>It's why restaurant websites with WeFood look a certain way. We've studied the best online brands. We've driven over $100 million in sales for restaurants. We've helped thousands of restaurant WeFood grow their customer base with our websites.<br><br>If you're looking for a lot of design freedom, WeFood is not the right fit for your business.</p></div></article>`
+      question: t('product_website.faqs.items.1.question'),
+      answer: t('product_website.faqs.items.1.answer_html')
     },
     {
-      question: 'How long will this take?',
-      answer:
-        `<article class="ctx-article p-5 text-base text-[#171F1F]"><div><p>If you have everything ready to go, a few days.<br><br>Most customers get their new online presence set up within about a week.<br><br>We'll need some information about your business when you sign up.<br><br>This includes your website domain information, along with Google Business and Yelp details. The more of those you have on hand, the faster we can launch.</p></div></article>`
+      question: t('product_website.faqs.items.2.question'),
+      answer: t('product_website.faqs.items.2.answer_html')
     }
   ],
   sideCard: {
     imageSrc: '/images/product/product/faq_manager_3.jpg',
-    imageAlt: 'Manager',
-    quote:
-      "We're getting more clicks, and we're getting more traffic. And those clicks are turning into sales.",
-    name: 'Matthew Miller',
-    role: "Co-WeFood of Mr M's Sandwich Shop"
+    imageAlt: t('product_website.faqs.side_card.image_alt'),
+    quote: t('product_website.faqs.side_card.quote'),
+    name: t('product_website.faqs.side_card.name'),
+    role: t('product_website.faqs.side_card.role')
   }
 }
 
 const testimonialProps = {
   imageSrc: '/images/product/product/in_how_1.jpg',
-  imageAlt: 'Customer story',
-  headline: "How Samos Oaxaca increased direct online sales to $10,000/m by using WeFood.com",
+  imageAlt: t('product_website.testimonial.image_alt'),
+  headline: t('product_website.testimonial.headline'),
   metrics: [
-    { value: '+$150,000', label: 'Online sales' },
-    { value: '+377%', label: 'Growth' }
+    { value: '+$150,000', label: t('product_website.testimonial.metrics.online_sales') },
+    { value: '+377%', label: t('product_website.testimonial.metrics.growth') }
   ]
 }
 
 const guidesProps = {
-  sectionTitle: "Improve your restaurant's website with our guides",
+  sectionTitle: t("product_website.guides.section_title"),
   blogHref: '/resources/blog',
   mainVideoSrc: '/images/product/product/new_video_2.mp4',
-  mainVideoTitle: "I Reviewed The Best Website Builders For Restaurants, Here's What I Found",
+  mainVideoTitle: t('product_website.guides.main_video_title'),
   sideImageSrc: '/images/product/product/product_pro_3_2.jpg',
-  sideImageAlt: 'Guide side card',
-  sideImageTitle: "Buyer's Guide: The Best Website Builders for Restaurants"
+  sideImageAlt: t('product_website.guides.side_image_alt'),
+  sideImageTitle: t('product_website.guides.side_image_title')
 }
 
 const orderingCtaProps = {
-  title: 'Grow your sales with our online ordering platform',
+  title: t('product_website.ordering_cta.title'),
   imageSrc: '/images/product/product/product_pro_4_1.jpg',
   linkTo: '/product/ordering',
-  cardTitle: 'Online Ordering',
-  cardDescription: 'Thousands of restaurants use WeFood to increase their direct online sales'
+  cardTitle: t('product_website.ordering_cta.card_title'),
+  cardDescription: t('product_website.ordering_cta.card_desc')
 }
 </script>
 

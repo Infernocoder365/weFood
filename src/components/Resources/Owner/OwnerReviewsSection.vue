@@ -3,7 +3,7 @@
     <div class="w-full max-w-wrap mx-auto">
       <div class="lg:text-center">
         <h3 class="max-w-[600px] mx-auto mb-6 text-[36px] lg:text-[44px] font-medium leading-tight">
-          <span>See why we're rated #1 in restaurant tech</span>
+          <span>{{ title }}</span>
         </h3>
       </div>
       
@@ -28,7 +28,8 @@
               </svg>
             </em>
             <div class="text-xs flex-1 overflow-hidden">
-              <span>Rated #1 Restaurant Marketing Software</span>
+-              <span>Rated #1 Restaurant Marketing Software</span>
++              <span>{{ badge1 }}</span>
             </div>
           </li>
           <li class="w-[190px] py-2 pl-2 pr-3 bg-gray-body rounded-xl flex items-center">
@@ -46,7 +47,8 @@
               </svg>
             </em>
             <div class="text-xs flex-1 overflow-hidden">
-              <span>Leader Position Summer 2024</span>
+-              <span>Leader Position Summer 2024</span>
++              <span>{{ badge2 }}</span>
             </div>
           </li>
         </ul>
@@ -119,7 +121,7 @@
       <!-- See More Reviews Button -->
       <div class="pt-6 flex justify-center">
         <a href="#" class="h-12 px-4 ctx-minor rounded-lg flex items-center">
-          <span>See more reviews</span>
+          <span>{{ t('actions.see_more_reviews') }}</span>
           <svg stroke="currentColor" stroke-width="4" width="20" height="20" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5">
             <path d="M19 12L31 24L19 36" stroke-linecap="round" stroke-linejoin="round"></path>
           </svg>
@@ -131,6 +133,12 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+const title = t('resources.owner.reviews.title')
+const badge1 = t('resources.owner.reviews.badges.rating')
+const badge2 = t('resources.owner.reviews.badges.leader')
 
 // Sample reviews data organized by columns
 const leftColumnReviews = ref([

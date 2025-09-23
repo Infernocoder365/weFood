@@ -7,7 +7,7 @@
           <div class="w-full" style="height: 353px;">
             <img 
               :src="story.image" 
-              :alt="story.title"
+              :alt="$t('home.success_story.title')"
               class="w-full h-full rounded-[32px] object-cover"
             >
           </div>
@@ -18,25 +18,25 @@
           <div class="w-full px-6 pt-8 pb-10 md:px-10">
             <div class="w-full">
               <h3 class="mb-6 text-[36px] lg:text-[44px] font-medium leading-tight">
-                <span>{{ story.title }}</span>
+                <span>{{ $t('home.success_story.title') }}</span>
               </h3>
             </div>
             <div class="w-full">
               <ul class="flex justify-between md:justify-start gap-6">
                 <li class="font-medium">
                   <p class="text-lg">
-                    <span>{{ story.stats.sales }}</span>
+                    <span>{{ $t('home.success_story.stats.sales') }}</span>
                   </p>
                   <p class="text-sm text-gray-500">
-                    <span>{{ story.stats.salesLabel }}</span>
+                    <span>{{ $t('home.success_story.stats.sales_label') }}</span>
                   </p>
                 </li>
                 <li class="font-medium">
                   <p class="text-lg">
-                    <span>{{ story.stats.growth }}</span>
+                    <span>{{ $t('home.success_story.stats.growth') }}</span>
                   </p>
                   <p class="text-sm text-gray-500">
-                    <span>{{ story.stats.growthLabel }}</span>
+                    <span>{{ $t('home.success_story.stats.growth_label') }}</span>
                   </p>
                 </li>
               </ul>
@@ -65,14 +65,7 @@
 import { ref } from 'vue'
 
 const story = ref({
-  title: 'How Samos Oaxaca increased direct online sales to $10,000/m by using WeFood.com',
-  image: '/images/home/in_how_1.jpg',
-  stats: {
-    sales: '+$150,000',
-    salesLabel: 'Online sales',
-    growth: '+377%',
-    growthLabel: 'Growth'
-  }
+  image: '/images/home/in_how_1.jpg'
 })
 </script>
 

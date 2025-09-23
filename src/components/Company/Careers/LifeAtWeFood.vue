@@ -1,10 +1,14 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+
 interface Testimonial { name: string; title: string; image: string }
 const people: Testimonial[] = [
   { name: 'Alexis Bernstein', title: 'Director of Launch', image: '/images/company/careers/company_careers_3_1.jpg' },
   { name: 'Maria Paula Soto', title: 'Director of Launch', image: '/images/company/careers/company_careers_3_2.jpg' },
   { name: 'Phillip Hang', title: 'Success Manager', image: '/images/company/careers/company_careers_3_3.jpg' }
 ]
+
+const { t } = useI18n()
 </script>
 
 <template>
@@ -12,8 +16,8 @@ const people: Testimonial[] = [
     <div class="w-full max-w-wrap mx-auto">
       <div class="grid grid-cols-1 gap-10 lg:gap-16">
         <div>
-          <h3 class="mb-3 lg:mb-4 text-[42px] lg:text-[56px] font-medium leading-none">Life at WeFood</h3>
-          <p class="opacity-50">What's it like to work at WeFood? Hear from our teammates.</p>
+          <h3 class="mb-3 lg:mb-4 text-[42px] lg:text-[56px] font-medium leading-none">{{ t('careers.life.title') }}</h3>
+          <p class="opacity-50">{{ t('careers.life.subtitle') }}</p>
         </div>
         <ul class="w-full overflow-x-auto flex lg:grid lg:grid-cols-3 gap-3">
           <li v-for="(p, idx) in people" :key="idx" class="flex-shrink-0 w-3/4 md:w-1/3 lg:w-auto lg:col-span-1 relative">
@@ -32,8 +36,8 @@ const people: Testimonial[] = [
           </li>
         </ul>
         <div class="w-[600px] max-w-full mx-auto pt-12 text-center">
-          <h3 class="mb-8 text-[32px] font-medium">"I joined WeFood because small mom and pop restaurants are the core of our communities."</h3>
-          <p class="opacity-50">Phillip Hang, Success Manager</p>
+          <h3 class="mb-8 text-[32px] font-medium">{{ t('careers.life.quote_headline') }}</h3>
+          <p class="opacity-50">{{ t('careers.life.quote_attribution') }}</p>
         </div>
       </div>
     </div>

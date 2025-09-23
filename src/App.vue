@@ -9,6 +9,7 @@
 </template>
 
 <script setup lang="ts">
+import ToastPlugin from 'vue-toast-notification';
 import HeaderComponent from './layout/HeaderComponent.vue'
 import FooterComponent from './layout/FooterComponent.vue'
 </script>

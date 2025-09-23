@@ -19,33 +19,33 @@
     <!-- Title row with bottom border -->
     <div class="w-full max-w-4xl mx-auto px-6">
       <div class="pt-3 pb-5 border-b border-black">
-        <h1 class="text-[24px] sm:text-[30px] lg:text-[40px] text-center leading-none">Login</h1>
+        <h1 class="text-[24px] sm:text-[30px] lg:text-[40px] text-center leading-none">{{ t('actions.sign_in') }}</h1>
       </div>
     </div>
 
     <!-- Body -->
     <div class="w-full max-w-[500px] mx-auto box-border px-6">
       <p class="mt-5 text-center text-sm">
-        <b class="opacity-60">Don't have an account?&nbsp;</b>
-        <RouterLink class="text-black underline" :to="{ name: 'register', query: { next } }">Create an account</RouterLink>
+        <b class="opacity-60">{{ t('auth.has_account_prefix', 'Don\'t have an account?') }}&nbsp;</b>
+        <RouterLink class="text-black underline" :to="{ name: 'register', query: { next } }">{{ t('auth.create_account', 'Create an account') }}</RouterLink>
       </p>
 
       <form class="pt-10" @submit.prevent="onSubmit">
-        <p class="text-sm capitalize">Phone Number</p>
+        <p class="text-sm capitalize">{{ t('profile.fields.phone_number') }}</p>
         <dl class="h-12 mb-5 border-b border-gray-300 flex items-center">
           <dd class="px-3 cursor-pointer flex-shrink-0 flex items-center text-sm">
             <span class="min-w-[40px] pr-1 inline-block">{{ code }}</span>
             <svg class="w-3 h-3 opacity-60" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"></path></svg>
           </dd>
           <dt class="flex-1 overflow-hidden">
-            <input v-model="phone" type="text" placeholder="Type here" class="w-full h-8 text-base bg-transparent placeholder:text-gray-400 outline-none" />
+            <input v-model="phone" type="text" :placeholder="t('placeholders.type_here')" class="w-full h-8 text-base bg-transparent placeholder:text-gray-400 outline-none" />
           </dt>
         </dl>
 
-        <p class="text-sm capitalize">Password</p>
+        <p class="text-sm capitalize">{{ t('profile.fields.password') }}</p>
         <dl class="h-12 mb-2 border-b border-gray-300 flex items-center">
           <dt class="flex-1 overflow-hidden">
-            <input v-model="password" :type="showPassword ? 'text' : 'password'" placeholder="Type here" class="w-full h-8 text-base bg-transparent placeholder:text-gray-400 outline-none" />
+            <input v-model="password" :type="showPassword ? 'text' : 'password'" :placeholder="t('placeholders.type_here')" class="w-full h-8 text-base bg-transparent placeholder:text-gray-400 outline-none" />
           </dt>
           <dd class="h-8 pl-3 pr-2 flex-shrink-0 flex items-center">
             <button type="button" class="text-sm opacity-80 hover:opacity-100" @click="showPassword = !showPassword">
@@ -60,12 +60,12 @@
         </dl>
 
         <div class="flex justify-end">
-          <a href="javascript:;" class="text-sm underline">Forgot Password?</a>
+          <a href="javascript:;" class="text-sm underline">{{ t('auth.forgot_password', 'Forgot Password?') }}</a>
         </div>
 
         <button type="submit" class="mt-5 w-full py-2.5 bg-black text-white rounded-none" :disabled="submitting">
-          <span v-if="submitting">Signing in...</span>
-          <span v-else>Login</span>
+          <span v-if="submitting">{{ t('auth.signing_in') }}</span>
+          <span v-else>{{ t('actions.sign_in') }}</span>
         </button>
         <p v-if="error" class="mt-3 text-sm text-red-600">{{ error }}</p>
       </form>
@@ -85,12 +85,12 @@
         <div class="p-4 text-base">
           <div class="text-blue-500 w-full pb-4 mb-4 border-b border-gray-200">
             <svg class="w-16 h-16 mb-3 mx-auto block" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg>
-            <p class="text-center font-medium"><span>Success!</span></p>
+            <p class="text-center font-medium"><span>{{ t('common.success', 'Success!') }}</span></p>
           </div>
           <article class="ctx-article text-center">{{ successMessage }}</article>
         </div>
         <ul class="!p-2 text-sm md:text-base flex justify-center">
-          <li class="w-full md:w-auto p-2"><button class="w-full md:w-auto lg:md:min-w-[80px] px-3 h-9 bg-black text-white md:rounded" @click="onSuccessClose"><span>Confirm</span></button></li>
+          <li class="w-full md:w-auto p-2"><button class="w-full md:w-auto lg:md:min-w-[80px] px-3 h-9 bg-black text-white md:rounded" @click="onSuccessClose"><span>{{ t('common.confirm', 'Confirm') }}</span></button></li>
         </ul>
       </div>
     </div>
@@ -101,6 +101,8 @@
 import { ref, computed } from 'vue'
 import { useRoute, useRouter, RouterLink } from 'vue-router'
 import { useAuthStore } from '@/stores/auth'
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 
 const route = useRoute()
 const router = useRouter()
@@ -116,8 +118,8 @@ const submitting = ref(false)
 const error = ref<string | null>(null)
 
 const successOpen = ref(false)
-const successTitle = ref('Login')
-const successMessage = ref('You have successfully logged in')
+const successTitle = ref(t('actions.sign_in'))
+const successMessage = ref(t('auth.login_success'))
 
 async function onSubmit() {
   error.value = null
@@ -125,11 +127,11 @@ async function onSubmit() {
   const ok = await auth.login({ phone: phone.value, password: password.value, code: code.value })
   submitting.value = false
   if (ok) {
-    successTitle.value = 'Login'
-    successMessage.value = 'You have successfully logged in'
+    successTitle.value = t('actions.sign_in')
+    successMessage.value = t('auth.login_success')
     successOpen.value = true
   } else {
-    error.value = auth.error || 'Login failed'
+    error.value = auth.error || t('auth.login_failed')
   }
 }
 

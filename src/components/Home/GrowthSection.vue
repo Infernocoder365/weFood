@@ -4,11 +4,11 @@
       <div class="w-full flex items-center justify-between flex-wrap">
         <div class="w-[560px] max-w-full">
           <h3 class="max-w-[560px] mx-auto mb-6 text-[36px] lg:text-[44px] font-medium leading-tight">
-            <span>See our free guides on growing your restaurant</span>
+            <span>{{ $t('home.growth_guides.title') }}</span>
           </h3>
         </div>
         <a href="/" class="h-12 px-4 ctx-minor rounded-lg hidden lg:flex items-center">
-          <span>See all guides</span>
+          <span>{{ $t('home.growth_guides.see_all') }}</span>
           <svg stroke="currentColor" stroke-width="4" width="20" height="20" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5">
             <path d="M19 12L31 24L19 36" stroke-linecap="round" stroke-linejoin="round"></path>
           </svg>
@@ -28,24 +28,18 @@
   </section>
 </template>
 
-<script setup lang="ts">
-import { ref } from 'vue'
+<script setup>
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 
-const guides = ref([
-  {
-    id: 1,
-    title: "3 Best Restaurant Marketing Ideas For 2024 (with AI Strategies)",
-    image: "/images/home/in_restaurant_1.jpg"
-  },
-  {
-    id: 2,
-    title: "Restaurant SEO is Easier Than You Think (3 Big Wins)",
-    image: "/images/home/in_restaurant_2.jpg"
-  },
-  {
-    id: 3,
-    title: "Buyer's Guide: The Best Restaurant Website Builders",
-    image: "/images/home/in_restaurant_3.jpg"
-  }
-])
+const { tm } = useI18n()
+
+const guides = computed(() => {
+  const items = tm('home.growth_guides.guides') ?? []
+  return [
+    { id: 1, title: items?.[0]?.title ?? '', image: "/images/home/in_restaurant_1.jpg" },
+    { id: 2, title: items?.[1]?.title ?? '', image: "/images/home/in_restaurant_2.jpg" },
+    { id: 3, title: items?.[2]?.title ?? '', image: "/images/home/in_restaurant_3.jpg" }
+  ]
+})
 </script>

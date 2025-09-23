@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+
 interface Investor { name: string; company: string; image: string }
 const investors: Investor[] = [
   { name: 'Arash Ferdowsi', company: 'Dropbox', image: '/images/company/careers/company_careers_5_1.jpeg' },
@@ -34,18 +38,16 @@ const investorLogos: string[] = [
   <section class="pt-20 pb-32 lg:pb-44 px-[5%]">
     <div class="w-full max-w-wrap mx-auto">
       <div class="w-[480px] max-w-full mb-10 lg:mb-20">
-        <h3 class="text-[36px] lg:text-[44px] font-medium leading-none">We’re backed by some of the best in business</h3>
+        <h3 class="text-[36px] lg:text-[44px] font-medium leading-none">{{ t('careers.investors.title') }}</h3>
       </div>
       <dl class="mb-10 lg:mb-16 flex flex-wrap items-center">
-        <dt class="w-[170px] text-sm text-gray-deep">Our investors built companies like</dt>
+        <dt class="w-[170px] text-sm text-gray-deep">{{ t('careers.investors.strip_label') }}</dt>
         <dd class="w-full lg:flex-1 overflow-hidden relative">
           <div class="h-[34px] flex gap-8 items-center">
-            <!-- v-for logo items -->
             <img v-for="(logo, idx) in investorLogos" :key="idx" :src="logo" class="w-auto h-full shrink-0" />
           </div>
-          
-      <em class="w-1/5 h-full absolute left-0 top-0 block" style="background-image: linear-gradient(90deg, rgb(255, 255, 255), rgba(255, 255, 255, 0));"></em>
-      <em class="w-1/5 h-full absolute right-0 top-0 block" style="background-image: linear-gradient(90deg, rgba(255, 255, 255, 0), rgb(255, 255, 255));"></em>
+          <em class="w-1/5 h-full absolute left-0 top-0 block" style="background-image: linear-gradient(90deg, rgb(255, 255, 255), rgba(255, 255, 255, 0));"></em>
+          <em class="w-1/5 h-full absolute right-0 top-0 block" style="background-image: linear-gradient(90deg, rgba(255, 255, 255, 0), rgb(255, 255, 255));"></em>
         </dd>
       </dl>
       <ul class="grid grid-cols-12 gap-4 lg:gap-x-6 lg:gap-y-12">

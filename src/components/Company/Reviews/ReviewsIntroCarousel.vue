@@ -1,16 +1,21 @@
+<script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
+</script>
+
 <template>
   <section class="pt-32 pb-20 lg:pt-40 lg:pb-24 px-[5%]">
     <div class="w-full max-w-wrap mx-auto">
       <div class="flex flex-col items-center">
         <h2 class="w-[710px] max-w-full mb-6 text-[42px] lg:text-[56px] text-center font-medium leading-none">
-          <span>WeFood.com Reviews from Restaurant WeFood</span>
+          <span>{{ t('company.reviews_page.intro_title') }}</span>
         </h2>
-        <p class="w-[470px] max-w-full mb-8 text-lg text-gray-deep text-center font-medium"><span>See why we're
-            rated #1 in restaurant tech.</span></p>
+        <p class="w-[470px] max-w-full mb-8 text-lg text-gray-deep text-center font-medium">
+          <span>{{ t('company.reviews_page.intro_subtitle') }}</span>
+        </p>
         <ul class="flex flex-wrap justify-center gap-2">
-          <li class="max-w-[190px] py-2 pl-2 pr-3 bg-gray-body rounded-xl flex items-center gap-2"><em
-              class="w-10 h-10 mr-2 flex shrink-0"><svg width="100%" height="100%" viewBox="0 0 32 32" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
+          <li class="max-w-[190px] py-2 pl-2 pr-3 bg-gray-body rounded-xl flex items-center gap-2">
+            <em class="w-10 h-10 mr-2 flex shrink-0"><svg width="100%" height="100%" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="32" height="32" rx="16" fill="white"></rect>
                 <g clip-path="url(#clip0_3003_13801)">
                   <path d="M5 15.2389H12.605H17.2288V10.6658L5 15.2389Z" fill="#FF9D28"></path>
@@ -24,7 +29,7 @@
                   </clippath>
                 </defs>
               </svg></em>
-            <p class="text-xs"><span>Rated #1 Restaurant Marketing Software</span></p>
+            <p class="text-xs"><span>{{ t('company.reviews_page.badge_1') }}</span></p>
           </li>
           <li class="max-w-[190px] py-2 pl-2 pr-3 bg-gray-body rounded-xl flex items-center gap-2"><em
               class="w-10 h-10 mr-2 flex shrink-0"><svg width="100%" height="100%" viewBox="0 0 32 32" fill="none"
@@ -41,7 +46,7 @@
                   </clippath>
                 </defs>
               </svg></em>
-            <p class="text-xs"><span>Leader Position Summer 2024</span></p>
+            <p class="text-xs"><span>{{ t('company.reviews_page.badge_2') }}</span></p>
           </li>
         </ul>
       </div>

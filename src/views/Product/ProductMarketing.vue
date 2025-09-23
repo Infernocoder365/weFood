@@ -6,27 +6,30 @@ import ProductFAQs from '@/components/Product/ProductFAQs.vue'
 import ProductTestimonial from '@/components/Product/ProductTestimonial.vue'
 import ProductGuides from '@/components/Product/ProductGuides.vue'
 import ProductOrderingCTA from '@/components/Product/ProductOrderingCTA.vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 const heroProps = {
-  title: 'Never miss another marketing opportunity again.',
-  description: 'Grow sales with automated campaigns. Drive repeat orders with proven email and text marketing on autopilot.',
-  primaryCtaText: 'Get Started',
+  title: t('product_marketing.hero.title'),
+  description: t('product_marketing.hero.description'),
+  primaryCtaText: t('actions.get_started'),
   primaryCtaHref: '/dashboard',
-  secondaryCtaText: 'View Pricing',
+  secondaryCtaText: t('actions.view_pricing'),
   secondaryCtaHref: '/pricing',
   videoSrc: '/images/product/market/video_2.mp4',
   videoPoster: '/images/product/market/video_2.jpg',
-  overlayText: "See how automated marketing boosts sales for Phillip and Karen from Sushi Me Roll'n"
+  overlayText: t('product_marketing.hero.overlay_text')
 }
 
 const salesFeaturesProps = {
-  title: 'Money-making marketing, powered by customer data',
+  title: t('product_marketing.sales_features.title'),
   leftImageSrc: '/images/product/market/product_market_1.jpg',
-  leftImageAlt: 'Marketing hero image',
+  leftImageAlt: t('product_marketing.sales_features.left_image_alt'),
   features: [
-    { title: 'Grow your sales with proven campaigns', description: 'Run automated marketing that grow orders.' },
-    { title: 'Grow your customer list', description: 'Every direct order grows your list, giving you more data to drive more sales.' },
-    { title: 'Write faster with AI', description: 'Sending your own campaign? Use our AI assistant to write email blasts in seconds.' }
+    { title: t('product_marketing.sales_features.features.0.title'), description: t('product_marketing.sales_features.features.0.desc') },
+    { title: t('product_marketing.sales_features.features.1.title'), description: t('product_marketing.sales_features.features.1.desc') },
+    { title: t('product_marketing.sales_features.features.2.title'), description: t('product_marketing.sales_features.features.2.desc') }
   ],
   icons: [
     '<svg width="100%" height="100%" viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M33.5 17.0625H34.5V16.0625H33.5V17.0625ZM33.5 31.0625V32.0625H34.5V31.0625H33.5ZM15.5 31.0625H14.5V32.0625H15.5V31.0625ZM15.5 17.0625V16.0625H14.5V17.0625H15.5ZM24.5 25.0625L24.0528 25.9569L24.5 26.1805L24.9472 25.9569L24.5 25.0625ZM32.5 17.0625V31.0625H34.5V17.0625H32.5ZM33.5 30.0625H15.5V32.0625H33.5V30.0625ZM16.5 31.0625V17.0625H14.5V31.0625H16.5ZM15.5 18.0625H33.5V16.0625H15.5V18.0625ZM24.9472 24.1681L16.2354 19.8122L15.341 21.601L24.0528 25.9569L24.9472 24.1681ZM32.7646 19.8122L24.0528 24.1681L24.9472 25.9569L33.6591 21.601L32.7646 19.8122Z" fill="currentColor"></path></svg>',
@@ -36,86 +39,86 @@ const salesFeaturesProps = {
 }
 
 const provenDesignProps = {
-  title: 'Reach more customers with automated marketing',
+  title: t('product_marketing.proven_design.title'),
   cards: [
     {
       src: '/images/product/market/product_market_2_1.jpg',
       imgClass: 'w-full h-full rounded-[24px] lg:rounded-[32px] object-contain object-top',
-      alt: 'Proven marketing',
+      alt: t('product_marketing.proven_design.cards.0.alt'),
       wrapperClass: 'flex flex-col items-center justify-end',
       textWrapperClass: 'w-[65%] relative',
       textColorClass: 'text-black',
-      label: 'Proven marketing',
+      label: t('product_marketing.proven_design.cards.0.label'),
       headingClass: 'text-[24px] md:text-[26px] lg:text-[30px]',
-      heading: 'Boost sales with smart, automated campaigns.'
+      heading: t('product_marketing.proven_design.cards.0.heading')
     },
     {
       src: '/images/product/market/product_market_2_2.jpg',
       imgClass: 'w-full h-full rounded-[24px] lg:rounded-[32px] object-contain object-right-bottom',
-      alt: 'Own customer data',
+      alt: t('product_marketing.proven_design.cards.1.alt'),
       wrapperClass: '',
       textWrapperClass: 'w-full relative',
       textColorClass: 'text-black',
-      label: 'Own customer data',
+      label: t('product_marketing.proven_design.cards.1.label'),
       headingClass: 'text-[22px] md:text-[26px] lg:text-[28px]',
-      heading: 'Your orders, your data. Grow your list, grow your sales.'
+      heading: t('product_marketing.proven_design.cards.1.heading')
     },
     {
       src: '/images/product/market/product_market_2_3.jpg',
       imgClass: 'w-full h-full object-cover rounded-[24px] lg:rounded-[32px]',
-      alt: 'AI marketing',
+      alt: t('product_marketing.proven_design.cards.2.alt'),
       wrapperClass: 'flex flex-col justify-end',
       textWrapperClass: 'w-full relative',
       textColorClass: 'text-black',
-      label: 'AI marketing',
+      label: t('product_marketing.proven_design.cards.2.label'),
       headingClass: 'text-[22px] md:text-[26px] lg:text-[28px]',
-      heading: 'Write emails instantly with AI.'
+      heading: t('product_marketing.proven_design.cards.2.heading')
     }
   ]
 }
 
 const faqsProps = {
-  title: 'FAQs',
+  title: t('product_marketing.faqs.title'),
   faqs: [
-    { question: 'What are some examples of your proven campaigns?', answer: `<article class="ctx-article p-5 text-base text-[#171F1F]"><div><p>We automate campaigns that we know drive sales. For example, 'abandoned cart' emails. When a customer adds food to their cart but doesn't complete their order, we'll send them an email or text to come back.<br><br>This is a best practice in eCommerce, and it works great for online ordering too.<br><br>Another example is holiday email campaigns. For example, we'll send a Mother's Day email with a limited-time coupon code.<br><br>Since these types of emails work across all restaurants, we've automated them for you. You'll grow sales without having to write dozens of email or text blast campaigns.</p></div></article>` },
-    { question: 'Can I run my own marketing campaigns?', answer: `<article class="ctx-article p-5 text-base text-[#171F1F]"><div><p>Absolutely. You can use our pre-built marketing campaigns, or you can build your own. It’s easy to send your own emails, and we make it easier with our AI writing assistant.</p></div></article>` },
-    { question: 'Should I stop using third party apps?', answer: `<article class="ctx-article p-5 text-base text-[#171F1F]"><div><p>Many of our customers stay on the apps, as they can be a good way to get new customers.<br><br>We'll help you to convert those customers to order directly from you, using your new online ordering system.</p></div></article>` }
+    { question: t('product_marketing.faqs.items.0.question'), answer: t('product_marketing.faqs.items.0.answer_html') },
+    { question: t('product_marketing.faqs.items.1.question'), answer: t('product_marketing.faqs.items.1.answer_html') },
+    { question: t('product_marketing.faqs.items.2.question'), answer: t('product_marketing.faqs.items.2.answer_html') }
   ],
   sideCard: {
     imageSrc: '/images/product/market/faq_manager_4.jpg',
-    imageAlt: 'Manager',
-    quote: 'Now that we’ve used WeFood for 1 year, I can say confidently that it is the best technology in our restaurant.',
-    name: 'Phillip Hang',
-    role: "WeFood of Sushi Me Roll'n"
+    imageAlt: t('product_marketing.faqs.side_card.image_alt'),
+    quote: t('product_marketing.faqs.side_card.quote'),
+    name: t('product_marketing.faqs.side_card.name'),
+    role: t('product_marketing.faqs.side_card.role')
   }
 }
 
 const testimonialProps = {
   imageSrc: '/images/product/market/in_how_1.jpg',
-  imageAlt: 'Customer story',
-  headline: 'How Samos Oaxaca increased direct online sales to $10,000/m by using WeFood.com',
+  imageAlt: t('product_marketing.testimonial.image_alt'),
+  headline: t('product_marketing.testimonial.headline'),
   metrics: [
-    { value: '+$150,000', label: 'Online sales' },
-    { value: '+377%', label: 'Growth' }
+    { value: '+$150,000', label: t('product_marketing.testimonial.metrics.online_sales') },
+    { value: '+377%', label: t('product_marketing.testimonial.metrics.growth') }
   ]
 }
 
 const guidesProps = {
-  sectionTitle: 'Grow your customer base with our marketing guides',
+  sectionTitle: t('product_marketing.guides.section_title'),
   blogHref: '/resources/blog',
   mainVideoSrc: '/images/product/market/new_video_2.mp4',
-  mainVideoTitle: 'How A.I. Will Transform Your Restaurant',
+  mainVideoTitle: t('product_marketing.guides.main_video_title'),
   sideImageSrc: '/images/product/market/product_market_3_2.jpg',
-  sideImageAlt: 'Guide side card',
-  sideImageTitle: 'The 8 Money-Making Email Campaigns Every Restaurant Must Send'
+  sideImageAlt: t('product_marketing.guides.side_image_alt'),
+  sideImageTitle: t('product_marketing.guides.side_image_title')
 }
 
 const orderingCtaProps = {
-  title: 'See what restaurant WeFood say about WeFood',
+  title: t('product_marketing.ordering_cta.title'),
   imageSrc: '/images/product/market/product_market_4_1.jpg',
   linkTo: '/resources/case',
-  cardTitle: 'WeFood stories',
-  cardDescription: 'See how WeFood helped these restaurants grow online'
+  cardTitle: t('product_marketing.ordering_cta.card_title'),
+  cardDescription: t('product_marketing.ordering_cta.card_desc')
 }
 </script>
 

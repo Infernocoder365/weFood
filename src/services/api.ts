@@ -1,6 +1,8 @@
 /* Centralized API service using native fetch (no extra deps) */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
+import { useAuthStore } from "@/stores/auth"
+
 const BASE_URL = 'https://test-amidnac.roomertravel-ai.com'
 const DEFAULT_LANG = 'en'
 
@@ -44,9 +46,21 @@ async function request<T = any>(path: string, options: RequestInit & { lang?: st
   }
 
   if (json.code !== 0) {
+    if (json.code == 302) {
+      useAuthStore().logout();
+    }
     const msg = json.info || 'Request failed'
     throw new Error(msg)
   }
+
+  // // Check if data is a JSON object and parse it if necessary
+  // if (json.data && typeof json.data === 'string') {
+  //   try {
+  //     json.data = JSON.parse(json.data);
+  //   } catch (e) {
+  //     console.warn(`Failed to parse json.data from ${path}: ${json.data}`);
+  //   }
+  // }
 
   return json
 }
@@ -83,6 +97,7 @@ export const MyAPI = {
     request('/myapi/my/change_pay_pwd', { method: 'POST', body: JSON.stringify(withAuth({ oldpwd, newpwd })) }),
 
   cashlog: (page = 1) => request('/myapi/my/cashlog', { method: 'POST', body: JSON.stringify(withAuth({ page })) }),
+  FinancialLog: (page = 1) => request('/myapi/my/financial_records', { method: 'POST', body: JSON.stringify(withAuth({ page })) }),
 }
 
 // Wallets
@@ -95,7 +110,7 @@ export const WalletAPI = {
     const params = new URLSearchParams({ type: String(type) })
     if (userid) params.set('userid', String(userid))
     if (token) params.set('token', String(token))
-    return request(`/myapi/my/get_wallet_list?${params.toString()}`, { method: 'GET' })
+    return request(`/myapi/my/get_wallet_list?${params.toString()}`, { method: 'POST' })
   },
 
   deleteWallet: (wallet_id: string) =>
@@ -110,7 +125,7 @@ export const OrderAPI = {
       body: JSON.stringify(withAuth(payload)),
     }),
 
-  orderList: (page = 1, type = 0) =>
+  orderList: (page = 1, type = 'all') =>
     request('/myapi/order/order_list', { method: 'POST', body: JSON.stringify(withAuth({ page, type })) }),
 
   orderInfo: (id: string | number) =>
@@ -122,8 +137,8 @@ export const OrderAPI = {
 
 // Finance
 export const FinanceAPI = {
-  doDeposit: (data: { type: 'usdt' | 'card'; num: number; paypassword: string }) =>
-    request('/myapi/ctrl/do_deposit', { method: 'POST', body: JSON.stringify(withAuth({ data })) }),
+  withdraw: (data: { wallet_id: string, type: 'usdt' | 'card'; num: number; paypassword: string }) =>
+    request('/myapi/ctrl/withdraw', { method: 'POST', body: JSON.stringify(withAuth({ data })) }),
 }
 
 // File upload (multipart/form-data)

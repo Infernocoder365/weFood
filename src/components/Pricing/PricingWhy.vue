@@ -1,14 +1,17 @@
-<script setup lang="ts">
+<script setup>
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t, tm } = useI18n()
+const cards = computed(() => tm('pricing.why.cards') ?? [])
 </script>
 
 <template>
   <section class="pt-32 md:pt-40 lg:pb-20 px-ctx md:px-14">
             <div class="w-full max-w-wrap mx-auto">
               <div class="mb-14 text-center">
-                <h3 class="max-w-[650px] mx-auto mb-6 text-[36px] lg:text-[44px] font-medium leading-tight"><span>Join
-                    thousands of restaurants switching to WeFood</span></h3>
-                <p class="max-w-[650px] mx-auto text-xd text-gray-deep"><span>Here’s why restaurants choose WeFood to
-                    grow faster online</span></p>
+                <h3 class="max-w-[650px] mx-auto mb-6 text-[36px] lg:text-[44px] font-medium leading-tight"><span>{{ $t('pricing.why.title') }}</span></h3>
+                <p class="max-w-[650px] mx-auto text-xd text-gray-deep"><span>{{ $t('pricing.why.subtitle') }}</span></p>
               </div>
               <ul class="grid grid-cols-4 gap-2">
                 <li class="lg:col-span-2 lg:row-span-2 col-span-4">
@@ -16,7 +19,7 @@
                     class="w-full h-full p-5 bg-default text-default rounded-[24px] grid grid-cols-1 gap-10 place-content-between">
                     <div class="col-span-1 flex">
                       <div class="flex-grow">
-                        <h5 class="max-w-[240px] text-xl font-medium"><span>One package with everything you need</span>
+                        <h5 class="max-w-[240px] text-xl font-medium"><span>{{ cards[0]?.title }}</span>
                         </h5>
                       </div><em class="w-12 h-12 ml-4 bg-minor/20 text-minor rounded-full flex shrink-0"><svg
                           width="100%" height="100%" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -39,10 +42,7 @@
                         </svg></em>
                     </div>
                     <div class="col-span-1">
-                      <p class="text-gray-deep text-base font-medium"><span>With WeFood, you get all the tools you need
-                          to grow from day one. Our happiest and most successful customers switched to WeFood from
-                          another solution. They were paying less, but weren’t getting the online sales growth they were
-                          looking for.</span></p>
+                      <p class="text-gray-deep text-base font-medium"><span>{{ cards[0]?.desc }}</span></p>
                     </div>
                   </div>
                 </li>
@@ -51,7 +51,7 @@
                     class="w-full h-full p-5 bg-default text-default rounded-[24px] grid grid-cols-1 gap-10 place-content-between">
                     <div class="col-span-1 flex">
                       <div class="flex-grow">
-                        <h5 class="max-w-[240px] text-xl font-medium"><span>Month to month pricing</span></h5>
+                        <h5 class="max-w-[240px] text-xl font-medium"><span>{{ cards[1]?.title }}</span></h5>
                       </div><em class="w-12 h-12 ml-4 bg-minor/20 text-minor rounded-full flex shrink-0"><svg
                           width="100%" height="100%" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path
@@ -63,8 +63,7 @@
                         </svg></em>
                     </div>
                     <div class="col-span-1">
-                      <p class="text-gray-deep text-base font-medium"><span>Month-to-month. No long-term contracts. No
-                          cancellation fees. Just pay a flat rate to get everything on the WeFood platform.</span></p>
+                      <p class="text-gray-deep text-base font-medium"><span>{{ cards[1]?.desc }}</span></p>
                     </div>
                   </div>
                 </li>
@@ -73,7 +72,7 @@
                     class="w-full h-full p-5 bg-default text-default rounded-[24px] grid grid-cols-1 gap-10 place-content-between">
                     <div class="col-span-1 flex">
                       <div class="flex-grow">
-                        <h5 class="max-w-[240px] text-xl font-medium"><span>No upgrades or upsells</span></h5>
+                        <h5 class="max-w-[240px] text-xl font-medium"><span>{{ cards[2]?.title }}</span></h5>
                       </div><em class="w-12 h-12 ml-4 bg-minor/20 text-minor rounded-full flex shrink-0"><svg
                           width="100%" height="100%" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path
@@ -83,8 +82,7 @@
                         </svg></em>
                     </div>
                     <div class="col-span-1">
-                      <p class="text-gray-deep text-base font-medium"><span>There’s no upgrades or upsells. We give you
-                          everything you need to grow online.</span></p>
+                      <p class="text-gray-deep text-base font-medium"><span>{{ cards[2]?.desc }}</span></p>
                     </div>
                   </div>
                 </li>
@@ -93,7 +91,7 @@
                     class="w-full h-full p-5 bg-default text-default rounded-[24px] grid grid-cols-1 gap-10 place-content-between">
                     <div class="col-span-1 flex">
                       <div class="flex-grow">
-                        <h5 class="max-w-[240px] text-xl font-medium"><span>24/7 USA support</span></h5>
+                        <h5 class="max-w-[240px] text-xl font-medium"><span>{{ cards[3]?.title }}</span></h5>
                       </div><em class="w-12 h-12 ml-4 bg-minor/20 text-minor rounded-full flex shrink-0"><svg
                           width="100%" height="100%" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path
@@ -102,8 +100,7 @@
                         </svg></em>
                     </div>
                     <div class="col-span-1">
-                      <p class="text-gray-deep text-base font-medium"><span>Work with a world-class team. You'll have
-                          24/7, USA-based support.</span></p>
+                      <p class="text-gray-deep text-base font-medium"><span>{{ cards[3]?.desc }}</span></p>
                     </div>
                   </div>
                 </li>

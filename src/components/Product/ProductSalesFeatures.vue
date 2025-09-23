@@ -1,15 +1,25 @@
-<script setup lang="ts">
-const props = withDefaults(defineProps<{
-  title: string
-  leftImageSrc: string
-  leftImageAlt: string
-  features: { title: string; description: string }[]
-  icons: string[]
-}>(), {
-  title: "Get more sales from your restaurant's website",
-  leftImageSrc: "/images/product/product/product_pro_1.jpg",
-  leftImageAlt: "Website preview",
-  features: () => [
+<script setup>
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const props = defineProps({
+  title: String,
+  leftImageSrc: String,
+  leftImageAlt: String,
+  features: Array,
+  icons: Array
+})
+
+const { t, tm } = useI18n()
+
+const titleText = computed(() => props.title ?? (t('product.features.title') || "Get more sales from your restaurant's website"))
+const leftImageSrcData = computed(() => props.leftImageSrc ?? (t('product.features.image_src') || "/images/product/product/product_pro_1.jpg"))
+const leftImageAltData = computed(() => props.leftImageAlt ?? (t('product.features.image_alt') || "Website preview"))
+
+const featuresData = computed(() => {
+  if (props.features) return props.features
+  const i18nFeatures = tm('product.features.features') 
+  return i18nFeatures.length ? i18nFeatures : [
     {
       title: 'We build websites that Google loves',
       description: 'AI-optimized websites that boost your SEO and get you more Google traffic.'
@@ -22,8 +32,13 @@ const props = withDefaults(defineProps<{
       title: 'Your new website in days, not months',
       description: "Add your branding to our proven design, then you're ready to grow online."
     }
-  ],
-  icons: () => [
+  ]
+})
+
+const iconsData = computed(() => {
+  if (props.icons) return props.icons
+  const i18nIcons = tm('product.features.icons')
+  return i18nIcons.length ? i18nIcons : [
     `<svg width="100%" height="100%" viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M21.5 25.5L23.5 27.25L27 22.25M21.5 17.5L24.5 14.5L27.5 17.5H31.5V21.5L34.5 24.5L31.5 27.5V31.5H27.5L24.5 34.5L21.5 31.5H17.5V27.5L14.5 24.5L17.5 21.5V17.5H21.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="square"></path>
     </svg>`,
@@ -43,20 +58,20 @@ const props = withDefaults(defineProps<{
   <section class="pt-16 pb-10 lg:pt-24 lg:pb-32 px-4 md:px-[5%] rounded-3xl md:rounded-[48px] bg-white">
     <div class="w-full max-w-6xl mx-auto">
       <h3 class="w-full md:w-[600px] max-w-full mx-auto mb-12 lg:mb-20 text-[28px] md:text-[38px] lg:text-[48px] text-center font-medium leading-none">
-        <span>{{ props.title }}</span>
+        <span>{{ titleText }}</span>
       </h3>
       <dl class="grid grid-cols-2 gap-10 place-items-center">
         <dt class="col-span-2 lg:col-span-1 flex justify-center lg:justify-start">
           <div class="w-[530px] max-w-full">
-            <img class="w-full h-auto rounded-[24px]" :src="props.leftImageSrc" :alt="props.leftImageAlt" />
+            <img class="w-full h-auto rounded-[24px]" :src="leftImageSrcData" :alt="leftImageAltData" />
           </div>
         </dt>
         <dd class="col-span-2 lg:col-span-1">
           <ul class="grid grid-cols-1 gap-10">
             <!-- Render features dynamically and use icons from params -->
-            <li v-for="(feature, idx) in props.features" :key="idx" class="col-span-1 flex">
+            <li v-for="(feature, idx) in featuresData" :key="idx" class="col-span-1 flex">
               <em class="w-12 h-12 mr-3 bg-[#ebebeb] rounded-lg flex shrink-0 items-center justify-center" aria-hidden="true">
-                <span v-html="props.icons[idx]"></span>
+                <span v-html="iconsData[idx]"></span>
               </em>
               <div class="flex-1 overflow-hidden">
                 <h5 class="text-2xl font-medium">{{ feature.title }}</h5>

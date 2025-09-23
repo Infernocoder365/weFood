@@ -3,10 +3,10 @@
         <div class="w-full max-w-wrap mx-auto">
           <div class="mb-10 lg:mb-24 text-center flex flex-col items-center">
             <h3 class="w-[450px] max-w-full mb-3 lg:mb-4 text-[42px] lg:text-[56px] font-medium leading-none">
-              <span>How does WeFood compare?</span>
+              <span>{{ title }}</span>
         </h3>
         <p class="w-[500px] max-w-full text-base text-gray-deep font-medium">
-              <span>There's a lot of restaurant tech out there. We know that choosing the right partners is an important choice. We want you to help you choose what's best for your restaurant, even if it’s not us.</span>
+              <span>{{ subtitle }}</span>
         </p>
       </div>
       <ul class="grid grid-cols-12 gap-6">
@@ -15,7 +15,7 @@
             <img :src="item.icon" class="w-14 h-14 object-contain rounded-xl" />
           </em>
           <div class="flex-1 overflow-hidden">
-            <p class="text-xd text-gray-default"><span>WeFood vs</span></p>
+            <p class="text-xd text-gray-default"><span>{{ vsText }}</span></p>
             <h5 class="text-xl font-medium"><span>{{ item.name }}</span></h5>
           </div>
         </li>
@@ -24,7 +24,17 @@
   </section>
 </template>
 <script setup lang="ts">
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+
 interface CompareItem { name: string; icon: string }
+const { t } = useI18n()
+const tr = (key: string, fallback: string) => { const v = t(key); return v === key ? fallback : String(v) }
+
+const title = computed(() => tr('resources.owner.compare.title', 'How does WeFood compare?'))
+const subtitle = computed(() => tr('resources.owner.compare.subtitle', "There's a lot of restaurant tech out there. We know that choosing the right partners is an important choice. We want you to help you choose what's best for your restaurant, even if it’s not us."))
+const vsText = computed(() => tr('resources.owner.compare.vs', 'WeFood vs'))
+
 const base = '/images/resources/owner/'
 const items: CompareItem[] = [
   { name: 'BentoBox', icon: base + 'resources_owner_1_1.svg' },

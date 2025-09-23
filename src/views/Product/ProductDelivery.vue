@@ -6,27 +6,30 @@ import ProductFAQs from '@/components/Product/ProductFAQs.vue'
 import ProductTestimonial from '@/components/Product/ProductTestimonial.vue'
 import ProductGuides from '@/components/Product/ProductGuides.vue'
 import ProductOrderingCTA from '@/components/Product/ProductOrderingCTA.vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 const heroProps = {
-  title: 'Profitable delivery and a great guest experience.',
-  description: 'Get food to your customers on time, by top-rated drivers, at a fair price.',
-  primaryCtaText: 'Get Started',
+  title: t('product_delivery.hero.title'),
+  description: t('product_delivery.hero.description'),
+  primaryCtaText: t('actions.get_started'),
   primaryCtaHref: '/dashboard',
-  secondaryCtaText: 'View Pricing',
+  secondaryCtaText: t('actions.view_pricing'),
   secondaryCtaHref: '/pricing',
   videoSrc: '/images/product/delivery/video_3.mp4',
   videoPoster: '/images/product/delivery/video_3.jpg',
-  overlayText: 'See why Gia from The Modern Vegan loves working with WeFood for delivery'
+  overlayText: t('product_delivery.hero.overlay_text')
 }
 
 const salesFeaturesProps = {
-  title: "Delivery that's better for you and your guests",
+  title: t("product_delivery.sales_features.title"),
   leftImageSrc: '/images/product/delivery/product_delivery_1.jpg',
-  leftImageAlt: 'Delivery hero image',
+  leftImageAlt: t('product_delivery.sales_features.left_image_alt'),
   features: [
-    { title: 'Pay a flat rate for delivery', description: 'Use third-party drivers at fixed rates. Guests pay delivery on small orders, you chip in for larger ones.' },
-    { title: 'Get the best drivers, commission free', description: 'We only use drivers rated 4.5 stars or higher to deliver your food.' },
-    { title: 'A direct line to your customers', description: "You can call customers directly. We'll cover refunds for any delivery issues." }
+    { title: t('product_delivery.sales_features.features.0.title'), description: t('product_delivery.sales_features.features.0.desc') },
+    { title: t('product_delivery.sales_features.features.1.title'), description: t('product_delivery.sales_features.features.1.desc') },
+    { title: t('product_delivery.sales_features.features.2.title'), description: t('product_delivery.sales_features.features.2.desc') }
   ],
   icons: [
     `<svg width="100%" height="100%" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_3040_23709)"><path d="M35.2314 23.9999C35.4016 24.2941 35.499 24.6356 35.499 24.9999C35.499 26.1045 34.6035 26.9999 33.499 26.9999C33.0646 26.9999 32.6625 26.8614 32.3346 26.6262M32.3346 26.6262C32.2385 26.5573 32.1487 26.4801 32.0664 26.3956L32.3346 26.6262ZM21 22.75C21 22.8881 20.8881 23 20.75 23M21 22.75C21 22.6119 20.8881 22.5 20.75 22.5M21 22.75H20.5M20.75 23C20.6119 23 20.5 22.8881 20.5 22.75M20.75 23V22.5M20.5 22.75C20.5 22.6119 20.6119 22.5 20.75 22.5M20.9665 22.625C21.0356 22.7446 20.9946 22.8974 20.875 22.9665M20.9665 22.625C20.8975 22.5054 20.7446 22.4644 20.625 22.5335M20.9665 22.625L20.5335 22.875M20.875 22.9665C20.7555 23.0355 20.6026 22.9946 20.5335 22.875M20.875 22.9665L20.625 22.5335M20.5335 22.875C20.4645 22.7554 20.5055 22.6025 20.625 22.5335M20.8751 22.5335C20.9947 22.6025 21.0356 22.7554 20.9666 22.875M20.8751 22.5335C20.7555 22.4645 20.6026 22.5054 20.5336 22.625M20.8751 22.5335L20.6251 22.9665M20.9666 22.875C20.8976 22.9946 20.7447 23.0355 20.6251 22.9665M20.9666 22.875L20.5336 22.625M20.6251 22.9665C20.5055 22.8975 20.4645 22.7446 20.5336 22.625M18 19.4999V16.9999C18 16.4476 18.4517 15.9885 18.9964 16.0797C21.2202 16.4521 21.974 17.9999 21.974 17.9999H26.5C29.814 17.9999 32.5 20.6859 32.5 23.9999C32.5 25.7749 31.725 27.3639 30.5 28.4629V30.9999C30.5 31.5522 30.0523 31.9999 29.5 31.9999H27.5C26.9477 31.9999 26.5 31.5522 26.5 30.9999C26.5 30.4477 26.0523 29.9999 25.5 29.9999H23.5C22.9477 29.9999 22.5 30.4477 22.5 30.9999C22.5 31.5522 22.0523 31.9999 21.5 31.9999H19.5C18.9477 31.9999 18.5 31.5522 18.5 30.9999V28.9999C17.594 28.4729 17.025 27.9079 16.5 26.9999H15.5C14.9477 26.9999 14.5 26.5522 14.5 25.9999V22.9349C14.5 22.3827 14.9477 21.9349 15.5 21.9349H16.5C16.838 21.0099 17.282 20.1479 18 19.4999Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g></svg>`,
@@ -36,86 +39,86 @@ const salesFeaturesProps = {
 }
 
 const provenDesignProps = {
-  title: 'Third-party delivery, no third-party commissions',
+  title: t('product_delivery.proven_design.title'),
   cards: [
     {
       src: '/images/product/delivery/product_delivery_2_1.png',
       imgClass: 'w-full h-full rounded-[24px] lg:rounded-[32px] object-contain object-top',
-      alt: 'Third party drivers',
+      alt: t('product_delivery.proven_design.cards.0.alt'),
       wrapperClass: 'flex flex-col items-center justify-end',
       textWrapperClass: 'w-[65%] relative',
       textColorClass: 'text-black',
-      label: 'Third party drivers',
+      label: t('product_delivery.proven_design.cards.0.label'),
       headingClass: 'text-[24px] md:text-[26px] lg:text-[30px]',
-      heading: 'Top third-party drivers deliver for you. One flat fee. No markup from us.'
+      heading: t('product_delivery.proven_design.cards.0.heading')
     },
     {
       src: '/images/product/delivery/product_delivery_2_2.jpg',
       imgClass: 'w-full h-full rounded-[24px] lg:rounded-[32px] object-contain object-right-bottom',
-      alt: 'Control delivery options',
+      alt: t('product_delivery.proven_design.cards.1.alt'),
       wrapperClass: '',
       textWrapperClass: 'w-full relative',
       textColorClass: 'text-black',
-      label: 'Control delivery options',
+      label: t('product_delivery.proven_design.cards.1.label'),
       headingClass: 'text-[22px] md:text-[26px] lg:text-[28px]',
-      heading: 'Use your in-house delivery drivers, third-party, or both.'
+      heading: t('product_delivery.proven_design.cards.1.heading')
     },
     {
       src: '/images/product/delivery/product_delivery_2_3.jpg',
       imgClass: 'w-full h-full object-cover rounded-[24px] lg:rounded-[32px]',
-      alt: 'Better for your guests',
+      alt: t('product_delivery.proven_design.cards.2.alt'),
       wrapperClass: 'flex flex-col justify-end',
       textWrapperClass: 'w-full relative',
       textColorClass: 'text-black',
-      label: 'Better for your guests',
+      label: t('product_delivery.proven_design.cards.2.label'),
       headingClass: 'text-[22px] md:text-[26px] lg:text-[28px]',
-      heading: "Call your customers if needed. We'll pay for any delivery problems."
+      heading: t('product_delivery.proven_design.cards.2.heading')
     }
   ]
 }
 
 const faqsProps = {
-  title: 'FAQs',
+  title: t('product_delivery.faqs.title'),
   faqs: [
-    { question: 'Why would customers order from my app instead of the third parties?', answer: `<article class="ctx-article p-5 text-base text-[#171F1F]"><div><p>First, it’s cheaper for them. You may be marking up your prices on the<br>delivery apps in order to cover their commissions. There are also sometimes platform<br>fees and delivery fees that can inflate their order total.<br><br>Second, you can<br>incentivize them with a rewards program. With WeFood, you can reward them with a<br>points-based loyalty program, giving away low food cost items like mozzarella sticks and<br>fries every few orders to reward people for ordering directly.<br><br>Finally,<br>supporting local. Customers know how unfair the third party delivery apps are to<br>restaurants, so when we give them a way that’s just as easy to support you while still<br>getting delivery, they take us up on it.</p></div></article>` },
-    { question: 'Who pays for delivery, the guest or the restaurant?', answer: `<article class="ctx-article p-5 text-base text-[#171F1F]"><div><p>For orders under $30, you can let the guest pay for delivery. You may<br>consider covering some of the cost to get more orders.<br><br>For orders over $30, you<br>should cover about $3 in delivery fees. Our research shows that you get the most orders<br>when customers pay a maximum of $3.99 in delivery.<br><br>Doing this can encourage your<br>customers to increase their order size. <br><br>Cheaper delivery for them, more sales<br>for you.</p></div></article>` },
-    { question: 'Why would the third-party apps go for this?', answer: `<article class="ctx-article p-5 text-base text-[#171F1F]"><div><p>We negotiated in bulk with our thousands of restaurants to get the best<br>possible deal. Even though the third parties make less revenue on these orders, they<br>make more profit on each order because they don’t have to spend money to get people to<br>use their apps. <br><br>They charge us about $7 to help you offer delivery, which we<br>charge directly to you at no markup from us. But to the third parties, this is almost<br>pure profit for them. It helps keep their drivers more busy and active on their<br>platform.</p></div></article>` }
+    { question: t('product_delivery.faqs.items.0.question'), answer: t('product_delivery.faqs.items.0.answer_html') },
+    { question: t('product_delivery.faqs.items.1.question'), answer: t('product_delivery.faqs.items.1.answer_html') },
+    { question: t('product_delivery.faqs.items.2.question'), answer: t('product_delivery.faqs.items.2.answer_html') }
   ],
   sideCard: {
     imageSrc: '/images/product/delivery/faq_manager_5.jpg',
-    imageAlt: 'Manager',
-    quote: 'There’s not a week that goes by where I don’t hear from our guests how much they love our website and app because it makes their experience so much easier.',
-    name: 'Rahul Bhatia',
-    role: 'WeFood of Saffron Indian Kitchen'
+    imageAlt: t('product_delivery.faqs.side_card.image_alt'),
+    quote: t('product_delivery.faqs.side_card.quote'),
+    name: t('product_delivery.faqs.side_card.name'),
+    role: t('product_delivery.faqs.side_card.role')
   }
 }
 
 const testimonialProps = {
   imageSrc: '/images/product/delivery/in_how_1.jpg',
-  imageAlt: 'Customer story',
-  headline: 'How Samos Oaxaca increased direct online sales to $10,000/m by using WeFood.com',
+  imageAlt: t('product_delivery.testimonial.image_alt'),
+  headline: t('product_delivery.testimonial.headline'),
   metrics: [
-    { value: '+$150,000', label: 'Online sales' },
-    { value: '+377%', label: 'Growth' }
+    { value: '+$150,000', label: t('product_delivery.testimonial.metrics.online_sales') },
+    { value: '+377%', label: t('product_delivery.testimonial.metrics.growth') }
   ]
 }
 
 const guidesProps = {
-  sectionTitle: 'See our guides on getting more delivery orders',
+  sectionTitle: t('product_delivery.guides.section_title'),
   blogHref: '/resources/blog',
   mainVideoSrc: '/images/product/delivery/new_video_2.mp4',
-  mainVideoTitle: 'Get More Delivery Orders (Without Paying More Commissions)',
+  mainVideoTitle: t('product_delivery.guides.main_video_title'),
   sideImageSrc: '/images/product/delivery/product_delivery_3_2.jpg',
-  sideImageAlt: 'Guide side card',
-  sideImageTitle: 'Get More Delivery Orders (Without Paying More Commissions)'
+  sideImageAlt: t('product_delivery.guides.side_image_alt'),
+  sideImageTitle: t('product_delivery.guides.side_image_title')
 }
 
 const orderingCtaProps = {
-  title: 'Grow re-orders with a mobile app',
+  title: t('product_delivery.ordering_cta.title'),
   imageSrc: '/images/product/delivery/product_delivery_4_1.jpg',
   linkTo: '/product/branded',
-  cardTitle: 'Your own mobile app',
-  cardDescription: 'WeFood grows your repeat orders with your branded mobile app'
+  cardTitle: t('product_delivery.ordering_cta.card_title'),
+  cardDescription: t('product_delivery.ordering_cta.card_desc')
 }
 </script>
 

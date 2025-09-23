@@ -16,7 +16,7 @@
                     <p class="text-xl">{{ review.content }}</p>
                   </template>
                   <template v-else>
-                    <div v-for="stat in review.stats" :key="stat.label">
+                    <div v-for="(stat, i) in review.stats" :key="i">
                       <p class="text-[28px] lg:text-[32px]">{{ stat.value }}</p>
                       <p class="text-gray-600">{{ stat.label }}</p>
                     </div>
@@ -36,57 +36,30 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 
-const reviewCards = ref([
-  {
-    id: 1,
-    type: 'testimonial',
-    content: 'WeFood is a must-have for succeeding online as an independent restaurant today.',
-    author: 'John',
-    position: 'WeFood at Metro Pizza',
-    image: '/images/home/home_review_1.jpg',
-    alt: 'Metro Pizza review',
-    bgColor: 'bg-purple-100'
-  },
-  {
-    id: 2,
-    type: 'stats',
-    stats: [
-      { value: '+$104,000', label: 'Sales growth after switching to WeFood' },
-      { value: '$31,000', label: 'Installs of their new mobile app, created with WeFood' }
-    ],
-    author: 'Sandy Sei',
-    position: 'WeFood of Cyclo Noodles',
-    image: '/images/home/home_review_2.jpg',
-    alt: 'Cyclo Noodles review',
-    bgColor: 'bg-orange-100'
-  },
-  {
-    id: 3,
-    type: 'testimonial',
-    content: 'Now that we\'ve used WeFood for 1 year, I can say confidently that it is the best technology in our restaurant.',
-    author: 'Phillip Hang',
-    position: 'WeFood of Sushi Me Roll\'n',
-    image: '/images/home/home_review_3.jpg',
-    alt: 'Sushi Me Roll\'n review',
-    bgColor: 'bg-gray-100'
-  },
-  {
-    id: 4,
-    type: 'stats',
-    stats: [
-      { value: '+$7,000,000', label: 'In direct online sales' },
-      { value: '+970%', label: 'Growth' },
-      { value: '$435,000', label: 'Savings' }
-    ],
-    author: 'Mo and Omar',
-    position: 'WeFood of Talkin Tacos',
-    image: '/images/home/home_review_4.jpg',
-    alt: 'Talkin Tacos review',
-    bgColor: 'bg-purple-100'
-  }
-])
+const { tm } = useI18n()
+
+const reviewCards = computed(() => {
+  const items = tm('home.customer_reviews.cards') as any[]
+  // Map images/alt/bgColor in the same order as before
+  const visuals = [
+    { image: '/images/home/home_review_1.jpg', alt: 'Metro Pizza review', bgColor: 'bg-purple-100' },
+    { image: '/images/home/home_review_2.jpg', alt: 'Cyclo Noodles review', bgColor: 'bg-orange-100' },
+    { image: '/images/home/home_review_3.jpg', alt: "Sushi Me Roll'n review", bgColor: 'bg-gray-100' },
+    { image: '/images/home/home_review_4.jpg', alt: 'Talkin Tacos review', bgColor: 'bg-purple-100' },
+  ]
+  return (items || []).map((item, idx) => ({
+    id: idx + 1,
+    type: item.type,
+    content: item.content,
+    stats: item.stats,
+    author: item.author,
+    position: item.position,
+    ...visuals[idx]
+  }))
+})
 </script>
 
 <style scoped>

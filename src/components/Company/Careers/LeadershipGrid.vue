@@ -1,5 +1,9 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+
 interface Leader { name: string; title: string; image: string; logo?: string }
+
+const { t } = useI18n()
 
 const leaders: Leader[] = [
   { name: 'Kyle Norton', title: 'CRO', image: '/images/company/careers/company_careers_2_1.jpg', logo: '/images/company/careers/company_careers_2_logo1.svg' },
@@ -24,8 +28,8 @@ const leaders: Leader[] = [
   <section class="pt-14 pb-20 lg:pt-32 lg:pb-40 px-[5%]">
     <div class="w-full max-w-wrap mx-auto">
       <div class="w-[480px] max-w-full mx-auto mb-10 lg:mb-16">
-        <h3 class="mb-4 text-[38px] lg:text-[48px] text-center font-medium leading-none">Our leadership team</h3>
-        <p class="text-gray-deep text-center">Experienced leaders passionate about small business, with backgrounds from the best companies in the industry.</p>
+        <h3 class="mb-4 text-[38px] lg:text-[48px] text-center font-medium leading-none">{{ t('careers.leadership.title') }}</h3>
+        <p class="text-gray-deep text-center">{{ t('careers.leadership.description') }}</p>
       </div>
       <ul class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-2 gap-y-6">
         <li v-for="(p, idx) in leaders" :key="idx" class="col-span-1 bg-default text-default rounded-xl flex flex-col">

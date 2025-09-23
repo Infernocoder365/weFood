@@ -3,10 +3,10 @@
     <div class="w-full max-w-wrap mx-auto">
       <div class="flex flex-col items-center">
         <h2 class="w-[710px] max-w-full mb-6 text-[42px] lg:text-[56px] text-center font-medium leading-none">
-          <span>WeFood is trusted by thousands of restaurants</span>
+          <span>{{ title }}</span>
         </h2>
         <p class="w-[470px] max-w-full mb-8 text-base text-gray-deep text-center font-medium">
-          <span>Learn more about how restaurant WeFood have used our platform to maximize their success online. See the real numbers from real restaurants — before and after using WeFood.</span>
+          <span>{{ description }}</span>
         </p>
         <ul class="flex flex-wrap justify-center gap-2">
           <li class="max-w-[190px] py-2 pl-2 pr-3 bg-gray-body rounded-xl flex items-center gap-2">
@@ -27,7 +27,7 @@
                 </defs>
               </svg>
             </em>
-            <p class="text-xs"><span>Rated #1 Restaurant Marketing Software</span></p>
+            <p class="text-xs"><span>{{ badge1 }}</span></p>
           </li>
           <li class="max-w-[190px] py-2 pl-2 pr-3 bg-gray-body rounded-xl flex items-center gap-2">
             <em class="w-10 h-10 flex shrink-0">
@@ -44,13 +44,25 @@
                 </defs>
               </svg>
             </em>
-            <p class="text-xs"><span>Leader Position Summer 2024</span></p>
+            <p class="text-xs"><span>{{ badge2 }}</span></p>
           </li>
         </ul>
-        <p class="mt-6 text-xs text-minor font-medium"><span>Over 250 5-star reviews on G2 and Capterra</span></p>
+        <p class="mt-6 text-xs text-minor font-medium"><span>{{ reviewsNote }}</span></p>
       </div>
     </div>
   </section>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t, tm } = useI18n()
+const tr = (key: string, fallback: string) => { const v = t(key); return v === key ? fallback : v }
+
+const title = computed(() => tr('resources.case.hero.title', 'WeFood is trusted by thousands of restaurants'))
+const description = computed(() => tr('resources.case.hero.description', 'Learn more about how restaurant WeFood have used our platform to maximize their success online. See the real numbers from real restaurants — before and after using WeFood.'))
+const badge1 = computed(() => tr('resources.case.hero.badge1', '#1 Restaurant Marketing Software'))
+const badge2 = computed(() => tr('resources.case.hero.badge2', 'Leader Position Summer 2024'))
+const reviewsNote = computed(() => tr('resources.case.hero.reviewsNote', 'Over 250 5-star reviews on G2 and Capterra'))
+</script>

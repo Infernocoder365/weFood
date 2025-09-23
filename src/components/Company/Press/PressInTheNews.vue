@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+
 // Logo sources for the press strip
 const pressLogos: string[] = [
   '/images/company/press/company_press_1_logo1.svg',
@@ -11,6 +13,8 @@ const pressLogos: string[] = [
   '/images/company/press/company_press_1_logo8.svg',
   '/images/company/press/company_press_1_logo9.svg'
 ]
+
+const { t } = useI18n()
 </script>
 
 <template>
@@ -18,11 +22,11 @@ const pressLogos: string[] = [
     <div class="w-full max-w-wrap mx-auto">
       <div class="pt-32 pb-10 lg:pb-20 lg:pt-44 px-[5%] bg-default text-default rounded-b-[24px] lg:rounded-b-[48px]">
         <div class="mb-8 md:mb-24 lg:mb-32">
-          <h3 class="text-[42px] lg:text-[56px] font-medium leading-none">WeFood in the News</h3>
-          <p class="text-lg text-gray-default font-medium">See what others are saying about WeFood.</p>
+          <h3 class="text-[42px] lg:text-[56px] font-medium leading-none">{{ t('company.press_page.title') }}</h3>
+          <p class="text-lg text-gray-default font-medium">{{ t('company.press_page.subtitle') }}</p>
         </div>
         <dl class="flex flex-wrap items-center">
-          <dt class="w-full lg:w-auto mr-10 text-sm text-gray-deep shrink-0">As seen on</dt>
+          <dt class="w-full lg:w-auto mr-10 text-sm text-gray-deep shrink-0">{{ t('company.press_page.as_seen_on') }}</dt>
           <dd class="w-full lg:flex-1 overflow-hidden relative">
             <div class="h-10 flex items-center">
               <!-- v-for logo items -->

@@ -30,6 +30,9 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+
 interface Metric {
   label: string
   value: string
@@ -45,7 +48,7 @@ interface CaseItem {
 
 const base = "/images/resources/case/"
 
-const items: CaseItem[] = [
+const defaults: CaseItem[] = [
   {
     img: base + "resources_case_1_1.jpg",
     title: "How Metro Pizza increased direct online sales by $10,000/m by swapping ChowNow for WeFood",
@@ -168,4 +171,8 @@ const items: CaseItem[] = [
     role: "WeFood of The Modern Vegan",
   },
 ]
+
+const { tm } = useI18n()
+
+const items = computed<CaseItem[]>(() => (tm('resources.case.list.items') as any) ?? defaults)
 </script>

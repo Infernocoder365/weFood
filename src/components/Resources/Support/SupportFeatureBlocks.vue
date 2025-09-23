@@ -4,7 +4,7 @@
     <section class="py-20 lg:pt-32 lg:pb-40 px-[5%] mb-12 bg-gray-light rounded-3xl lg:rounded-[48px]">
       <div class="w-full max-w-wrap mx-auto">
         <h3 class="w-[580px] max-w-full mx-auto mb-12 lg:mb-20 text-[38px] lg:text-[48px] text-center font-medium leading-tight">
-          <span>Get great support, every step of the way</span>
+          <span>{{ block1.title }}</span>
         </h3>
         <dl class="flex flex-col lg:flex-row items-center gap-12">
           <dt class="lg:flex-1 flex">
@@ -26,8 +26,8 @@
                   </svg>
                 </em>
                 <div class="flex-1 overflow-hidden">
-                  <h5 class="mb-2 text-2xl font-medium"><span>We make setup a breeze</span></h5>
-                  <p class="text-sm text-gray-deep"><span>Together, we'll set up your online ordering to work perfectly with the rest of your business.</span></p>
+                  <h5 class="mb-2 text-2xl font-medium"><span>{{ block1.items[0].title }}</span></h5>
+                  <p class="text-sm text-gray-deep"><span>{{ block1.items[0].desc }}</span></p>
                 </div>
               </li>
               <li class="flex">
@@ -37,8 +37,8 @@
                   </svg>
                 </em>
                 <div class="flex-1 overflow-hidden">
-                  <h5 class="mb-2 text-2xl font-medium"><span>We're here to help</span></h5>
-                  <p class="text-sm text-gray-deep"><span>Need to add a modifier, update employee permissions or anything else? No problem. Contact us anytime.</span></p>
+                  <h5 class="mb-2 text-2xl font-medium"><span>{{ block1.items[1].title }}</span></h5>
+                  <p class="text-sm text-gray-deep"><span>{{ block1.items[1].desc }}</span></p>
                 </div>
               </li>
               <li class="flex">
@@ -48,8 +48,8 @@
                   </svg>
                 </em>
                 <div class="flex-1 overflow-hidden">
-                  <h5 class="mb-2 text-2xl font-medium"><span>Top-rated American support, available 24/7</span></h5>
-                  <p class="text-sm text-gray-deep"><span>We're always ready, whether it's the Saturday dinner rush or the break of dawn. You're 24/7, so we are too.</span></p>
+                  <h5 class="mb-2 text-2xl font-medium"><span>{{ block1.items[2].title }}</span></h5>
+                  <p class="text-sm text-gray-deep"><span>{{ block1.items[2].desc }}</span></p>
                 </div>
               </li>
             </ul>
@@ -62,7 +62,7 @@
     <section class="py-20 lg:pt-32 lg:pb-40 px-[5%] mb-12 bg-gray-light rounded-3xl lg:rounded-[48px]">
       <div class="w-full max-w-wrap mx-auto">
         <h3 class="w-[580px] max-w-full mx-auto mb-12 lg:mb-20 text-[38px] lg:text-[48px] text-center font-medium leading-tight">
-          <span>Keep things running smoothly with expert help</span>
+          <span>{{ block2.title }}</span>
         </h3>
         <dl class="flex flex-col lg:flex-row items-center gap-12">
           <dt class="lg:flex-1 flex">
@@ -77,8 +77,8 @@
                   </svg>
                 </em>
                 <div class="flex-1 overflow-hidden">
-                  <h5 class="mb-2 text-2xl font-medium"><span>We'll keep you updated</span></h5>
-                  <p class="text-sm text-gray-deep"><span>We're always improving our platform, and we'll make sure you have the latest and greatest features.</span></p>
+                  <h5 class="mb-2 text-2xl font-medium"><span>{{ block2.items[0].title }}</span></h5>
+                  <p class="text-sm text-gray-deep"><span>{{ block2.items[0].desc }}</span></p>
                 </div>
               </li>
               <li class="flex">
@@ -88,8 +88,8 @@
                   </svg>
                 </em>
                 <div class="flex-1 overflow-hidden">
-                  <h5 class="mb-2 text-2xl font-medium"><span>Get ideas from successful restaurants</span></h5>
-                  <p class="text-sm text-gray-deep"><span>Our team works with thousands of restaurants, so we'll share best practices for driving online sales.</span></p>
+                  <h5 class="mb-2 text-2xl font-medium"><span>{{ block2.items[1].title }}</span></h5>
+                  <p class="text-sm text-gray-deep"><span>{{ block2.items[1].desc }}</span></p>
                 </div>
               </li>
               <li class="flex">
@@ -99,8 +99,8 @@
                   </svg>
                 </em>
                 <div class="flex-1 overflow-hidden">
-                  <h5 class="mb-2 text-2xl font-medium"><span>It's easy to DIY</span></h5>
-                  <p class="text-sm text-gray-deep"><span>If you prefer to do things yourself, our help center is packed with training videos for all of your questions.</span></p>
+                  <h5 class="mb-2 text-2xl font-medium"><span>{{ block2.items[2].title }}</span></h5>
+                  <p class="text-sm text-gray-deep"><span>{{ block2.items[2].desc }}</span></p>
                 </div>
               </li>
             </ul>
@@ -111,4 +111,48 @@
   </section>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+interface BlockItem { title: string; desc: string }
+interface Block { title: string; items: BlockItem[] }
+
+const { t } = useI18n()
+const tr = (key: string, fallback: string) => { const v = t(key); return v === key ? fallback : String(v) }
+
+const defaults: Block[] = [
+  {
+    title: 'Get great support, every step of the way',
+    items: [
+      { title: 'We make setup a breeze', desc: "Together, we'll set up your online ordering to work perfectly with the rest of your business." },
+      { title: "We're here to help", desc: 'Need to add a modifier, update employee permissions or anything else? No problem. Contact us anytime.' },
+      { title: 'Top-rated American support, available 24/7', desc: "We're always ready, whether it's the Saturday dinner rush or the break of dawn. You're 24/7, so we are too." },
+    ]
+  },
+  {
+    title: 'Keep things running smoothly with expert help',
+    items: [
+      { title: "We'll keep you updated", desc: "We're always improving our platform, and we'll make sure you have the latest and greatest features." },
+      { title: 'Get ideas from successful restaurants', desc: "Our team works with thousands of restaurants, so we'll share best practices for driving online sales." },
+      { title: "It's easy to DIY", desc: 'If you prefer to do things yourself, our help center is packed with training videos for all of your questions.' },
+    ]
+  }
+]
+
+const block1 = computed<Block>(() => ({
+  title: tr('resources.support.blocks.0.title', defaults[0].title),
+  items: defaults[0].items.map((d, j) => ({
+    title: tr(`resources.support.blocks.0.items.${j}.title`, d.title),
+    desc: tr(`resources.support.blocks.0.items.${j}.desc`, d.desc),
+  })),
+}))
+
+const block2 = computed<Block>(() => ({
+  title: tr('resources.support.blocks.1.title', defaults[1].title),
+  items: defaults[1].items.map((d, j) => ({
+    title: tr(`resources.support.blocks.1.items.${j}.title`, d.title),
+    desc: tr(`resources.support.blocks.1.items.${j}.desc`, d.desc),
+  })),
+}))
+</script>

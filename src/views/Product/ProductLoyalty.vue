@@ -6,27 +6,30 @@ import ProductFAQs from '@/components/Product/ProductFAQs.vue'
 import ProductTestimonial from '@/components/Product/ProductTestimonial.vue'
 import ProductGuides from '@/components/Product/ProductGuides.vue'
 import ProductOrderingCTA from '@/components/Product/ProductOrderingCTA.vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 const heroProps = {
-  title: 'Introduce loyalty to increase repeat orders',
-  description: "Give your regulars a reason to come back with cashback and rewards.",
-  primaryCtaText: 'Get Started',
+  title: t('product_loyalty.hero.title'),
+  description: t('product_loyalty.hero.description'),
+  primaryCtaText: t('actions.get_started'),
   primaryCtaHref: '/dashboard',
-  secondaryCtaText: 'View Pricing',
+  secondaryCtaText: t('actions.view_pricing'),
   secondaryCtaHref: '/pricing',
   videoSrc: '/images/product/loyalty/video_2.mp4',
   videoPoster: '/images/product/loyalty/video_2.jpg',
-  overlayText: 'See how Mo from Talkin Tacos uses WeFood Loyalty to bring guests back again and again'
+  overlayText: t('product_loyalty.hero.overlay_text')
 }
 
 const salesFeaturesProps = {
-  title: 'Loyalty that brings customers back',
+  title: t('product_loyalty.sales_features.title'),
   leftImageSrc: '/images/product/loyalty/product_loyalty_1.jpg',
-  leftImageAlt: 'Loyalty hero image',
+  leftImageAlt: t('product_loyalty.sales_features.left_image_alt'),
   features: [
-    { title: 'Cashback your customers use', description: 'Guests earn cashback every time they order, motivating repeat business.' },
-    { title: 'Rewards that your customers love', description: 'Simple, transparent rewards that are easy to understand and engage with.' },
-    { title: 'Simple to set up', description: 'Launch loyalty quickly and start seeing repeat orders grow.' }
+    { title: t('product_loyalty.sales_features.features.0.title'), description: t('product_loyalty.sales_features.features.0.desc') },
+    { title: t('product_loyalty.sales_features.features.1.title'), description: t('product_loyalty.sales_features.features.1.desc') },
+    { title: t('product_loyalty.sales_features.features.2.title'), description: t('product_loyalty.sales_features.features.2.desc') }
   ],
   icons: [
     `<svg width="100%" height="100%" viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M33.5 17.0625H34.5V16.0625H33.5V17.0625ZM33.5 31.0625V32.0625H34.5V31.0625H33.5ZM15.5 31.0625H14.5V32.0625H15.5V31.0625ZM15.5 17.0625V16.0625H14.5V17.0625H15.5ZM24.5 25.0625L24.0528 25.9569L24.5 26.1805L24.9472 25.9569L24.5 25.0625ZM32.5 17.0625V31.0625H34.5V17.0625H32.5ZM33.5 30.0625H15.5V32.0625H33.5V30.0625ZM16.5 31.0625V17.0625H14.5V31.0625H16.5ZM15.5 18.0625H33.5V16.0625H15.5V18.0625ZM24.9472 24.1681L16.2354 19.8122L15.341 21.601L24.0528 25.9569L24.9472 24.1681ZM32.7646 19.8122L24.0528 24.1681L24.9472 25.9569L33.6591 21.601L32.7646 19.8122Z" fill="currentColor"></path></svg>`,
@@ -36,86 +39,86 @@ const salesFeaturesProps = {
 }
 
 const provenDesignProps = {
-  title: 'Loyalty that increases direct sales',
+  title: t('product_loyalty.proven_design.title'),
   cards: [
     {
       src: '/images/product/loyalty/product_loyalty_2_1.jpg',
       imgClass: 'w-full h-full rounded-[24px] lg:rounded-[32px] object-contain object-top',
-      alt: 'Cashback rewards',
+      alt: t('product_loyalty.proven_design.cards.0.alt'),
       wrapperClass: 'flex flex-col items-center justify-end',
       textWrapperClass: 'w-[65%] relative',
       textColorClass: 'text-black',
-      label: 'Create loyal customers',
+      label: t('product_loyalty.proven_design.cards.0.label'),
       headingClass: 'text-[24px] md:text-[26px] lg:text-[30px]',
-      heading: 'Every order can earn cashback and rewards.'
+      heading: t('product_loyalty.proven_design.cards.0.heading')
     },
     {
       src: '/images/product/loyalty/product_loyalty_2_2.jpg',
       imgClass: 'w-full h-full rounded-[24px] lg:rounded-[32px] object-contain object-right-bottom',
-      alt: 'Rewards engagement',
+      alt: t('product_loyalty.proven_design.cards.1.alt'),
       wrapperClass: '',
       textWrapperClass: 'w-full relative',
       textColorClass: 'text-black',
-      label: 'Build long-term relationships',
+      label: t('product_loyalty.proven_design.cards.1.label'),
       headingClass: 'text-[22px] md:text-[26px] lg:text-[28px]',
-      heading: 'Give guests a reason to come back every time.'
+      heading: t('product_loyalty.proven_design.cards.1.heading')
     },
     {
       src: '/images/product/loyalty/product_loyalty_2_3.jpg',
       imgClass: 'w-full h-full object-cover rounded-[24px] lg:rounded-[32px]',
-      alt: 'Customer retention',
+      alt: t('product_loyalty.proven_design.cards.2.alt'),
       wrapperClass: 'flex flex-col justify-end',
       textWrapperClass: 'w-full relative',
       textColorClass: 'text-black',
-      label: 'Increase retention',
+      label: t('product_loyalty.proven_design.cards.2.label'),
       headingClass: 'text-[22px] md:text-[26px] lg:text-[28px]',
-      heading: 'Turn first-time guests into loyal regulars.'
+      heading: t('product_loyalty.proven_design.cards.2.heading')
     }
   ]
 }
 
 const faqsProps = {
-  title: 'FAQs',
+  title: t('product_loyalty.faqs.title'),
   faqs: [
-    { question: 'What are some examples of your proven campaigns?', answer: `<article class="ctx-article p-5 text-base text-[#171F1F]"><div><p>We automate campaigns that we know drive sales. For example, 'abandoned cart' emails. When a customer adds food to their cart but doesn't complete their order, we'll send them an email or text to come back.<br><br>This is a best practice in eCommerce, and it works great for online ordering too.<br><br>Another example is holiday email campaigns. For example, we'll send a Mother's Day email with a limited-time coupon code.<br><br>Since these types of emails work across all restaurants, we've automated them for you. You'll grow sales without having to write dozens of email or text blast campaigns.</p></div></article>` },
-    { question: 'Can I run my own marketing campaigns?', answer: `<article class="ctx-article p-5 text-base text-[#171F1F]"><div><p>Absolutely. You can use our pre-built marketing campaigns, or you can build your own. It’s easy to send your own emails, and we make it easier with our AI writing assistant.</p></div></article>` },
-    { question: 'Should I stop using third party apps?', answer: `<article class="ctx-article p-5 text-base text-[#171F1F]"><div><p>Many of our customers stay on the apps, as they can be a good way to get new customers.<br><br>We'll help you to convert those customers to order directly from you, using your new online ordering system.</p></div></article>` }
+    { question: t('product_loyalty.faqs.items.0.question'), answer: t('product_loyalty.faqs.items.0.answer_html') },
+    { question: t('product_loyalty.faqs.items.1.question'), answer: t('product_loyalty.faqs.items.1.answer_html') },
+    { question: t('product_loyalty.faqs.items.2.question'), answer: t('product_loyalty.faqs.items.2.answer_html') }
   ],
   sideCard: {
     imageSrc: '/images/product/loyalty/faq_manager_8.jpg',
-    imageAlt: 'Manager',
-    quote: '"I can say confidently that WeFood is the best technology in our restaurant. We’ve increased direct online sales by over $77,000 in the past 10 months alone."',
-    name: 'Kristy Webber',
-    role: 'WeFood of Fork & Spoon'
+    imageAlt: t('product_loyalty.faqs.side_card.image_alt'),
+    quote: t('product_loyalty.faqs.side_card.quote'),
+    name: t('product_loyalty.faqs.side_card.name'),
+    role: t('product_loyalty.faqs.side_card.role')
   }
 }
 
 const testimonialProps = {
   imageSrc: '/images/product/loyalty/in_how_1.jpg',
-  imageAlt: 'Customer story',
-  headline: 'How Samos Oaxaca increased direct online sales to $10,000/m by using WeFood.com',
+  imageAlt: t('product_loyalty.testimonial.image_alt'),
+  headline: t('product_loyalty.testimonial.headline'),
   metrics: [
-    { value: '+$150,000', label: 'Online sales' },
-    { value: '+377%', label: 'Growth' }
+    { value: '+$150,000', label: t('product_loyalty.testimonial.metrics.online_sales') },
+    { value: '+377%', label: t('product_loyalty.testimonial.metrics.growth') }
   ]
 }
 
 const guidesProps = {
-  sectionTitle: 'Grow repeat orders with these loyalty guides',
+  sectionTitle: t('product_loyalty.guides.section_title'),
   blogHref: '/resources/blog',
   mainVideoSrc: '/images/product/loyalty/new_video_2.mp4',
-  mainVideoTitle: 'How A.I. Will Transform Your Restaurant',
+  mainVideoTitle: t('product_loyalty.guides.main_video_title'),
   sideImageSrc: '/images/product/loyalty/product_loyalty_3_2.jpg',
-  sideImageAlt: 'Guide side card',
-  sideImageTitle: 'The 8 Money-Making Email Campaigns Every Restaurant Must Send'
+  sideImageAlt: t('product_loyalty.guides.side_image_alt'),
+  sideImageTitle: t('product_loyalty.guides.side_image_title')
 }
 
 const orderingCtaProps = {
-  title: 'Get your own mobile app to boost repeat orders',
+  title: t('product_loyalty.ordering_cta.title'),
   imageSrc: '/images/product/loyalty/product_loyalty_4_1.jpg',
   linkTo: '/product/branded',
-  cardTitle: 'Branded mobile app',
-  cardDescription: 'Launch your own mobile app with WeFood and grow loyalty faster'
+  cardTitle: t('product_loyalty.ordering_cta.card_title'),
+  cardDescription: t('product_loyalty.ordering_cta.card_desc')
 }
 </script>
 

@@ -3,8 +3,7 @@
     <div class="w-full max-w-wrap mx-auto">
       <h3
         class="mb-10 lg:mb-20 px-[5%] text-[36px] lg:text-[44px] text-center font-medium leading-tight"
-        ><span>Trending articles</span></h3
-      >
+        >{{ trendingTitle }}</h3>
 
       <!-- Swiper -->
       <section class="w-full overflow-visible" style="--swiper-theme-color: var(--minor);">
@@ -53,6 +52,8 @@ import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Navigation } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 interface SlideItem {
   image: string
@@ -62,7 +63,14 @@ interface SlideItem {
   date: string
 }
 
-const slides: SlideItem[] = [
+const { t, tm } = useI18n()
+const tr = (key: string, fallback: string) => {
+  const val = t(key)
+  return val === key ? fallback : val
+}
+const trendingTitle = computed(() => tr('resources.blog.trending.title', 'Trending articles'))
+
+const defaultSlides: SlideItem[] = [
   {
     image: '/images/resources/blog/resources_blog_3_1.jpeg',
     tag: 'Restaurant Software',
@@ -135,6 +143,8 @@ const slides: SlideItem[] = [
     date: 'March 26, 2024'
   }
 ]
+
+const slides = computed<SlideItem[]>(() => (tm('resources.blog.trending.slides') as any) ?? defaultSlides)
 </script>
 
 <style scoped>

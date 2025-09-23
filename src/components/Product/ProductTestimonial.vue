@@ -1,14 +1,23 @@
-<script setup lang="ts">
-const props = withDefaults(defineProps<{
-  imageSrc: string
-  imageAlt: string
-  headline: string
-  metrics: { value: string; label: string }[]
-}>(), {
-  imageSrc: '/images/product/product/in_how_1.jpg',
-  imageAlt: 'Customer story',
-  headline: "How Samos Oaxaca increased direct online sales to $10,000/m by using WeFood.com",
-  metrics: () => [
+<script setup>
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const props = defineProps({
+  imageSrc: String,
+  imageAlt: String,
+  headline: String,
+  metrics: Array
+})
+
+const { t, tm } = useI18n()
+
+const imageSrcData = computed(() => props.imageSrc ?? (t('product.testimonial.image_src') || '/images/product/product/in_how_1.jpg'))
+const imageAltData = computed(() => props.imageAlt ?? (t('product.testimonial.image_alt') || 'Customer story'))
+const headlineText = computed(() => props.headline ?? (t('product.testimonial.headline') || "How Samos Oaxaca increased direct online sales to $10,000/m by using WeFood.com"))
+const metricsData = computed(() => {
+  if (props.metrics) return props.metrics
+  const metrics = tm('product.testimonial.metrics')
+  return Array.isArray(metrics) && metrics.length ? metrics : [
     { value: '+$150,000', label: 'Online sales' },
     { value: '+377%', label: 'Growth' }
   ]
@@ -21,7 +30,7 @@ const props = withDefaults(defineProps<{
       <dl class="w-full bg-gray-50 rounded-[24px] lg:rounded-[32px] flex flex-wrap">
         <dt class="w-full md:w-2/5 md:max-w-[406px] shrink-0">
           <div class="w-full h-[320px] md:h-[474px]">
-            <img :src="props.imageSrc" :alt="props.imageAlt"
+            <img :src="imageSrcData" :alt="imageAltData"
                  class="w-full h-full object-cover rounded-[24px] lg:rounded-[32px]" />
           </div>
         </dt>
@@ -29,12 +38,12 @@ const props = withDefaults(defineProps<{
           <div class="w-full px-6 pt-8 pb-10 md:px-10">
             <div class="w-full">
               <h3 class="mb-6 text-[28px] md:text-[36px] lg:text-[44px] font-medium leading-tight">
-                <span>{{ props.headline }}</span>
+                <span>{{ headlineText }}</span>
               </h3>
             </div>
             <div class="w-full">
               <ul class="flex justify-between md:justify-start gap-6">
-                <li v-for="(m,i) in props.metrics" :key="i" class="font-medium">
+                <li v-for="(m,i) in metricsData" :key="i" class="font-medium">
                   <p class="text-lg md:text-xl"><span>{{ m.value }}</span></p>
                   <p class="text-sm text-gray-500"><span>{{ m.label }}</span></p>
                 </li>

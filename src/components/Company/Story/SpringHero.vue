@@ -1,10 +1,13 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
 import StoryReleaseSection from './StoryReleaseSection.vue'
 
+const { t } = useI18n()
+
 const year = 2024
-const season = 'Spring'
+const season = t('company.seasons.spring')
 const videoSrc = '/images/company/story/company_story_v3.mp4'
-const intro = `Learn how our new automated holiday emails, SMS promotions, and website upgrades help your restaurants drive more online sales.`
+const intro = t('company.story.heroes.2024.spring.intro')
 </script>
 
 <template>

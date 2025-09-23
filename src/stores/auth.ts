@@ -20,7 +20,7 @@ export const useAuthStore = defineStore('auth', () => {
       // Try to extract token/userid from response data
       const data: any = res?.data ?? {}
       const tk = data?.token ?? (res as any)?.token ?? null
-      const uid = data?.userid ?? (res as any)?.userid ?? null
+      const uid = data?.id ?? (res as any)?.id ?? null
 
       if (!tk || !uid) {
         // If backend does not return token/userid explicitly but code===0 indicates success,

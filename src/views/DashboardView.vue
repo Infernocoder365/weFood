@@ -1,7 +1,7 @@
 <template>
     <section class="py-10 md:py-20 ctx-minor">
         <div class="w-full max-w-wrap mx-auto">
-            <h5 class="text-2xl md:text-3xl lg:text-[42px] text-center leading-none"><span>Welcome, {{ displayName }}</span>
+            <h5 class="text-2xl md:text-3xl lg:text-[42px] text-center leading-none"><span>{{ t('dashboard.welcome') }}, {{ userInfo['username'] }}</span>
             </h5>
         </div>
     </section>
@@ -11,27 +11,27 @@
                 <dl
                     class="w-full p-3 text-sm md:text-base lg:text-lg bg-default text-default rounded-lg relative cursor-pointer select-none flex items-center justify-between">
                     <dt class="max-w-2/5 p-2 flex items-center justify-between">
-                        <span class="align-middle">Rank</span>
+                        <span class="align-middle">{{ t('dashboard.rank') }}</span>
                         <div class="van-image w-8 h-8 ml-2 align-middle">
-                            <img class="van-image__img" data-src="/imgs/vip-1.jpeg" src="/images/dashboard/vip-1.jpeg"
+                            <img class="van-image__img" data-src="/imgs/vip-1.jpeg" :src="userInfo['level_pic']"
                                 lazy="loaded">
                         </div>
                     </dt>
-                    <dd class="max-w-3/5 p-2 uppercase"><b>100&nbsp;</b><span>Credibility</span></dd>
+                    <dd class="max-w-3/5 p-2 uppercase"><b>{{ userInfo['score'] }}&nbsp;</b><span>{{ t('dashboard.credibility') }}</span></dd>
                 </dl>
                 <ul class="mt-10 grid grid-cols-12 gap-4 sm:gap-6 uppercase">
                     <li class="col-span-12 sm:col-span-6 md:col-span-4 px-8 py-4 bg-black text-white rounded-lg">
                         <h5 class="mb-1 text-base opacity-60"><span>Account Balance</span><span>&nbsp;(USD)</span></h5>
-                        <p class="text-3xl break-all"><b>486.00</b></p>
+                        <p class="text-3xl break-all"><b>{{ userInfo['balance']}}</b></p>
                     </li>
                     <li class="col-span-12 sm:col-span-6 md:col-span-4 px-8 py-4 bg-black text-white rounded-lg">
                         <h5 class="mb-1 text-base opacity-60"><span>Frozen Amount</span><span>&nbsp;(USD)</span></h5>
-                        <p class="text-3xl break-all"><b>544.00</b></p>
+                        <p class="text-3xl break-all"><b>{{ userInfo['freeze_balance'] }}</b></p>
                     </li>
                     <li
                         class="col-span-12 sm:col-span-6 md:col-span-4 px-8 py-4 bg-black text-white rounded-lg cursor-pointer relative">
                         <h5 class="mb-1 text-base opacity-60"><span>Referral code</span></h5>
-                        <p class="text-3xl break-all"><b>4742190</b></p><em class="p-2 absolute right-0 top-0 flex"><svg
+                        <p class="text-3xl break-all"><b> {{ userInfo['invite_code'] }} </b></p><em class="p-2 absolute right-0 top-0 flex"><svg
                                 stroke="currentColor" stroke-width="3" width="20" height="20" viewBox="0 0 48 48"
                                 fill="none" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4">
                                 <path
@@ -46,26 +46,26 @@
                 <ol class="mt-10 grid grid-cols-12 gap-4 sm:gap-6 uppercase">
                     <li class="col-span-6 lg:col-span-3">
                         <div class="w-full">
-                            <h6 class="text-xs"><span>Today's earnings</span><span>&nbsp;(USD)</span></h6>
-                            <p class="text-3xl break-all"><span>0.00</span></p>
+                            <h6 class="text-xs"><span>{{ t('dashboard.today_earnings') }}</span><span>&nbsp;(USD)</span></h6>
+                            <p class="text-3xl break-all"><span>{{ userInfo['daily_earnings'] }}</span></p>
                         </div>
                     </li>
                     <li class="col-span-6 lg:col-span-3">
                         <div class="w-full">
-                            <h6 class="text-xs"><span>Total earnings</span><span>&nbsp;(USD)</span></h6>
-                            <p class="text-3xl break-all"><span>0.00</span></p>
+                            <h6 class="text-xs"><span>{{ t('dashboard.total_earnings') }}</span><span>&nbsp;(USD)</span></h6>
+                            <p class="text-3xl break-all"><span>{{ userInfo['earnings_history'] }}</span></p>
                         </div>
                     </li>
                     <li class="col-span-6 lg:col-span-3">
                         <div class="w-full">
-                            <h6 class="text-xs"><span>Data</span></h6>
-                            <p class="text-3xl break-all"><span>0/30</span></p>
+                            <h6 class="text-xs"><span>{{ t('dashboard.data') }}</span></h6>
+                            <p class="text-3xl break-all"><span>{{ userInfo['order_num']}}</span></p>
                         </div>
                     </li>
                     <li class="col-span-6 lg:col-span-3">
                         <div class="w-full">
-                            <h6 class="text-xs"><span>Profit/Orders</span></h6>
-                            <p class="text-3xl break-all"><span>0.50%</span></p>
+                            <h6 class="text-xs"><span>{{ t('dashboard.profit_orders') }}</span></h6>
+                            <p class="text-3xl break-all"><span>{{ userInfo['ratio']}}%</span></p>
                         </div>
                     </li>
                 </ol>
@@ -127,9 +127,9 @@
                                     class="w-7 h-7 mr-2.5 flex shrink-0"><img src="/images/dashboard/icon-profile.svg"
                                         class="w-full h-full object-contain"></em>
                                 <div class="flex-1 overflow-hidden">
-                                    <h6 class="mb-1"><span>Profile Details</span></h6>
-                                    <p class="text-gray-default"><span>Manage your sign-in and password details</span>
-                                    </p>
+                                    <h6 class="mb-1"><span>{{ t('dashboard.profile_details') }}</span></h6>
+                                    <p class="text-gray-default"><span>{{ t('dashboard.profile_desc') }}</span></p>
+                                   
                                 </div>
                             </RouterLink></dd>
                         <dd class="w-full pb-2.5 mb-2.5 border-b border-default block"><RouterLink to="/invite"
@@ -137,7 +137,7 @@
                                     class="w-7 h-7 mr-2.5 flex shrink-0"><img src="/images/dashboard/icon-invite.svg"
                                         class="w-full h-full object-contain"></em>
                                 <div class="flex-1 overflow-hidden">
-                                    <h6 class="mb-1"><span>Referral code</span></h6>
+                                    <h6 class="mb-1"><span>{{ t('dashboard.referral_code') }}</span></h6>
                                     <p class="text-gray-default"><span>Get your amazing rewards</span></p>
                                 </div>
                             </RouterLink></dd>
@@ -152,8 +152,14 @@
 import { computed } from 'vue'
 import { useAuthStore } from '@/stores/auth'
 import { RouterLink } from 'vue-router'
+import { useI18n } from 'vue-i18n'
+import { useUserStore } from '@/stores/user'
+const { t } = useI18n()
 
 const auth = useAuthStore()
+const user = useUserStore()
+user.fetchIndex()
+const userInfo = computed(() => user.userInfo);
 
 function decodeTokenName(token: string | null): string | null {
   if (!token) return null

@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 </script>
 
 <template>
@@ -20,12 +23,11 @@ import { RouterLink } from 'vue-router'
                         class="h-full -ml-px border-l-2 border-default border-dashed absolute top-14 left-1/2 hidden lg:block"></i>
                     </div>
                     <div class="w-full lg:flex-1 lg:overflow-hidden">
-                      <h5 class="mb-2 text-4xl font-medium"><span>Show up at the top of Google</span></h5>
-                      <p class="text-gray-deep"><span>Beat your competition with a website perfectly optimized for
-                          Google. Get more orders from people in your area.</span></p>
+                      <h5 class="mb-2 text-4xl font-medium"><span>{{ t('works.steps.step1.title') }}</span></h5>
+                      <p class="text-gray-deep"><span>{{ t('works.steps.step1.desc') }}</span></p>
                       <div class="pt-5 flex"><a href="/product/product"
                           class="h-12 px-4 bg-[#eaeaea] rounded-lg flex items-center"><span
-                            class="text-sm font-medium">Learn more</span><svg stroke="currentColor" stroke-width="5"
+                            class="text-sm font-medium">{{ t('actions.learn_more') }}</span><svg stroke="currentColor" stroke-width="5"
                             width="20" height="20" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"
                             class="w-5 h-5 opacity-60">
                             <path d="M19 12L31 24L19 36" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -44,13 +46,11 @@ import { RouterLink } from 'vue-router'
                         class="h-full -ml-px border-l-2 border-default border-dashed absolute top-14 left-1/2 hidden lg:block"></i>
                     </div>
                     <div class="w-full lg:flex-1 lg:overflow-hidden">
-                      <h5 class="mb-2 text-4xl font-medium"><span>Grow your sales with our online ordering
-                          platform</span></h5>
-                      <p class="text-gray-deep"><span>Guests order more from you when your online ordering experience
-                          feels as good as WeFood.</span></p>
+                      <h5 class="mb-2 text-4xl font-medium"><span>{{ t('works.steps.step2.title') }}</span></h5>
+                      <p class="text-gray-deep"><span>{{ t('works.steps.step2.desc') }}</span></p>
                       <div class="pt-5 flex"><a href="/product/ordering"
                           class="h-12 px-4 bg-[#eaeaea] rounded-lg flex items-center"><span
-                            class="text-sm font-medium">Learn more</span><svg stroke="currentColor" stroke-width="5"
+                            class="text-sm font-medium">{{ t('actions.learn_more') }}</span><svg stroke="currentColor" stroke-width="5"
                             width="20" height="20" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"
                             class="w-5 h-5 opacity-60">
                             <path d="M19 12L31 24L19 36" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -69,12 +69,11 @@ import { RouterLink } from 'vue-router'
                         class="h-full -ml-px border-l-2 border-default border-dashed absolute top-14 left-1/2 hidden lg:block"></i>
                     </div>
                     <div class="w-full lg:flex-1 lg:overflow-hidden">
-                      <h5 class="mb-2 text-4xl font-medium"><span>Drive re-orders with your mobile app and
-                          rewards</span></h5>
-                      <p class="text-gray-deep"><span>Mobile app with rewards</span></p>
+                      <h5 class="mb-2 text-4xl font-medium"><span>{{ t('works.steps.step3.title') }}</span></h5>
+                      <p class="text-gray-deep"><span>{{ t('works.steps.step3.desc') }}</span></p>
                       <div class="pt-5 flex"><a href="/product/branded"
                           class="h-12 px-4 bg-[#eaeaea] rounded-lg flex items-center"><span
-                            class="text-sm font-medium">Learn more</span><svg stroke="currentColor" stroke-width="5"
+                            class="text-sm font-medium">{{ t('actions.learn_more') }}</span><svg stroke="currentColor" stroke-width="5"
                             width="20" height="20" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"
                             class="w-5 h-5 opacity-60">
                             <path d="M19 12L31 24L19 36" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -93,12 +92,11 @@ import { RouterLink } from 'vue-router'
                         class="h-full -ml-px border-l-2 border-default border-dashed absolute top-14 left-1/2 hidden lg:block"></i>
                     </div>
                     <div class="w-full lg:flex-1 lg:overflow-hidden">
-                      <h5 class="mb-2 text-4xl font-medium"><span>Keep guests engaged with auto-marketing</span></h5>
-                      <p class="text-gray-deep"><span>Boost sales with proven, automated marketing campaigns. Send
-                          money-making emails and texts without writing a word.</span></p>
+                      <h5 class="mb-2 text-4xl font-medium"><span>{{ t('works.steps.step4.title') }}</span></h5>
+                      <p class="text-gray-deep"><span>{{ t('works.steps.step4.desc') }}</span></p>
                       <div class="pt-5 flex"><a href="/product/marketing"
                           class="h-12 px-4 bg-[#eaeaea] rounded-lg flex items-center"><span
-                            class="text-sm font-medium">Learn more</span><svg stroke="currentColor" stroke-width="5"
+                            class="text-sm font-medium">{{ t('actions.learn_more') }}</span><svg stroke="currentColor" stroke-width="5"
                             width="20" height="20" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"
                             class="w-5 h-5 opacity-60">
                             <path d="M19 12L31 24L19 36" stroke-linecap="round" stroke-linejoin="round"></path>

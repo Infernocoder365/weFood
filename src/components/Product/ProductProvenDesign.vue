@@ -3,10 +3,10 @@
     <div class="w-full max-w-6xl mx-auto">
       <h3
         class="w-full md:w-[580px] max-w-full mx-auto mb-12 lg:mb-20 text-[28px] md:text-[38px] lg:text-[48px] text-center leading-none">
-        <span>{{ props.title }}</span>
+        <span>{{ titleText }}</span>
       </h3>
       <ul class="w-full max-w-6xl mx-auto grid grid-cols-12 gap-4 md:gap-6">
-        <li v-for="(card, idx) in props.cards" :key="idx" class="col-span-12 md:col-span-6 lg:col-span-4">
+        <li v-for="(card, idx) in cardsData" :key="idx" class="col-span-12 md:col-span-6 lg:col-span-4">
           <div
             class="w-full h-[320px] md:h-[520px] px-6 pb-6 md:p-8 rounded-[24px] lg:rounded-[32px] relative overflow-hidden bg-white"
             :class="card.wrapperClass">
@@ -26,23 +26,24 @@
   </section>
 </template>
 
-<script setup lang="ts">
-const props = withDefaults(defineProps<{
-  title: string
-  cards: Array<{
-    src: string
-    imgClass: string
-    alt: string
-    wrapperClass: string
-    textWrapperClass: string
-    textColorClass: string
-    label: string
-    headingClass: string
-    heading: string
-  }>
-}>(), {
-  title: 'A proven design that drives more traffic',
-  cards: () => [
+<script setup>
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const props = defineProps({
+  title: String,
+  cards: Array
+})
+
+const { t, tm } = useI18n()
+
+const titleText = computed(() => props.title ?? (t('product.design.title') || 'A proven design that drives more traffic'))
+
+const cardsData = computed(() => {
+  if (props.cards) return props.cards
+  const i18nCards = tm('product.design.cards')
+  if (Array.isArray(i18nCards) && i18nCards.length) return i18nCards
+  return [
     {
       src: '/images/product/product/product_pro_2_1.png',
       imgClass: 'w-full h-full rounded-[24px] lg:rounded-[32px] object-contain object-top',

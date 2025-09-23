@@ -4,9 +4,9 @@
     <div class="w-full max-w-6xl mx-auto">
       <div class="w-full flex flex-col lg:flex-row">
         <div class="w-full lg:flex-1 lg:overflow-hidden">
-          <h3 class="mb-6 text-[28px] md:text-[36px] font-medium"><span>{{ props.title }}</span></h3>
+          <h3 class="mb-6 text-[28px] md:text-[36px] font-medium"><span>{{ titleText }}</span></h3>
           <ul class="grid grid-cols-1 gap-2">
-            <li v-for="(faq, idx) in props.faqs" :key="idx" class="col-span-1 rounded-2xl hover:bg-gray-light">
+            <li v-for="(faq, idx) in faqItems" :key="idx" class="col-span-1 rounded-2xl hover:bg-gray-light">
               <div class="w-full p-5 flex items-center cursor-pointer select-none" role="button" tabindex="0"
                 :aria-expanded="openIndex === idx" :aria-controls="'faq-' + idx" @click="toggle(idx)"
                 @keydown.enter.prevent="toggle(idx)" @keydown.space.prevent="toggle(idx)">
@@ -30,13 +30,13 @@
         <div class="w-full lg:w-[260px] lg:ml-10 pt-10 lg:pt-14 hidden lg:block shrink-0">
           <div class="w-full px-[22px] pb-[22px] pt-3 bg-[#171F1F] text-white rounded-3xl grid grid-cols-1 gap-6">
             <div class="-mx-3 flex">
-              <img class="w-full h-[150px] object-cover rounded-2xl" :src="props.sideCard.imageSrc"
-                :alt="props.sideCard.imageAlt">
+              <img class="w-full h-[150px] object-cover rounded-2xl" :src="sideCardData.imageSrc"
+                :alt="sideCardData.imageAlt">
             </div>
-            <p class="text-base md:text-lg font-medium"><span>{{ props.sideCard.quote }}</span></p>
+            <p class="text-base md:text-lg font-medium"><span>{{ sideCardData.quote }}</span></p>
             <div class="text-xs opacity-80">
-              <p>{{ props.sideCard.name }}</p>
-              <p>{{ props.sideCard.role }}</p>
+              <p>{{ sideCardData.name }}</p>
+              <p>{{ sideCardData.role }}</p>
             </div>
           </div>
         </div>
@@ -46,7 +46,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 const props = withDefaults(defineProps<{
   title: string
@@ -75,6 +76,45 @@ const props = withDefaults(defineProps<{
     name: 'Matthew Miller',
     role: "Co-WeFood of Mr M's Sandwich Shop"
   })
+})
+
+const { t, tm, te } = useI18n()
+
+const titleText = computed(() =>
+  te('resources.works.faqs.title') ? t('resources.works.faqs.title') :
+  te('works.faqs.title') ? t('works.faqs.title') :
+  props.title
+)
+
+const faqItems = computed(() => {
+  let items = tm('resources.works.faqs.items') as any
+  if (!Array.isArray(items) || items.length === 0) {
+    items = tm('works.faqs.items') as any
+  }
+  if (Array.isArray(items) && items.length > 0) {
+    return items.map((i: any) => ({
+      question: i?.question ?? '',
+      answer: i?.answer_html ?? i?.answer ?? ''
+    }))
+  }
+  return props.faqs
+})
+
+const sideCardData = computed(() => {
+  let sc = tm('resources.works.faqs.side_card') as any
+  if (!sc || typeof sc !== 'object') {
+    sc = tm('works.faqs.side_card') as any
+  }
+  if (sc && typeof sc === 'object') {
+    return {
+      imageSrc: props.sideCard.imageSrc,
+      imageAlt: sc.image_alt ?? props.sideCard.imageAlt,
+      quote: sc.quote ?? props.sideCard.quote,
+      name: sc.name ?? props.sideCard.name,
+      role: sc.role ?? props.sideCard.role
+    }
+  }
+  return props.sideCard
 })
 
 const openIndex = ref<number | null>(null)

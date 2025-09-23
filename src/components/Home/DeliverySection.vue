@@ -13,7 +13,7 @@
                 :href="content.learnMoreLink" 
                 class="h-12 px-4 text-white rounded-lg flex items-center ctx-minor transition-colors"
               >
-                <span>Learn more</span>
+                <span>{{ t('actions.learn_more') }}</span>
                 <svg 
                   stroke="currentColor" 
                   stroke-width="4" 
@@ -84,6 +84,9 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 const content = ref({
   title: 'Delivery without the unfair commissions',

@@ -17,9 +17,8 @@
                 </dd>
                 <dd class="col-span-6 lg:col-span-4 flex flex-col items-center">
                   <h2 class="w-[710px] max-w-full mb-6 text-[42px] lg:text-[56px] text-center font-medium leading-none">
-                    <span>See why our support is consistently called the best in the restaurant tech world.</span></h2>
-                  <p class="w-[470px] max-w-full mb-8 text-lg text-gray-deep text-center font-medium"><span>It's always
-                      easy to contact our top-rated support team.</span></p>
+                    <span>{{ title }}</span></h2>
+                  <p class="w-[470px] max-w-full mb-8 text-lg text-gray-deep text-center font-medium"><span>{{ desc }}</span></p>
                   <ul class="flex flex-wrap justify-center gap-2">
                     <li class="max-w-[190px] py-2 pl-2 pr-3 bg-gray-body rounded-xl flex items-center gap-2"><em
                         class="w-10 h-10 flex shrink-0"><svg width="100%" height="100%" viewBox="0 0 32 32" fill="none"
@@ -78,4 +77,15 @@
           </section>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+const tr = (key: string, fallback: string) => { const v = t(key); return v === key ? fallback : String(v) }
+
+const title = computed(() => tr('resources.support.hero.title', "See why our support is consistently called the best in the restaurant tech world."))
+const desc = computed(() => tr('resources.support.hero.description', "It's always easy to contact our top-rated support team."))
+const badge1 = computed(() => tr('resources.support.hero.badge1', 'Rated #1 Restaurant Marketing Software'))
+const badge2 = computed(() => tr('resources.support.hero.badge2', 'Leader Position Summer 2024'))
+</script>
