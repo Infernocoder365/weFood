@@ -4,7 +4,7 @@ import { WalletAPI } from '@/services/api';
 
 export const useWalletStore = defineStore('wallet', {
   state: () => ({
-    wallets: [],
+    wallets: [] as any[],
     loading: false,
     error: null,
   }),
@@ -26,7 +26,8 @@ export const useWalletStore = defineStore('wallet', {
       }
     },
 
-    async addWallet({ address, utype, notes }) {
+    async addWallet(payload: { address: string; utype: string; notes?: string }) {
+      const { address, utype, notes } = payload;
       this.loading = true;
       try {
         const response = await WalletAPI.addWallet(address, utype, notes);

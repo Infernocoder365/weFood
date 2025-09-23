@@ -46,36 +46,16 @@
       "recently_featured_on": "Recently featured on",
       "see_the_article": "See the article",
       "side_items": [
-        {
-          "title": "This startup wants to help mom-and-pop restaurants drop Grubhub"
-        },
-        {
-          "title": "WeFood.com, Led by High School Dropout CEO, Raises $33 Million"
-        },
-        {
-          "title": "WeFood.com grabs $33M Series B to improve online guest experiences for mom-and-pop restaurants"
-        },
-        {
-          "title": "WeFood.com serves up $10.7M so that independent restaurants can get cooking"
-        },
-        {
-          "title": "How WeFood.com helps restaurants to survive during the pandemic"
-        },
-        {
-          "title": "Profitboss gives restaurants the tools to survive"
-        },
-        {
-          "title": "How a 21-year-old CEO raised millions to help restaurants succeed online"
-        },
-        {
-          "title": "High school dropout starts company that offers free delivery for restaurants"
-        },
-        {
-          "title": "This startup is saving restaurants from heavy delivery app fees"
-        },
-        {
-          "title": "Meal delivery: High school dropout’s Bay Area startup aims to save restaurants from fees, Karens"
-        }
+        { "title": "This startup wants to help mom-and-pop restaurants drop Grubhub" },
+        { "title": "WeFood.com, Led by High School Dropout CEO, Raises $33 Million" },
+        { "title": "WeFood.com grabs $33M Series B to improve online guest experiences for mom-and-pop restaurants" },
+        { "title": "WeFood.com serves up $10.7M so that independent restaurants can get cooking" },
+        { "title": "How WeFood.com helps restaurants to survive during the pandemic" },
+        { "title": "Profitboss gives restaurants the tools to survive" },
+        { "title": "How a 21-year-old CEO raised millions to help restaurants succeed online" },
+        { "title": "High school dropout starts company that offers free delivery for restaurants" },
+        { "title": "This startup is saving restaurants from heavy delivery app fees" },
+        { "title": "Meal delivery: High school dropout’s Bay Area startup aims to save restaurants from fees, Karens" }
       ]
     },
     "reviews_page": {
@@ -86,27 +66,13 @@
       "cta_title": "Actual reviews from restaurant WeFood",
       "cta_subtitle": "We asked our customers to share their experiences with WeFood.com on independent software review websites.",
       "testimonials": [
-        {
-          "title": "\"Easy to work with and streamlined systems for small business\""
-        },
-        {
-          "title": "\"WeFood.com is a must for every business\""
-        },
-        {
-          "title": "\"NEVER BEEN A MOMENT I HAVE REGRETTED SIGNING UP AND USING WeFood.COM\""
-        },
-        {
-          "title": "\"Great for Startups or Upgrading existing systems\""
-        },
-        {
-          "title": "\"Simple and Straightforward\""
-        },
-        {
-          "title": "\"WeFood.com + Small Business = BIG Business\""
-        },
-        {
-          "title": "\"WeFood helps us build a Virtual Relationship with our Clients!\""
-        }
+        { "title": "\"Easy to work with and streamlined systems for small business\"" },
+        { "title": "\"WeFood.com is a must for every business\"" },
+        { "title": "\"Simple and Straightforward\"" },
+        { "title": "\"WeFood.com delivers!\"" },
+        { "title": "\"WeFood.com + Small Business = BIG Business\"" },
+        { "title": "\"Easy transition; Attentive Customer Support\"" },
+        { "title": "\"WeFood helps us build a Virtual Relationship with our Clients!\"" }
       ]
     },
     "seasons": {
@@ -426,535 +392,11 @@
   },
   "resources": {
     "learn": "Learn",
-    "blog": {
-      "label": "Blog",
-      "header": {
-        "title": "The Marketing Menu",
-        "subtitle": "The Marketing Menu"
-      },
-      "trending": {
-        "title": "Trending articles",
-        "slides": [
-          {
-            "image": "/images/resources/blog/resources_blog_3_1.jpeg",
-            "tag": "Restaurant Software",
-            "title": "8 Best Restaurant Online Ordering Systems to Drive Sales in 2025",
-            "read": "11 min read",
-            "date": "November 20, 2024"
-          },
-          {
-            "image": "/images/resources/blog/resources_blog_3_2.jpeg",
-            "tag": "Marketing Strategy",
-            "title": "Email Marketing for Restaurants: The 8 Money-Making Campaigns Every Restaurant Must Send",
-            "read": "14 min read",
-            "date": "August 5, 2024"
-          },
-          {
-            "image": "/images/resources/blog/resources_blog_3_3.jpeg",
-            "tag": "Marketing Strategy",
-            "title": "Restaurant Marketing Plan: A Step-by-Step Template for Any Budget",
-            "read": "17 min read",
-            "date": "July 3, 2024"
-          },
-          {
-            "image": "/images/resources/blog/resources_blog_3_4.jpeg",
-            "tag": "Restaurant Software",
-            "title": "The Top 7 ChowNow Alternatives for Growing Online Orders",
-            "read": "8 min read",
-            "date": "June 21, 2024"
-          },
-          {
-            "image": "/images/resources/blog/resources_blog_3_5.jpeg",
-            "tag": "Restaurant Software",
-            "title": "The 6 Best Popmenu Competitors to Consider (Pros & Cons)",
-            "read": "8 min read",
-            "date": "June 17, 2024"
-          },
-          {
-            "image": "/images/resources/blog/resources_blog_3_6.jpeg",
-            "tag": "Restaurant Software",
-            "title": "How To Create Online Ordering for a Restaurant (That Gets Results)",
-            "read": "10 min read",
-            "date": "June 12, 2024"
-          },
-          {
-            "image": "/images/resources/blog/resources_blog_3_7.jpeg",
-            "tag": "Restaurant Software",
-            "title": "The Best Restaurant Website Builders (Read This First)",
-            "read": "15 min read",
-            "date": "May 14, 2024"
-          },
-          {
-            "image": "/images/resources/blog/resources_blog_3_8.jpeg",
-            "tag": "Marketing Strategy",
-            "title": "Restaurant SEO is Easier Than You Think (3 Big Wins)",
-            "read": "22 min read",
-            "date": "May 6, 2024"
-          },
-          {
-            "image": "/images/resources/blog/resources_blog_3_9.jpeg",
-            "tag": "Marketing Strategy",
-            "title": "Restaurant Marketing Guide: Strategies for Growth in 2024",
-            "read": "21 min read",
-            "date": "April 24, 2024"
-          },
-          {
-            "image": "/images/resources/blog/resources_blog_3_10.jpeg",
-            "tag": "Increase Online Sales",
-            "title": "7 Reliable Local SEO Tips To Grow Your Restaurant's Exposure",
-            "read": "10 min read",
-            "date": "March 26, 2024"
-          }
-        ]
-      },
-      "most_recent": {
-        "title": "Most Recent",
-        "subscribe": {
-          "title": "Subscribe to our blog",
-          "desc": "We'll send you our best ideas on restaurant marketing and growing your online sales."
-        },
-        "items": [
-          {
-            "image": "/images/resources/blog/resources_blog_2_1.jpg",
-            "alt": "Recent 1",
-            "tag": "Marketing Strategy",
-            "title": "How To Write a Killer Menu Description That Boosts Sales",
-            "read": "9 min read",
-            "date": "December 10, 2024"
-          },
-          {
-            "image": "/images/resources/blog/resources_blog_2_2.png",
-            "alt": "Recent 2",
-            "tag": "Marketing Strategy",
-            "title": "Menu Engineering: How To Design a Menu That Drives Sales",
-            "read": "8 min read",
-            "date": "December 3, 2024"
-          },
-          {
-            "image": "/images/resources/blog/resources_blog_2_3.jpeg",
-            "alt": "Recent 3",
-            "tag": "Increase Online Sales",
-            "title": "How Much Does WeFood Cost? Cut Delivery Fees with These Proven Tips",
-            "read": "7 min read",
-            "date": "November 21, 2024"
-          }
-        ]
-      },
-      "explore": {
-        "heading": "Explore topics",
-        "topics": [
-          {
-            "label": "Increase Online Sales",
-            "alt": "topic1"
-          },
-          {
-            "label": "Restaurant Software",
-            "alt": "topic2"
-          },
-          {
-            "label": "Marketing Strategy",
-            "alt": "topic3"
-          },
-          {
-            "label": "Restaurant Websites",
-            "alt": "topic4"
-          },
-          {
-            "label": "Industry Trends & Data",
-            "alt": "topic5"
-          }
-        ]
-      },
-      "topic_sections": {
-        "sections": []
-      },
-      "featured": {
-        "featured": {
-          "tag": "FEATURED",
-          "title": "How to Create a Restaurant Website That Grows Your Online Orders",
-          "desc": "Discover easy ways to build a website that attracts more customers to your restaurant.",
-          "author": "Adam Guild",
-          "read": "5 min read",
-          "date": "February 26, 2024",
-          "imageAlt": "Featured image",
-          "authorAlt": "Author"
-        },
-        "cards": [
-          {
-            "category": "Increase Online Sales",
-            "title": "7 Reliable Local SEO Tips To Grow Your Restaurant's Exposure",
-            "image": "/images/resources/blog/resources_blog_1_3.jpeg",
-            "alt": "Card 1",
-            "read": "10 min read",
-            "date": "March 26, 2024"
-          },
-          {
-            "category": "Restaurant Software",
-            "title": "8 Best Restaurant Online Ordering Systems to Drive Sales in 2025",
-            "image": "/images/resources/blog/resources_blog_1_4.jpeg",
-            "alt": "Card 2",
-            "read": "11 min read",
-            "date": "November 20, 2024"
-          },
-          {
-            "category": "Marketing Strategy",
-            "title": "Restaurant SEO is Easier Than You Think (3 Big Wins)",
-            "image": "/images/resources/blog/resources_blog_1_5.jpeg",
-            "alt": "Card 3",
-            "read": "22 min read",
-            "date": "May 6, 2024"
-          }
-        ]
-      }
-    },
+    "blog": "Blog",
     "case_studies": "Case Studies",
     "support_center": "Support Center",
     "compare_wefood": "Compare WeFood",
-    "view_all": "View all",
-    "owner": {
-      "benefits": {
-        "title": "Join thousands of restaurants switching to WeFood",
-        "subtitle": "Here’s why restaurants choose WeFood to grow faster online",
-        "cards": [
-          {
-            "title": "One package with everything you need",
-            "desc": "With WeFood, you get all the tools you need to grow from day one. Our happiest and most successful customers switched to WeFood from another solution. They were paying less, but weren’t getting the online sales growth they were looking for."
-          },
-          {
-            "title": "Month to month pricing",
-            "desc": "Month-to-month. No long-term contracts. No cancellation fees. Just pay a flat rate to get everything on the WeFood platform."
-          },
-          {
-            "title": "No upgrades or upsells",
-            "desc": "There’s no upgrades or upsells. We give you everything you need to grow online."
-          },
-          {
-            "title": "24/7 USA support",
-            "desc": "Work with a world-class team. You'll have 24/7, USA-based support."
-          }
-        ]
-      },
-      "compare": {
-        "title": "How does WeFood compare?",
-        "subtitle": "There's a lot of restaurant tech out there. We know that choosing the right partners is an important choice. We want you to help you choose what's best for your restaurant, even if it’s not us.",
-        "vs": "WeFood vs"
-      },
-      "faqs": {
-        "title": "FAQs",
-        "items": [
-          {
-            "question": "What is included?",
-            "answer_html": "<article class=\"ctx-article p-5 text-base text-[#171F1F]\"><div><p>Your subscription includes all of our features. The WeFood platform upgrades your online presence to drive direct orders like the big restaurant brands. One price upgrades your website and online ordering system and gives you your own branded app. You also get proven marketing automations that drive revenue per guest higher.<br><br>“<a href=\"javascript:;\">WeFood.com is the secret to our online success. It makes online marketing so easy, and our guests love using our new ordering system and app.”</a></p><p></p><p><a href=\"javascript:;\">Yuliana Vasquez, WeFood of Samos Oaxaca</a></p></div></article>"
-          },
-          {
-            "question": "What commissions do I pay as a restaurant?",
-            "answer_html": "<article class=\"ctx-article p-5 text-base text-[#171F1F]\"><div><p>Restaurants pay zero commissions, and are only charged a simple flat fee for the WeFood platform.<br><br>As for your customers, they are charged 5% of their order. When your customers order from third-party apps, they get charged 15% or more, so they pay a lot less when they order directly from you.<br><br>“It's only one flat fee. There's no hidden fees. They're very upfront about what they're going to charge you. I love it, you know, and I cannot say that enough.”</p><p></p><p>Sandy Sei, WeFood of Cyclo Noodles</p><p></p></div></article>"
-          },
-          {
-            "question": "How long are your contracts?",
-            "answer_html": "<article class=\"ctx-article p-5 text-base text-[#171F1F]\"><div><p>There are no long-term contracts or commitments. You can use WeFood month to month, and cancel at any time you'd like. At WeFood, we don’t believe in locking restaurants into contracts. That’s why we have the only month-to-month billing in the industry.<br><br>“The best part is your customer service. It’s so quick and friendly; it just made my life easier. If somebody asks me, I recommend WeFood.”</p><p></p><p>Hiroyuki Aidichi, WeFood of Aburaya Fried Chicken</p><p></p></div></article>"
-          },
-          {
-            "question": "How long does it take to get started?",
-            "answer_html": "<article class=\"ctx-article p-5 text-base text-[#171F1F]\"><div><p>Many restaurants can launch within a week. We'll ask you for details like your website domain, Google Business, and Yelp information. If you have those on hand, we can launch your new online presence in a few days.<br><br>“The process was so easy. I think it was ready in less than two weeks. I'm so grateful.”</p><p></p><p>Gia Schultz, WeFood of The Modern Vegan</p><p></p></div></article>"
-          },
-          {
-            "question": "Should I stop using third-party delivery apps?",
-            "answer_html": "<article class=\"ctx-article p-5 text-base text-[#171F1F]\"><div><p>Most of our customers use both. They use the apps as another marketing channel, then drive their customers to order directly from them using WeFood.<br><br>“We're working with <a href=\"javascript:;\">WeFood.com</a> and it's pulling away the traffic that's going to those third-party platforms, and it's coming directly to us.”</p><p></p><p>Matt Miller, Co-WeFood of Mr M's Sandwich Shop</p><p></p></div></article>"
-          }
-        ],
-        "side_card": {
-          "image_alt": "Manager",
-          "quote": "WeFood makes online marketing easy, and our guests love the new ordering system.",
-          "name": "Restaurant manager",
-          "role": "WeFood Partner"
-        }
-      },
-      "reviews": {
-        "title": "What restaurant owners are saying",
-        "badges": {
-          "rating": "#1 Restaurant Marketing Software",
-          "leader": "Leader Position Summer 2024"
-        }
-      }
-    },
-    "support": {
-      "hero": {
-        "title": "See why our support is consistently called the best in the restaurant tech world.",
-        "description": "It's always easy to contact our top-rated support team.",
-        "badge1": "Rated #1 Restaurant Marketing Software",
-        "badge2": "Leader Position Summer 2024"
-      },
-      "blocks": [
-        {
-          "title": "Get great support, every step of the way",
-          "items": [
-            {
-              "title": "We make setup a breeze",
-              "desc": "Together, we'll set up your online ordering to work perfectly with the rest of your business."
-            },
-            {
-              "title": "We're here to help",
-              "desc": "Need to add a modifier, update employee permissions or anything else? No problem. Contact us anytime."
-            },
-            {
-              "title": "Top-rated American support, available 24/7",
-              "desc": "We're always ready, whether it's the Saturday dinner rush or the break of dawn. You're 24/7, so we are too."
-            }
-          ]
-        },
-        {
-          "title": "Keep things running smoothly with expert help",
-          "items": [
-            {
-              "title": "We'll keep you updated",
-              "desc": "We're always improving our platform, and we'll make sure you have the latest and greatest features."
-            },
-            {
-              "title": "Get ideas from successful restaurants",
-              "desc": "Our team works with thousands of restaurants, so we'll share best practices for driving online sales."
-            },
-            {
-              "title": "It's easy to DIY",
-              "desc": "If you prefer to do things yourself, our help center is packed with training videos for all of your questions."
-            }
-          ]
-        }
-      ]
-    },
-    "case": {
-      "hero": {
-        "title": "WeFood is trusted by thousands of restaurants",
-        "description": "Learn more about how restaurant WeFood have used our platform to maximize their success online. See the real numbers from real restaurants — before and after using WeFood.",
-        "badge1": "#1 Restaurant Marketing Software",
-        "badge2": "Leader Position Summer 2024",
-        "reviewsNote": "Over 250 5-star reviews on G2 and Capterra"
-      },
-      "list": {
-        "items": [
-          {
-            "img": "/images/resources/case/resources_case_1_1.jpg",
-            "title": "How Metro Pizza increased direct online sales by $10,000/m by swapping ChowNow for WeFood",
-            "metrics": [
-              {
-                "value": "+$112,000",
-                "label": "Sales"
-              },
-              {
-                "value": "+54%",
-                "label": "Growth"
-              },
-              {
-                "value": "+$29,000",
-                "label": "Savings"
-              }
-            ],
-            "owner": "John",
-            "role": "WeFood at Metro Pizza"
-          },
-          {
-            "img": "/images/resources/case/resources_case_1_2.jpg",
-            "title": "How Talkin Tacos increased direct online sales to $120,000/m by using WeFood.com",
-            "metrics": [
-              {
-                "value": "+$7,000,000",
-                "label": "Sales"
-              },
-              {
-                "value": "+970%",
-                "label": "Growth"
-              },
-              {
-                "value": "+$435,000",
-                "label": "Savings"
-              }
-            ],
-            "owner": "Mo and Omar",
-            "role": "WeFood of Talkin Tacos"
-          },
-          {
-            "img": "/images/resources/case/resources_case_1_3.jpg",
-            "title": "How Saffron grew direct online sales by $171,400/month after switching to WeFood.com",
-            "metrics": [
-              {
-                "value": "+$4,500,000",
-                "label": "Sales"
-              },
-              {
-                "value": "4",
-                "label": "Growth"
-              },
-              {
-                "value": "+$600,000",
-                "label": "Savings"
-              }
-            ],
-            "owner": "Rahul Bhatia",
-            "role": "WeFood of Saffron Indian Kitchen"
-          },
-          {
-            "img": "/images/resources/case/resources_case_1_4.jpg",
-            "title": "How Sushi Me Roll'n’ increased direct online sales by $91,000 using WeFood.com",
-            "metrics": [
-              {
-                "value": "+$91,000",
-                "label": "Sales"
-              },
-              {
-                "value": "+47%",
-                "label": "Growth"
-              },
-              {
-                "value": "+54%",
-                "label": "Savings"
-              }
-            ],
-            "owner": "Phillip Hang",
-            "role": "WeFood of Sushi Me Roll'n"
-          },
-          {
-            "img": "/images/resources/case/resources_case_1_5.jpg",
-            "title": "How Doo-Dah Diner increased direct online sales by $72,000 using WeFood.com",
-            "metrics": [
-              {
-                "value": "+$72,000",
-                "label": "Sales"
-              },
-              {
-                "value": "+54%",
-                "label": "Growth"
-              },
-              {
-                "value": "+$19,000",
-                "label": "Savings"
-              }
-            ],
-            "owner": "Timirie Shibley",
-            "role": "WeFood of Doo-Dah Diner"
-          },
-          {
-            "img": "/images/resources/case/resources_case_1_6.jpg",
-            "title": "How Samos Oaxaca increased direct online sales to $10,000/m by using WeFood.com",
-            "metrics": [
-              {
-                "value": "+$150,000",
-                "label": "Sales"
-              },
-              {
-                "value": "+377%",
-                "label": "Growth"
-              },
-              {
-                "value": "+$70,000",
-                "label": "Savings"
-              }
-            ],
-            "owner": "Yuliana Vasquez",
-            "role": "WeFood of Samos Oaxaca"
-          },
-          {
-            "img": "/images/resources/case/resources_case_1_7.jpg",
-            "title": "How Sushi Addicts grew online orders to $210,000 per year with WeFood",
-            "metrics": [
-              {
-                "value": "+$17,000",
-                "label": "Sales"
-              },
-              {
-                "value": "+75%",
-                "label": "Growth"
-              },
-              {
-                "value": "+$2,000",
-                "label": "Savings"
-              }
-            ],
-            "owner": "Fernando Izaguirre",
-            "role": "WeFood of Sushi Addicts"
-          },
-          {
-            "img": "/images/resources/case/resources_case_1_8.jpg",
-            "title": "How Cyclo Noodles grew direct online sales by +8500% by switching to WeFood.com",
-            "metrics": [
-              {
-                "value": "+$177,500",
-                "label": "Sales"
-              },
-              {
-                "value": "+8500%",
-                "label": "Growth"
-              },
-              {
-                "value": "+$31,000",
-                "label": "Savings"
-              }
-            ],
-            "owner": "Sandy Sei",
-            "role": "WeFood of Cyclo Noodles"
-          },
-          {
-            "img": "/images/resources/case/resources_case_1_9.jpg",
-            "title": "How Aburaya grew online sales by $25,000/m by switching from third-party apps",
-            "metrics": [
-              {
-                "value": "+$25,000",
-                "label": "Sales"
-              },
-              {
-                "value": "+160%",
-                "label": "Growth"
-              },
-              {
-                "value": "+$100,000",
-                "label": "Savings"
-              }
-            ],
-            "owner": "Hiroyuki Aidichi",
-            "role": "WeFood of Aburaya Fried Chicken"
-          },
-          {
-            "img": "/images/resources/case/resources_case_1_10.jpg",
-            "title": "How Township Line Pizza grew online sales to $300,000 per year with WeFood.com",
-            "metrics": [
-              {
-                "value": "+$300,000",
-                "label": "Sales"
-              },
-              {
-                "value": "100's",
-                "label": "Growth"
-              },
-              {
-                "value": "+$60,000",
-                "label": "Savings"
-              }
-            ],
-            "owner": "Sarkis Panossian",
-            "role": "WeFood of Township Line Pizza"
-          },
-          {
-            "img": "/images/resources/case/resources_case_1_11.jpg",
-            "title": "How The Modern Vegan Grew Online Sales by 3x with WeFood.com",
-            "metrics": [
-              {
-                "value": "+$194,000",
-                "label": "Sales"
-              },
-              {
-                "value": "+100%",
-                "label": "Growth"
-              },
-              {
-                "value": "25%",
-                "label": "Savings"
-              }
-            ],
-            "owner": "Gia Schultz",
-            "role": "WeFood of The Modern Vegan"
-          }
-        ]
-      }
-    }
+    "view_all": "View all"
   },
   "menu": {
     "premium_membership": "Premium Membership",
@@ -1034,9 +476,7 @@
     "success": "Success!",
     "confirm": "Confirm"
   },
-  "license_terms": {
-    "title": "Restaurant Agreements"
-  },
+  "license_terms": { "title": "Restaurant Agreements" },
   "wallet": {
     "fund_history": "Fund History",
     "no_more_data": "No more data",
@@ -1136,9 +576,7 @@
   },
   "access": {
     "title": "Evaluate",
-    "actions": {
-      "begin": "Begin"
-    },
+    "actions": { "begin": "Begin" },
     "stats": {
       "date": "Data",
       "today_earnings_usd": "Today's earnings (USD)",
@@ -1187,21 +625,9 @@
     "proven_design": {
       "title": "A proven design that drives more traffic",
       "cards": [
-        {
-          "alt": "SEO boost",
-          "label": "",
-          "heading": "AI-optimized sites boost SEO and Google traffic."
-        },
-        {
-          "alt": "Ordering built-in",
-          "label": "Online ordering built-in",
-          "heading": "Great ordering experience that increases sales."
-        },
-        {
-          "alt": "Fast launch",
-          "label": "Fast launch",
-          "heading": "Add your branding, then go live ASAP."
-        }
+        { "alt": "SEO boost", "label": "", "heading": "AI-optimized sites boost SEO and Google traffic." },
+        { "alt": "Ordering built-in", "label": "Online ordering built-in", "heading": "Great ordering experience that increases sales." },
+        { "alt": "Fast launch", "label": "Fast launch", "heading": "Add your branding, then go live ASAP." }
       ]
     },
     "faqs": {
@@ -1239,8 +665,7 @@
       "section_title": "Improve your restaurant's website with our guides",
       "main_video_title": "I Reviewed The Best Website Builders For Restaurants, Here's What I Found",
       "side_image_alt": "Guide side card",
-      "side_image_title": "Buyer's Guide: The Best Website Builders for Restaurants",
-      "blog_cta": "Read the blog"
+      "side_image_title": "Buyer's Guide: The Best Website Builders for Restaurants"
     },
     "ordering_cta": {
       "title": "Grow your sales with our online ordering platform",
@@ -1258,38 +683,17 @@
       "title": "Every restaurant today needs a mobile app",
       "left_image_alt": "Branded app hero image",
       "features": [
-        {
-          "title": "The fastest way for your regulars to order",
-          "desc": "Customers can re-order in a few taps. No distractions from other restaurants."
-        },
-        {
-          "title": "Your own 5-star mobile app",
-          "desc": "We've helped restaurants earn thousands of 5-star reviews on Apple and Android."
-        },
-        {
-          "title": "It drives repeat orders",
-          "desc": "Restaurants with apps get 85% more return customers."
-        }
+        { "title": "The fastest way for your regulars to order", "desc": "Customers can re-order in a few taps. No distractions from other restaurants." },
+        { "title": "Your own 5-star mobile app", "desc": "We've helped restaurants earn thousands of 5-star reviews on Apple and Android." },
+        { "title": "It drives repeat orders", "desc": "Restaurants with apps get 85% more return customers." }
       ]
     },
     "proven_design": {
       "title": "Increase sales with your own mobile app",
       "cards": [
-        {
-          "alt": "Fast ordering",
-          "label": "Fast ordering",
-          "heading": "Regulars can reorder in seconds."
-        },
-        {
-          "alt": "5-star ratings",
-          "label": "Control delivery options",
-          "heading": "Thousands of 5-star ratings on Apple and Android. It's your turn."
-        },
-        {
-          "alt": "Drive loyalty",
-          "label": "Drive loyalty",
-          "heading": "Apps drive 85% more repeat orders."
-        }
+        { "alt": "Fast ordering", "label": "Fast ordering", "heading": "Regulars can reorder in seconds." },
+        { "alt": "5-star ratings", "label": "Control delivery options", "heading": "Thousands of 5-star ratings on Apple and Android. It's your turn." },
+        { "alt": "Drive loyalty", "label": "Drive loyalty", "heading": "Apps drive 85% more repeat orders." }
       ]
     },
     "faqs": {
@@ -1337,62 +741,41 @@
   },
   "product_delivery": {
     "hero": {
-      "title": "Profitable delivery and a great guest experience",
-      "description": "Get food to your customers on time, by top-rated drivers, at a fair price.",
-      "overlay_text": "See why Gia from The Modern Vegan loves working with WeFood for delivery"
+      "title": "Zero-commission delivery for your restaurant",
+      "description": "Deliver profitably with top-rated drivers at a fair price. Keep more from every order.",
+      "overlay_text": "See how restaurants use WeFood Delivery to grow direct orders"
     },
     "sales_features": {
-      "title": "Delivery that's better for you and your guests",
+      "title": "Make delivery profitable",
       "left_image_alt": "Delivery preview",
       "features": [
-        {
-          "title": "Pay a flat rate for delivery",
-          "desc": "Use third-party drivers at fixed rates. Guests pay delivery on small orders, you chip in for larger ones."
-        },
-        {
-          "title": "Get the best drivers, commission free",
-          "desc": "We only use drivers rated 4.5 stars or higher to deliver your food."
-        },
-        {
-          "title": "A direct line to your customers",
-          "desc": "You can call customers directly. We'll cover refunds for any delivery issues."
-        }
+        { "title": "Zero commissions, fair pricing", "desc": "Keep your margins on every delivery." },
+        { "title": "Your drivers or ours", "desc": "Use your own drivers or tap into our network." },
+        { "title": "Fast, reliable delivery", "desc": "Delight customers with on-time delivery and tracking." }
       ]
     },
     "proven_design": {
-      "title": "Third-party delivery, no third-party commissions",
+      "title": "Built for speed and reliability",
       "cards": [
-        {
-          "alt": "Driver routing",
-          "label": "Third party drivers",
-          "heading": "Top third-party drivers deliver for you. One flat fee. No markup from us."
-        },
-        {
-          "alt": "Live tracking",
-          "label": "Control delivery options",
-          "heading": "Use your in-house delivery drivers, third-party, or both."
-        },
-        {
-          "alt": "Fair fees",
-          "label": "Better for your guests",
-          "heading": "Call your customers if needed. We'll pay for any delivery problems."
-        }
+        { "alt": "Driver routing", "label": "Smarter routing", "heading": "Optimized routes for faster delivery." },
+        { "alt": "Live tracking", "label": "Live tracking", "heading": "Customers can follow every delivery in real time." },
+        { "alt": "Fair fees", "label": "Fair fees", "heading": "Transparent, predictable pricing." }
       ]
     },
     "faqs": {
       "title": "FAQs",
       "items": [
         {
-          "question": "Why would customers order from my app instead of the third parties?",
-          "answer_html": "<article class=\"ctx-article p-5 text-base text-[#171F1F]\"><div><p>First, it’s cheaper for them. You may be marking up your prices on the<br>delivery apps in order to cover their commissions. There are also sometimes platform<br>fees and delivery fees that can inflate their order total.<br><br>Second, you can<br>incentivize them with a rewards program. With WeFood, you can reward them with a<br>points-based loyalty program, giving away low food cost items like mozzarella sticks and<br>fries every few orders to reward people for ordering directly.<br><br>Finally,<br>supporting local. Customers know how unfair the third party delivery apps are to<br>restaurants, so when we give them a way that’s just as easy to support you while still<br>getting delivery, they take us up on it.</p></div></article>"
+          "question": "How are delivery fees calculated?",
+          "answer_html": "<article class=\"ctx-article p-5 text-base text-[#171F1F]\"><div><p>We offer transparent, predictable pricing with no commissions on your direct orders.<br><br>Fees depend on distance, time, and driver availability. You can set delivery zones and minimums to protect your margins.</p></div></article>"
         },
         {
-          "question": "Who pays for delivery, the guest or the restaurant?",
-          "answer_html": "<article class=\"ctx-article p-5 text-base text-[#171F1F]\"><div><p>For orders under $30, you can let the guest pay for delivery. You may<br>consider covering some of the cost to get more orders.<br><br>For orders over $30, you<br>should cover about $3 in delivery fees. Our research shows that you get the most orders<br>when customers pay a maximum of $3.99 in delivery.<br><br>Doing this can encourage your<br>customers to increase their order size. <br><br>Cheaper delivery for them, more sales<br>for you.</p></div></article>"
+          "question": "Can I use my own drivers?",
+          "answer_html": "<article class=\"ctx-article p-5 text-base text-[#171F1F]\"><div><p>Yes. Use your own drivers, our network, or a mix of both. We support flexible dispatch so you always have coverage.<br><br>Your drivers get optimized routes and optional live tracking for customers.</p></div></article>"
         },
         {
-          "question": "Why would the third-party apps go for this?",
-          "answer_html": "<article class=\"ctx-article p-5 text-base text-[#171F1F]\"><div><p>We negotiated in bulk with our thousands of restaurants to get the best<br>possible deal. Even though the third parties make less revenue on these orders, they<br>make more profit on each order because they don’t have to spend money to get people to<br>use their apps. <br><br>They charge us about $7 to help you offer delivery, which we<br>charge directly to you at no markup from us. But to the third parties, this is almost<br>pure profit for them. It helps keep their drivers more busy and active on their<br>platform.</p></div></article>"
+          "question": "What areas can you deliver to?",
+          "answer_html": "<article class=\"ctx-article p-5 text-base text-[#171F1F]\"><div><p>Set custom delivery zones by distance or map area. You’re always in control of where you deliver and what you charge.<br><br>We’ll help you configure zones that balance coverage and profitability.</p></div></article>"
         }
       ],
       "side_card": {
@@ -1411,59 +794,38 @@
       }
     },
     "guides": {
-      "section_title": "See our guides on getting more delivery orders",
-      "main_video_title": "Get More Delivery Orders (Without Paying More Commissions)",
+      "section_title": "Best practices for profitable delivery",
+      "main_video_title": "How To Offer Delivery Without Paying Commissions",
       "side_image_alt": "Guide side card",
-      "side_image_title": "Delivery Fees: Here's How Much To Charge (based on data)"
+      "side_image_title": "A Practical Guide To Zero-Commission Delivery"
     },
     "ordering_cta": {
-      "title": "Grow re-orders with a mobile app",
-      "card_title": "Your own mobile app",
-      "card_desc": "WeFood grows your repeat orders with your branded mobile app"
+      "title": "Grow your sales with our online ordering platform",
+      "card_title": "Online Ordering",
+      "card_desc": "Thousands of restaurants use WeFood to increase their direct online sales"
     }
   },
   "product_loyalty": {
     "hero": {
-      "title": "Never miss another marketing opportunity again",
-      "description": "Grow sales with automated campaigns. Drive repeat orders with proven email and text marketing on autopilot.",
-      "overlay_text": "Money-making marketing, powered by customer data"
+      "title": "Introduce loyalty to increase repeat orders",
+      "description": "Give your regulars a reason to come back with cashback and rewards.",
+      "overlay_text": "See how Mo from Talkin Tacos uses WeFood Loyalty to bring guests back again and again"
     },
     "sales_features": {
-      "title": "Money-making marketing, powered by customer data",
+      "title": "Loyalty that brings customers back",
       "left_image_alt": "Loyalty hero image",
       "features": [
-        {
-          "title": "Grow your sales with proven campaigns",
-          "desc": "Run automated marketing that grow orders."
-        },
-        {
-          "title": "Grow your customer list",
-          "desc": "Every direct order grows your list, giving you more data to drive more sales."
-        },
-        {
-          "title": "Write faster with AI",
-          "desc": "Sending your own campaign? Use our AI assistant to write email blasts in seconds."
-        }
+        { "title": "Cashback your customers use", "desc": "Guests earn cashback every time they order, motivating repeat business." },
+        { "title": "Rewards that your customers love", "desc": "Simple, transparent rewards that are easy to understand and engage with." },
+        { "title": "Simple to set up", "desc": "Launch loyalty quickly and start seeing repeat orders grow." }
       ]
     },
     "proven_design": {
-      "title": "Reach more customers with automated marketing",
+      "title": "Loyalty that increases direct sales",
       "cards": [
-        {
-          "alt": "Cashback rewards",
-          "label": "Proven marketing",
-          "heading": "Boost sales with smart, automated campaigns."
-        },
-        {
-          "alt": "Rewards engagement",
-          "label": "Own customer data",
-          "heading": "Your orders, your data. Grow your list, grow your sales."
-        },
-        {
-          "alt": "Customer retention",
-          "label": "AI marketing",
-          "heading": "Write emails instantly with AI."
-        }
+        { "alt": "Cashback rewards", "label": "Create loyal customers", "heading": "Every order can earn cashback and rewards." },
+        { "alt": "Rewards engagement", "label": "Build long-term relationships", "heading": "Give guests a reason to come back every time." },
+        { "alt": "Customer retention", "label": "Increase retention", "heading": "Turn first-time guests into loyal regulars." }
       ]
     },
     "faqs": {
@@ -1492,21 +854,18 @@
     "testimonial": {
       "image_alt": "Customer story",
       "headline": "How Samos Oaxaca increased direct online sales to $10,000/m by using WeFood.com",
-      "metrics": {
-        "online_sales": "Online sales",
-        "growth": "Growth"
-      }
+      "metrics": { "online_sales": "Online sales", "growth": "Growth" }
     },
     "guides": {
-      "section_title": "Grow your customer base with our marketing guides",
+      "section_title": "Grow repeat orders with these loyalty guides",
       "main_video_title": "How A.I. Will Transform Your Restaurant",
       "side_image_alt": "Guide side card",
       "side_image_title": "The 8 Money-Making Email Campaigns Every Restaurant Must Send"
     },
     "ordering_cta": {
-      "title": "See what restaurant WeFood say about WeFood",
-      "card_title": "WeFood stories",
-      "card_desc": "See how WeFood helped these restaurants grow online"
+      "title": "Get your own mobile app to boost repeat orders",
+      "card_title": "Branded mobile app",
+      "card_desc": "Launch your own mobile app with WeFood and grow loyalty faster"
     }
   },
   "product_ordering": {
@@ -1519,38 +878,17 @@
       "title": "Online ordering that feels like the delivery apps",
       "left_image_alt": "Ordering hero image",
       "features": [
-        {
-          "title": "Easy for your guests to make the switch",
-          "desc": "Both your website and mobile online ordering are easy for customers, since they feel familiar."
-        },
-        {
-          "title": "Start owning your customer data",
-          "desc": "Direct orders mean you get customer data, not third parties. Build more connections with your guests."
-        },
-        {
-          "title": "Cheaper and better for your guests",
-          "desc": "Ordering directly means that guests avoid third-party fees, so they'll go to you first."
-        }
+        { "title": "Easy for your guests to make the switch", "desc": "Both your website and mobile online ordering are easy for customers, since they feel familiar." },
+        { "title": "Start owning your customer data", "desc": "Direct orders mean you get customer data, not third parties. Build more connections with your guests." },
+        { "title": "Cheaper and better for your guests", "desc": "Ordering directly means that guests avoid third-party fees, so they'll go to you first." }
       ]
     },
     "proven_design": {
       "title": "Online ordering that helps you grow",
       "cards": [
-        {
-          "alt": "Built like the best",
-          "label": "Built like the best",
-          "heading": "Feels like the apps your customers use daily."
-        },
-        {
-          "alt": "Grow your customer list",
-          "label": "Grow your customer list",
-          "heading": "Own your data. Grow your list. Connect with your customers."
-        },
-        {
-          "alt": "Save on fees",
-          "label": "Save on fees",
-          "heading": "Direct orders: cheaper for guests, better for you."
-        }
+        { "alt": "Built like the best", "label": "Built like the best", "heading": "Feels like the apps your customers use daily." },
+        { "alt": "Grow your customer list", "label": "Grow your customer list", "heading": "Own your data. Grow your list. Connect with your customers." },
+        { "alt": "Save on fees", "label": "Save on fees", "heading": "Direct orders: cheaper for guests, better for you." }
       ]
     },
     "faqs": {
@@ -1579,10 +917,7 @@
     "testimonial": {
       "image_alt": "Customer story",
       "headline": "How Samos Oaxaca increased direct online sales to $10,000/m by using WeFood.com",
-      "metrics": {
-        "online_sales": "Online sales",
-        "growth": "Growth"
-      }
+      "metrics": { "online_sales": "Online sales", "growth": "Growth" }
     },
     "guides": {
       "section_title": "Drive more direct online orders with our best guides",
@@ -1606,18 +941,9 @@
       "title": "Money-making marketing, powered by customer data",
       "left_image_alt": "Marketing hero image",
       "features": [
-        {
-          "title": "Grow your sales with proven campaigns",
-          "desc": "Run automated marketing that grow orders."
-        },
-        {
-          "title": "Grow your customer list",
-          "desc": "Every direct order grows your list, giving you more data to drive more sales."
-        },
-        {
-          "title": "Write faster with AI",
-          "desc": "Sending your own campaign? Use our AI assistant to write email blasts in seconds."
-        }
+        { "title": "Grow your sales with proven campaigns", "desc": "Run automated marketing that grow orders." },
+        { "title": "Grow your customer list", "desc": "Every direct order grows your list, giving you more data to drive more sales." },
+        { "title": "Write faster with AI", "desc": "Sending your own campaign? Use our AI assistant to write email blasts in seconds." }
       ]
     },
     "proven_design": {
@@ -1682,8 +1008,8 @@
       "card_title": "WeFood stories",
       "card_desc": "See how WeFood helped these restaurants grow online"
     }
-  },
-  "careers": {
+  }
+,  "careers": {
     "intro": {
       "badge_text": "WeFood named to Forbes Next Billion-Dollar Startups 2024",
       "headline": "Protect the future of small business WeFood.",
@@ -1699,8 +1025,8 @@
     "leadership": {
       "title": "Our leadership team",
       "description": "Experienced leaders passionate about small business, with backgrounds from the best companies in the industry."
-    },
-    "investors": {
+    }
+   ,  "investors": {
       "title": "We’re backed by some of the best in business",
       "strip_label": "Our investors built companies like"
     },
@@ -1741,7 +1067,7 @@
       }
     },
     "values": {
-      "title": "Phillip Hang, Success Manager",
+      "title": "Our values",
       "author": "Phillip Hang, Success Manager",
       "sections": {
         "obsess": {
@@ -1766,8 +1092,8 @@
         }
       }
     }
-  },
-  "works": {
+   }
+  ,  "works": {
     "hero": {
       "title": "You could be getting a LOT more online sales.",
       "description": "WeFood is the easiest way to rank higher on Google, get more online orders, and create the best experience for your customers. See how we do it."
@@ -1864,258 +1190,6 @@
         "previous_label": "Samos Oaxaca",
         "next_label": "Talkin Tacos"
       }
-    },
-    "hero_banner": {
-      "title": "Making online growth easy for restaurants",
-      "description": "Thousands of restaurants use WeFood.com to grow online. Boost your sales with a seamless digital experience just like Domino's and Chipotle.",
-      "cta_get_started": "Get started",
-      "cta_how_it_works": "How it works"
-    },
-    "ratings": {
-      "title": "See why we're rated #1 in restaurant tech",
-      "badge1": "Rated #1 Restaurant Marketing Software",
-      "badge2": "Leader Position Summer 2024",
-      "see_more_reviews": "See more reviews",
-      "reviews": {
-        "left": [
-          {
-            "text": "The branded website and online ordering platform is perfect for our guests and growing my business.",
-            "name": "Steven F"
-          },
-          {
-            "text": "WeFood.com has been an absolute lifesaver when it comes to minimizing third-party service fees and driving direct store sales.",
-            "name": "Tara B"
-          },
-          {
-            "text": "My restaurant's website looks awesome. I'm keeping all the profits for my store instead of giving 30-40% away.",
-            "name": "Gia S"
-          }
-        ],
-        "center": [
-          {
-            "text": "With WeFood.com I keep all money from sales and only pay minimal fee on delivery cost.",
-            "name": "Mohammad A"
-          },
-          {
-            "text": "My restaurants operate very late, yet WeFood Customer Support has ALWAYS been active and able to help me with any concerns!",
-            "name": "Daryl E"
-          },
-          {
-            "text": "Why isn’t every restaurant using this system? My SCO is at an all-time high, because I am retaining customers to my website.",
-            "name": "Michael B"
-          }
-        ],
-        "right": [
-          {
-            "text": "WeFood.com has almost everything you need to run your restaurant online. An awesome partner to have for restaurants.",
-            "name": "Jake A"
-          },
-          {
-            "text": "They are helping us take back more control of our business and compete with larger companies because the technology is great!",
-            "name": "Michael B"
-          },
-          {
-            "text": "Exceptional customer service from start to finish, every step of the process has been an enjoyable experience.",
-            "name": "Anna P"
-          }
-        ]
-      }
-    },
-    "growth_guides": {
-      "title": "See our free guides on growing your restaurant",
-      "see_all": "See all guides",
-      "guides": [
-        {
-          "title": "3 Best Restaurant Marketing Ideas For 2024 (with AI Strategies)"
-        },
-        {
-          "title": "Restaurant SEO is Easier Than You Think (3 Big Wins)"
-        },
-        {
-          "title": "Buyer's Guide: The Best Restaurant Website Builders"
-        }
-      ]
-    },
-    "restaurant_growth": {
-      "title": "How restaurants grow using WeFood",
-      "description": "WeFood gives you the same tools that major national brands use to drive sales. We learn what works for them, then give it to local restaurant WeFood.",
-      "cards": [
-        {
-          "title": "Website and Online Ordering",
-          "subtitle": "designed to increase orders."
-        },
-        {
-          "title": "Mobile app with rewards",
-          "subtitle": "to help you drive repeat orders."
-        },
-        {
-          "title": "Automated Marketing",
-          "subtitle": "proven to drive sales."
-        }
-      ],
-      "cta": "See How it works"
-    },
-    "success_story": {
-      "title": "How Samos Oaxaca increased direct online sales to $10,000/m by using WeFood.com",
-      "stats": {
-        "sales": "+$150,000",
-        "sales_label": "Online sales",
-        "growth": "+377%",
-        "growth_label": "Growth"
-      }
-    },
-    "customer_reviews": {
-      "cards": [
-        {
-          "type": "testimonial",
-          "content": "WeFood is a must-have for succeeding online as an independent restaurant today.",
-          "author": "John",
-          "position": "WeFood at Metro Pizza"
-        },
-        {
-          "type": "stats",
-          "stats": [
-            {
-              "value": "+$104,000",
-              "label": "Sales growth after switching to WeFood"
-            },
-            {
-              "value": "$31,000",
-              "label": "Installs of their new mobile app, created with WeFood"
-            }
-          ],
-          "author": "Sandy Sei",
-          "position": "WeFood of Cyclo Noodles"
-        },
-        {
-          "type": "testimonial",
-          "content": "Now that we've used WeFood for 1 year, I can say confidently that it is the best technology in our restaurant.",
-          "author": "Phillip Hang",
-          "position": "WeFood of Sushi Me Roll'n"
-        },
-        {
-          "type": "stats",
-          "stats": [
-            {
-              "value": "+$7,000,000",
-              "label": "In direct online sales"
-            },
-            {
-              "value": "+970%",
-              "label": "Growth"
-            },
-            {
-              "value": "$435,000",
-              "label": "Savings"
-            }
-          ],
-          "author": "Mo and Omar",
-          "position": "WeFood of Talkin Tacos"
-        }
-      ]
-    }
-  },
-  "pricing": {
-    "hero": {
-      "title": "One simple price.",
-      "description": "Month-to-month. No long-term contracts. No cancellation fees. Just pay a flat rate to get everything on the WeFood platform.",
-      "price": "$499",
-      "billed_monthly": "Billed monthly",
-      "cta": "Get started",
-      "whats_included": "WHAT’S INCLUDED",
-      "items": [
-        {
-          "title": "Restaurant Website",
-          "desc": "A restaurant website perfectly optimized to grow your traffic and sales."
-        },
-        {
-          "title": "Online Ordering",
-          "desc": "An online ordering system that's as good as the biggest restaurant brands."
-        },
-        {
-          "title": "Mobile App",
-          "desc": "Your very own mobile app, branded for your restaurant, that your regulars will love."
-        },
-        {
-          "title": "Keep guests coming back with loyalty and rewards",
-          "desc": "A rewards program that gets more repeat orders, just like the national chains."
-        },
-        {
-          "title": "Automated Marketing",
-          "desc": "Automated email and text marketing campaigns that drive sales on their own."
-        },
-        {
-          "title": "Month-to-Month Contract",
-          "desc": "No lock-in. No long-term contracts. No cancellation fees. Cancel anytime."
-        },
-        {
-          "title": "24/7 Support",
-          "desc": "You’re 24/7, so we are too. Our customer support is consistently rated 5 stars."
-        }
-      ]
-    },
-    "calculator": {
-      "title": "Are you using third-party delivery apps?",
-      "badge": "Calculator",
-      "orders_label": "How many orders do you get from them every month?",
-      "avg_order_size_label": "What's your average order size?",
-      "monthly_cost": "$15,000",
-      "explanation_top": "With a typical 25% commission: you're paying the apps this much every month.",
-      "explanation_bottom": "We'll help you save on those fees by getting more customers to order from you directly.",
-      "placeholder_orders": "1500",
-      "placeholder_avg": "40"
-    },
-    "why": {
-      "title": "Join thousands of restaurants switching to WeFood",
-      "subtitle": "Here’s why restaurants choose WeFood to grow faster online",
-      "cards": [
-        {
-          "title": "One package with everything you need",
-          "desc": "With WeFood, you get all the tools you need to grow from day one. Our happiest and most successful customers switched to WeFood from another solution. They were paying less, but weren’t getting the online sales growth they were looking for."
-        },
-        {
-          "title": "Month to month pricing",
-          "desc": "Month-to-month. No long-term contracts. No cancellation fees. Just pay a flat rate to get everything on the WeFood platform."
-        },
-        {
-          "title": "No upgrades or upsells",
-          "desc": "There’s no upgrades or upsells. We give you everything you need to grow online."
-        },
-        {
-          "title": "24/7 USA support",
-          "desc": "Work with a world-class team. You'll have 24/7, USA-based support."
-        }
-      ]
-    },
-    "faq": {
-      "title": "FAQs",
-      "side_card": {
-        "quote": "\"After we signed up with WeFood, we've saved probably hundreds of thousands of dollars.\"",
-        "name": "Hiroyuki Aidichi",
-        "role": "WeFood of Aburaya"
-      },
-      "items": [
-        {
-          "question": "What is included?",
-          "answer_html": "<article class=\"ctx-article p-5 text-base text-[#171F1F]\"><div><p>Your subscription includes all of our features. The WeFood platform upgrades your online presence to drive direct orders like the big restaurant brands. One price upgrades your website and online ordering system and gives you your own branded app. You also get proven marketing automations that drive revenue per guest higher.<br><br>“<a href=\"javascript:;\">WeFood.com is the secret to our online success. It makes online marketing so easy, and our guests love using our new ordering system and app.”</a></p><p></p><p><a href=\"javascript:;\">Yuliana Vasquez, WeFood of Samos Oaxaca</a></p></div></article>"
-        },
-        {
-          "question": "What commissions do I pay as a restaurant?",
-          "answer_html": "<article class=\"ctx-article p-5 text-base text-[#171F1F]\"><div><p>Restaurants pay zero commissions, and are only charged a simple flat fee for the WeFood platform.<br><br>As for your customers, they are charged 5% of their order. When your customers order from third-party apps, they get charged 15% or more, so they pay a lot less when they order directly from you.<br><br>“It's only one flat fee. There's no hidden fees. They're very upfront about what they're going to charge you. I love it, you know, and I cannot say that enough.”</p><p></p><p>Sandy Sei, WeFood of Cyclo Noodles</p><p></p></div></article>"
-        },
-        {
-          "question": "How long are your contracts?",
-          "answer_html": "<article class=\"ctx-article p-5 text-base text-[#171F1F]\"><div><p>There are no long-term contracts or commitments. You can use WeFood month to month, and cancel at any time you'd like. At WeFood, we don’t believe in locking restaurants into contracts. That’s why we have the only month-to-month billing in the industry.<br><br>“The best part is your customer service. It’s so quick and friendly; it just made my life easier. If somebody asks me, I recommend WeFood.”</p><p></p><p>Hiroyuki Aidichi, WeFood of Aburaya Fried Chicken</p><p></p></div></article>"
-        },
-        {
-          "question": "How long does it take to get started?",
-          "answer_html": "<article class=\"ctx-article p-5 text-base text-[#171F1F]\"><div><p>Many restaurants can launch within a week. We'll ask you for details like your website domain, Google Business, and Yelp information. If you have those on hand, we can launch your new online presence in a few days.<br><br>“The process was so easy. I think it was ready in less than two weeks. I'm so grateful.”</p><p></p><p>Gia Schultz, WeFood of The Modern Vegan</p><p></p></div></article>"
-        },
-        {
-          "question": "Should I stop using third-party delivery apps?",
-          "answer_html": "<article class=\"ctx-article p-5 text-base text-[#171F1F]\"><div><p>Most of our customers use both. They use the apps as another marketing channel, then drive their customers to order directly from them using WeFood.<br><br>“We're working with <a href=\"javascript:;\">WeFood.com</a> and it's pulling away the traffic that's going to those third-party platforms, and it's coming directly to us.”</p><p></p><p>Matt Miller, Co-WeFood of Mr M's Sandwich Shop</p><p></p></div></article>"
-        }
-      ]
     }
   }
 }
